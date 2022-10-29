@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ModeratorInfo} from "../shared/interfaces/register.interface";
+import {ModeratorInfo} from "../shared/interfaces/moderator.interface";
 import {AdminService} from "../shared/services/admin/admin.service";
 
 @Component({

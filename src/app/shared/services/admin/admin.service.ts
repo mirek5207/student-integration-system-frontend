@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {ModeratorInfo} from "../../interfaces/register.interface";
+import {ModeratorInfo} from "../../interfaces/moderator.interface";
 import {AUTHENTICATION_KEY} from "../../authenticationKey/authenticationKey";
 import {getUrl} from "../../API/api";
 
