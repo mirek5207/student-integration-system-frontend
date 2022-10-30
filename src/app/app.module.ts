@@ -15,12 +15,16 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import { AuthService } from "./shared/services/auth/auth.service";
 import { AdminComponent } from './admin/admin.component';
+import { ClientComponent } from './client/client.component';
+import { PlaceownerComponent } from './placeowner/placeowner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
+    ClientComponent,
+    PlaceownerComponent,
   ],
     imports: [
         BrowserModule,
