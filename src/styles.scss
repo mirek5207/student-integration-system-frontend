@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.lobbies-container{
+  display: flex;
+  justify-content: space-around;
+  .lobbies-list{
+    background-color: aqua;
+    width: 49%;
+    border-radius: 5px;
+  }
+  .map{
+    background-color: blue;
+    width: 49%;
+    border-radius: 5px;
+  }
+}
