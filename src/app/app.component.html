@@ -1,10 +1,24 @@
-<mat-toolbar color="primary">
+<mat-toolbar *ngIf="isAuthenticated$ | async else elseBlock" style="background-color: white">
+  <nav>
+    <a
+      *ngFor="let link of navigationLinks"
+      [routerLink]="link.url"
+      routerLinkActive="active"
+    >
+      {{link.name}}
+    </a>
+  </nav>
+</mat-toolbar>
+
+<ng-template #elseBlock>
   <span>Logo</span>
   <span class="example-spacer"></span>
+  <a routerLink="/placeowner">Rejestracja wlasciciela</a>
   <a routerLink="/login">Zaloguj się</a>
-  <span>Zarejestruj się</span>
-</mat-toolbar>
+  <a routerLink="/createAccount">Zarejestruj się</a>
+</ng-template>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
 
