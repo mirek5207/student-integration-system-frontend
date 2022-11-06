@@ -1,47 +1,52 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {lastValueFrom, Observable} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import {AUTHENTICATION_KEY} from "../../authenticationKey/authenticationKey";
-import {getUrl} from "../../API/api";
 
 import { UserInfo } from '../../interfaces/auth.interface';
 import {HttpClient} from "@angular/common/http";
-
-
-
-
-interface Token {
-  token: string
-}
+import {TokenService} from "../token/token.service";
+import {NavigationService} from "../navigation/navigation.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   model = 'Auth/authenticate';
+  role ='';
+  token=''
+
+  private isAuthenticated = new BehaviorSubject(this.setIsAuthenticated() || false);
+  isAuthenticated$ = this.isAuthenticated.asObservable();
+  private navItems = new BehaviorSubject<{name: string, url: string}[]>(this.navigationService.getNavLinks() || [])
+  navItems$ = this.navItems.asObservable();
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private tokenService: TokenService,
+    private navigationService: NavigationService
     ) { }
 
-   createToken(user: UserInfo): Observable<Token> {
-      return this.http.post<Token>(getUrl(this.model), user)
+
+  async loginAfterRegistration() {
+      this.isAuthenticated.next(true);
+      this.navItems.next(this.navigationService.getNavLinks())
+      await this.navigationService.navigate()
   }
+
     async login(userInfo: UserInfo) {
-      const fetchToken$ = await this.createToken(userInfo)
-      const fetchToken = await lastValueFrom(fetchToken$)
-      localStorage.setItem(AUTHENTICATION_KEY, fetchToken.token)
+      await this.tokenService.setTokenToLocalStorage(userInfo)
       if(this.setIsAuthenticated()){
-        await this.router.navigateByUrl('/admin');
+        this.isAuthenticated.next(true);
+        this.navItems.next(this.navigationService.getNavLinks())
+        await this.navigationService.navigate()
       }
-
   }
 
-  private setIsAuthenticated() {
-    return !(localStorage.getItem(AUTHENTICATION_KEY) === '' || localStorage.getItem(AUTHENTICATION_KEY) == null);
-
+   private setIsAuthenticated() {
+     return !(localStorage.getItem(AUTHENTICATION_KEY) === '' || localStorage.getItem(AUTHENTICATION_KEY) == null);
   }
-
 
 }
+
