@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlaceOwnerInfo} from "../shared/interfaces/placeOwner.interface";
-import {PlaceownerService} from "../shared/services/placeowner/placeowner.service";
+import {RegisterService} from "../shared/services/register/register.service";
+import {AuthService} from "../shared/services/auth/auth.service";
 
 @Component({
   selector: 'app-placeowner',
@@ -17,14 +18,14 @@ export class PlaceownerComponent implements OnInit {
     hashedPassword: ''
   }
 
-  constructor(private placeOwnerService : PlaceownerService) { }
+  constructor(private placeOwner : RegisterService, private authService : AuthService) { }
 
   ngOnInit(): void {
   }
 
-  async register(placeOnwer: PlaceOwnerInfo){
-    await this.placeOwnerService.registerPlaceOwner(placeOnwer)
-    console.log(placeOnwer)
+  async register(placeOwner: PlaceOwnerInfo){
+    await this.placeOwner.createAccount(placeOwner, 'PlaceOwner/createAccount')
+    await this.authService.loginAfterRegistration()
   }
 
 }
