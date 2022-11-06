@@ -17,6 +17,23 @@ import { AuthService } from "./shared/services/auth/auth.service";
 import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
 import { PlaceownerComponent } from './placeowner/placeowner.component';
+import { RegisterComponent } from './register/register.component';
+import { SystemReportComponent } from './system-report/system-report.component';
+import { UserReportComponent } from './user-report/user-report.component';
+import { LobbyComponent } from './lobby/lobby.component';
+import { LobbiesListComponent } from './lobby/lobbies-list/lobbies-list.component';
+import { LobbyDetailsComponent } from './lobby/lobbies-list/lobby-details/lobby-details.component';
+import { MapComponent } from './lobby/map/map.component';
+import {MatListModule} from "@angular/material/list";
+import {LobbyDetailsDialogComponent} from "./lobby/lobbies-list/lobby-details/lobby-details.component";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import { AdminGetModeratorsComponent } from './admin/admin-get-moderators/admin-get-moderators.component';
+import { AdminCreateModeratorComponent } from './admin/admin-create-moderator/admin-create-moderator.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -25,6 +42,16 @@ import { PlaceownerComponent } from './placeowner/placeowner.component';
     AdminComponent,
     ClientComponent,
     PlaceownerComponent,
+    RegisterComponent,
+    SystemReportComponent,
+    UserReportComponent,
+    LobbyComponent,
+    LobbiesListComponent,
+    LobbyDetailsComponent,
+    MapComponent,
+    LobbyDetailsDialogComponent,
+    AdminGetModeratorsComponent,
+    AdminCreateModeratorComponent
   ],
     imports: [
         BrowserModule,
@@ -37,7 +64,14 @@ import { PlaceownerComponent } from './placeowner/placeowner.component';
         MatCardModule,
         MatFormFieldModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatListModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatInputModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule
     ],
   providers: [AuthService],
   bootstrap: [AppComponent]
