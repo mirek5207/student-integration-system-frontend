@@ -1,21 +1,25 @@
-<mat-toolbar *ngIf="isAuthenticated$ | async else elseBlock" style="background-color: white">
-  <nav>
-    <a
-      *ngFor="let link of navigationLinks"
-      [routerLink]="link.url"
-      routerLinkActive="active"
-    >
-      {{link.name}}
-    </a>
-  </nav>
+<mat-toolbar color="primary" class="navbar_container">
+  <ng-container *ngIf="isAuthenticated$ | async else elseBlock" >
+      <img src="../assets/logo.png" class = "logo">
+      <a
+        *ngFor="let link of navigationLinks"
+        [routerLink]="link.url"
+        routerLinkActive="active"
+        class="routerLink"
+      >
+        {{link.name}}
+      </a>
+  </ng-container>
+  <ng-template #elseBlock>
+    <img src="../assets/logo.png" class = "logo">
+    <span class="spacer"></span>
+    <a routerLink="/login" class="routerLink">Logowanie</a>
+    <a routerLink="/createAccount" style="float: right" class="routerLink">Rejestracja</a>
+  </ng-template>
 </mat-toolbar>
 
-<ng-template #elseBlock>
-  <span>Logo</span>
-  <span class="example-spacer"></span>
-  <a routerLink="/placeowner">Rejestracja wlasciciela</a>
-  <a routerLink="/login">Zaloguj się</a>
-  <a routerLink="/createAccount">Zarejestruj się</a>
+<ng-template >
+
 </ng-template>
 <div class="container">
   <router-outlet></router-outlet>
