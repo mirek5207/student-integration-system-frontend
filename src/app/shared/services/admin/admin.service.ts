@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {ModeratorInfo} from "../../interfaces/moderator.interface";
+import {GetAllModerators, ModeratorInfo} from "../../interfaces/moderator.interface";
 import {AUTHENTICATION_KEY} from "../../authenticationKey/authenticationKey";
 import {getUrl} from "../../API/api";
+import {Observable} from "rxjs";
 
 
 
@@ -25,6 +26,14 @@ export class AdminService {
   registerModerator(moderator: ModeratorInfo) {
       return this.http.post(getUrl(this.model), moderator, this.httpOptions)
         .subscribe(response => console.log(response))
+  }
+
+  getAllModerators(){
+    return this.http.get<GetAllModerators[]>(getUrl('Admin/getModerators'), this.httpOptions)
+  }
+
+  getModeratorById(id: string): Observable<GetAllModerators[]>{
+    return this.http.get<GetAllModerators[]>(getUrl(`Admin/getModerator/${id}`), this.httpOptions)
   }
 
 }
