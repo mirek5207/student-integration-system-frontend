@@ -1,0 +1,58 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Zarejestruj sie </mat-card-title>
+    </mat-card-header>
+    <form (submit)="register(registerNewClient)">
+      <mat-card-content>
+
+        <input
+          matInput
+          placeholder="Login"
+          [(ngModel)]="registerNewClient.login"
+          type="text"
+          name="login"
+        />
+
+
+        <input
+          matInput
+          placeholder="Email"
+          [(ngModel)]="registerNewClient.email"
+          type="email"
+          name="Email"
+        />
+
+        <input
+          matInput
+          placeholder="First name"
+          [(ngModel)]="registerNewClient.firstName"
+          type="text"
+          name="first name"
+        />
+
+        <input
+          matInput
+          placeholder="Surname"
+          [(ngModel)]="registerNewClient.surName"
+          type="text"
+          name="Surname"
+        />
+
+        <input
+          matInput
+          placeholder="Password"
+          [(ngModel)]="registerNewClient.hashedPassword"
+          type="password"
+          name="password"
+        />
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-button color="primary">Register</button>
+      </mat-card-actions>
+    </form>
+    <a [routerLink]="'/placeowner'"  routerLinkActive="active">Jesteś właścicielem? Zarejestruj się klikając w ten link</a>
+  </mat-card>
+
+</div>
