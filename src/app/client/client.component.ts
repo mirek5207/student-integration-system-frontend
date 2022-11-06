@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ClientInfo} from "../shared/interfaces/client.interface";
 import {ClientService} from "../shared/services/client/client.service";
+import {AuthService} from "../shared/services/auth/auth.service";
 
 
 @Component({
