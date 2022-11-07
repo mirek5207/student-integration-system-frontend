@@ -1,32 +1,33 @@
 <div class="login-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title> Login </mat-card-title>
-    </mat-card-header>
-    <form (submit)="login(userInfo)">
-      <mat-card-content>
+  <mat-card-header>
 
-          <input
-            matInput
-            placeholder="Login"
-            [(ngModel)]="userInfo.login"
-            type="text"
-            name="email"
-          />
+    <mat-card-title> <img src="assets/logo.png"> </mat-card-title>
+  </mat-card-header>
+  <form (submit)="login(userInfo)">
+    <mat-card-content>
+        <input
+          matInput
+          placeholder="Login"
+          [(ngModel)]="userInfo.login"
+          type="text"
+          name="email"
+        /><br>
 
+        <input
+          matInput
+          placeholder="Password"
+          [(ngModel)]="userInfo.password"
+          type="password"
+          name="password"
+        /><br>
 
-          <input
-            matInput
-            placeholder="Password"
-            [(ngModel)]="userInfo.password"
-            type="password"
-            name="password"
-          />
-
-      </mat-card-content>
-      <mat-card-actions>
-        <button type="submit" mat-button color="primary">Login</button>
-      </mat-card-actions>
-    </form>
-  </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" class="login-button">Login</button>
+    </mat-card-actions>
+  </form>
 </div>
+<!-- HTML !-->
+
+
+

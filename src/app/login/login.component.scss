@@ -1,0 +1,43 @@
+.login-container{
+  text-align: center;
+}
+input{
+  width: 70%;
+  position: relative;
+  border-width: 0px 0px 1px 0px;
+  text-decoration: none;
+  color: #000;
+  margin: 20px 20px;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Arial;
+}
+input:focus{
+  border-width: 0px 0px 2px 0px;
+  outline: none;
+}
+/* CSS */
+.login-button {
+  margin-top: 70px;
+  width: 40%;
+  background-color: #f66a0a;
+  border: 0;
+  border-radius: 100px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 60px;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.login-button:hover,
+.login-button:focus {
+  background-color: #d05701;
+  color: #ffffff;
+}

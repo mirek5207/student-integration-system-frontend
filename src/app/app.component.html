@@ -13,8 +13,8 @@
   <ng-template #elseBlock>
     <img src="../assets/logo.png" class = "logo">
     <span class="spacer"></span>
-    <a routerLink="/login" class="routerLink">Logowanie</a>
-    <a routerLink="/createAccount" style="float: right" class="routerLink">Rejestracja</a>
+    <a (click)="openLoginDialog()" class="routerLink">Logowanie</a>
+    <a (click)="openRegisterDialog()" class="routerLink">Rejestracja</a>
   </ng-template>
 </mat-toolbar>
 
