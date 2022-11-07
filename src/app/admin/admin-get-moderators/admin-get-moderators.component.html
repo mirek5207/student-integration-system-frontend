@@ -1,28 +1,33 @@
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource" matSort>
 
-    <!-- Position Column -->
+  <mat-table #table [dataSource]="dataSource">
+    <!-- Id Column -->
     <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- FirstName Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> FirstName </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> FirstName </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
     </ng-container>
 
-    <!-- Weight Column -->
+    <!-- Surname Column -->
     <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Surname </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.surName}} </mat-cell>
     </ng-container>
 
-    <!-- Symbol Column -->
+    <!-- UserId Column -->
     <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> UserId </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> UserId </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.userId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="button">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element"> <button (click)="redirect(element.id)">Edit</button></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
