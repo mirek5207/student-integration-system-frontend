@@ -6,7 +6,7 @@ export interface ModeratorInfo {
   hashedPassword: string
 }
 
-export interface GetAllModerators {
+export interface GetModerator {
   id: number
   firstName: string
   surName: string
