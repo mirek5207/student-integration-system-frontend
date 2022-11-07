@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AdminService} from "../../shared/services/admin/admin.service";
-import {GetAllModerators} from "../../shared/interfaces/moderator.interface";
+import {GetModerator} from "../../shared/interfaces/moderator.interface";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {Observable} from "rxjs";
-import {MatSort} from "@angular/material/sort";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-get-moderators',
@@ -14,21 +14,19 @@ import {MatSort} from "@angular/material/sort";
 
 
 export class AdminGetModeratorsComponent implements OnInit {
-  moderators!: Observable<GetAllModerators[]>;
+  moderators!: Observable<GetModerator[]>;
 
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<GetAllModerators>();
-  constructor(private adminService: AdminService) {}
+  displayedColumns = ['position', 'name', 'weight', 'symbol', 'button'];
+  dataSource = new MatTableDataSource<GetModerator>();
+  constructor(private adminService: AdminService, private router: Router) {}
 
   @ViewChild(MatPaginator) paginator: MatPaginator | null = null;
-  @ViewChild(MatSort) sort: MatSort | null = null;
 
   ngOnInit(): void {
     this.getAllModerators()
     this.moderators.subscribe(things =>
     this.dataSource.data = things)
     this.dataSource.paginator = this.paginator
-    this.dataSource.sort = this.sort
   }
 
   ngAfterViewInit() {
@@ -38,7 +36,10 @@ export class AdminGetModeratorsComponent implements OnInit {
 
   getAllModerators(){
    this.moderators = this.adminService.getAllModerators()
+  }
 
+  redirect(id: number){
+    this.router.navigate(["admin/getModerator", id]);
   }
 }
 
