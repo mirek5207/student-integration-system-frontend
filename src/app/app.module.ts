@@ -34,6 +34,7 @@ import { AdminCreateModeratorComponent } from './admin/admin-create-moderator/ad
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
+import { AdminGetModeratorComponent } from './admin/admin-get-moderator/admin-get-moderator.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatSortModule} from "@angular/material/sort";
     MapComponent,
     LobbyDetailsDialogComponent,
     AdminGetModeratorsComponent,
-    AdminCreateModeratorComponent
+    AdminCreateModeratorComponent,
+    AdminGetModeratorComponent
   ],
     imports: [
         BrowserModule,
