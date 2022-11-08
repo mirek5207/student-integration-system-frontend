@@ -27,7 +27,7 @@ export class AppComponent{
   openLoginDialog(){
     this.dialogRef.open(LoginComponent, this.getLoginDialogConfig())
   }
-  openRegisterDialog(){
+  openRegisterClientDialog(){
     this.dialogRef.open(RegisterComponent, this.getRegisterDialogConfig())
   }
 

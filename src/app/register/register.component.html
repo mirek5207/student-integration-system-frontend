@@ -32,9 +32,6 @@
         type="text"
         name="Surname"
       />
-
-
-
       <input
         matInput
         placeholder="Password"
@@ -42,11 +39,11 @@
         type="password"
         name="password"
       />
-
     </mat-card-content>
     <mat-card-actions>
       <button type="submit" mat-button color="primary" class="register-button">Register</button>
     </mat-card-actions>
   </form>
-  <a [routerLink]="'/placeowner'"  routerLinkActive="active">Jesteś właścicielem? Zarejestruj się klikając w ten link</a>
+  <br>
+  <a (click)="openRegisterPlaceOwnerDialog()" class="routerLink">Jesteś właścicielem? Zarejestruj się klikając w ten link</a>
 </div>
