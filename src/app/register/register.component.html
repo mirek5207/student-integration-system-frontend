@@ -1,6 +1,7 @@
 <div class="container">
+  <button mat-dialog-close class= "close-button" style="float: right">X</button>
   <mat-card-header>
-    <mat-card-title> <img src="assets/logo.png"> </mat-card-title>
+    <mat-card-title> <img src="assets/logo.png">Rejestracja użytkownika</mat-card-title>
   </mat-card-header>
   <form (submit)="register(registerNewClient)" class="form">
     <mat-card-content>
@@ -41,9 +42,9 @@
       />
     </mat-card-content>
     <mat-card-actions>
-      <button type="submit" mat-button color="primary" class="register-button">Register</button>
+      <button mat-dialog-close type="submit" mat-button color="primary" class="register-button">Register</button>
     </mat-card-actions>
   </form>
   <br>
-  <a (click)="openRegisterPlaceOwnerDialog()" class="routerLink">Jesteś właścicielem? Zarejestruj się klikając w ten link</a>
+  <a (click)="openRegisterPlaceOwnerDialog()" class="link-owner-registration">Jesteś właścicielem? Zarejestruj się klikając w ten link</a>
 </div>

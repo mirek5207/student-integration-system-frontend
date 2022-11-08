@@ -1,6 +1,7 @@
 <div class="container">
+  <button mat-dialog-close class="close-button" style="float: left"><-</button>
   <mat-card-header>
-    <mat-card-title> <img src="assets/logo.png"> </mat-card-title>
+    <mat-card-title> <img src="assets/logo.png">Rejestracja właściciela lokalu</mat-card-title>
   </mat-card-header>
   <form (submit)="register(registerNewPlaceOwner)">
     <mat-card-content>
@@ -41,7 +42,7 @@
       />
     </mat-card-content>
     <mat-card-actions>
-      <button type="submit" mat-button color="primary" class="register-button">Register</button>
+      <button mat-dialog-close type="submit" mat-button color="primary" class="register-button">Register</button>
     </mat-card-actions>
   </form>
 </div>
