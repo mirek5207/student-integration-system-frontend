@@ -1,0 +1,26 @@
+@import "src/app/login/login.component";
+
+/* CSS */
+.register-button {
+  margin-top: 20px;
+  width: 40%;
+  background-color: #f66a0a;
+  border: 0;
+  border-radius: 100px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 60px;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.register-button:hover,
+.register-button:focus {
+  background-color: #d05701;
+  color: #ffffff;
+}
