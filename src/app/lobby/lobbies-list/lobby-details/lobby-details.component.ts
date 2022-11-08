@@ -29,10 +29,7 @@ export class LobbyDetailsComponent{
       this.animal = result;
     });
   }
-
-
 }
-
 
 @Component({
   selector: 'app-lobby-details-dialog',

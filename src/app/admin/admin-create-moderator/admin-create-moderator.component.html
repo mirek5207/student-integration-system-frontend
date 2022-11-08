@@ -5,7 +5,7 @@
     </mat-card-header>
     <form (submit)="register(registerNewModerator)">
       <mat-card-content>
-
+        <mat-form-field class="full-width">
         <input
           matInput
           placeholder="Login"
@@ -13,8 +13,8 @@
           type="text"
           name="login"
         />
-
-
+        </mat-form-field>
+        <mat-form-field class="full-width">
         <input
           matInput
           placeholder="Email"
@@ -22,7 +22,8 @@
           type="email"
           name="Email"
         />
-
+        </mat-form-field>
+          <mat-form-field class="full-width">
         <input
           matInput
           placeholder="First name"
@@ -30,7 +31,8 @@
           type="text"
           name="first name"
         />
-
+          </mat-form-field>
+            <mat-form-field class="full-width">
         <input
           matInput
           placeholder="Surname"
@@ -38,7 +40,8 @@
           type="text"
           name="Surname"
         />
-
+            </mat-form-field>
+              <mat-form-field class="full-width">
         <input
           matInput
           placeholder="Password"
@@ -46,6 +49,7 @@
           type="password"
           name="password"
         />
+              </mat-form-field>
 
       </mat-card-content>
       <mat-card-actions>

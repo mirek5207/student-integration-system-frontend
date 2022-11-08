@@ -8,6 +8,7 @@ import {RegisterComponent} from "./register/register.component";
 import {LobbyComponent} from "./lobby/lobby.component";
 import {AdminGetModeratorsComponent} from "./admin/admin-get-moderators/admin-get-moderators.component";
 import {AdminCreateModeratorComponent} from "./admin/admin-create-moderator/admin-create-moderator.component";
+import {AdminGetModeratorComponent} from "./admin/admin-get-moderator/admin-get-moderator.component";
 
 const routes: Routes = [
   { path: 'user/lobbies', component: LobbyComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {path: 'getModerators', component: AdminGetModeratorsComponent},
-      {path: 'createModeratorAccount', component: AdminCreateModeratorComponent}
+      {path: 'createModeratorAccount', component: AdminCreateModeratorComponent},
+      {path: 'getModerator/:id', component: AdminGetModeratorComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
