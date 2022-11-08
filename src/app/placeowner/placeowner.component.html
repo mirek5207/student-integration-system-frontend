@@ -1,56 +1,48 @@
-<div class="login-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title> Create placeowner </mat-card-title>
-    </mat-card-header>
-    <form (submit)="register(registerNewPlaceOwner)">
-      <mat-card-content>
-
-        <input
-          matInput
-          placeholder="Login"
-          [(ngModel)]="registerNewPlaceOwner.login"
-          type="text"
-          name="login"
-        />
-
-
-        <input
-          matInput
-          placeholder="Email"
-          [(ngModel)]="registerNewPlaceOwner.email"
-          type="email"
-          name="Email"
-        />
-
-        <input
-          matInput
-          placeholder="First name"
-          [(ngModel)]="registerNewPlaceOwner.firstName"
-          type="text"
-          name="first name"
-        />
-
-        <input
-          matInput
-          placeholder="Surname"
-          [(ngModel)]="registerNewPlaceOwner.surName"
-          type="text"
-          name="Surname"
-        />
-
-        <input
-          matInput
-          placeholder="Password"
-          [(ngModel)]="registerNewPlaceOwner.hashedPassword"
-          type="password"
-          name="password"
-        />
-
-      </mat-card-content>
-      <mat-card-actions>
-        <button type="submit" mat-button color="primary">Register</button>
-      </mat-card-actions>
-    </form>
-  </mat-card>
+<div class="container">
+  <button mat-dialog-close class="close-button" style="float: left"><-</button>
+  <mat-card-header>
+    <mat-card-title> <img src="assets/logo.png">Rejestracja właściciela lokalu</mat-card-title>
+  </mat-card-header>
+  <form (submit)="register(registerNewPlaceOwner)">
+    <mat-card-content>
+      <input
+        matInput
+        placeholder="Login"
+        [(ngModel)]="registerNewPlaceOwner.login"
+        type="text"
+        name="login"
+      />
+      <input
+        matInput
+        placeholder="Email"
+        [(ngModel)]="registerNewPlaceOwner.email"
+        type="email"
+        name="Email"
+      />
+      <input
+        matInput
+        placeholder="First name"
+        [(ngModel)]="registerNewPlaceOwner.firstName"
+        type="text"
+        name="first name"
+      />
+      <input
+        matInput
+        placeholder="Surname"
+        [(ngModel)]="registerNewPlaceOwner.surName"
+        type="text"
+        name="Surname"
+      />
+      <input
+        matInput
+        placeholder="Password"
+        [(ngModel)]="registerNewPlaceOwner.hashedPassword"
+        type="password"
+        name="password"
+      />
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-dialog-close type="submit" mat-button color="primary" class="register-button">Register</button>
+    </mat-card-actions>
+  </form>
 </div>
