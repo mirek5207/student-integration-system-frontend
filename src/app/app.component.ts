@@ -45,4 +45,8 @@ export class AppComponent{
     dialogConfig.height = "800px";
     return dialogConfig;
   }
+
+  async logout(){
+    await this.authService.logout();
+  }
 }
