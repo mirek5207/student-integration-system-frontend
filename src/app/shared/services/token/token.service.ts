@@ -25,6 +25,10 @@ export class TokenService {
     localStorage.setItem(AUTHENTICATION_KEY, fetchToken.token)
   }
 
+   removeTokenFromLocalStorage(){
+    localStorage.removeItem(AUTHENTICATION_KEY)
+  }
+
   getRole(){
     if(localStorage.getItem(AUTHENTICATION_KEY) === null){
       return '';
