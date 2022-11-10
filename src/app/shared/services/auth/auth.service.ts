@@ -44,6 +44,15 @@ export class AuthService {
       }
   }
 
+  async logout() {
+    await this.tokenService.removeTokenFromLocalStorage()
+    if(!this.setIsAuthenticated()){
+      this.isAuthenticated.next(false);
+      this.navItems.next([])
+      await this.router.navigate(['/']);
+    }
+  }
+
    private setIsAuthenticated() {
      return !(localStorage.getItem(AUTHENTICATION_KEY) === '' || localStorage.getItem(AUTHENTICATION_KEY) == null);
   }
