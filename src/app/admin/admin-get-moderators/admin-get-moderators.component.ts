@@ -41,5 +41,10 @@ export class AdminGetModeratorsComponent implements OnInit {
   redirect(id: number){
     this.router.navigate(["admin/getModerator", id]);
   }
+
+  redirectCreateModerator(){
+    this.router.navigate(["admin/createModerator"]);
+  }
+
 }
 
