@@ -5,11 +5,7 @@
 .navigation-box {
   margin: 10px;
 }
-.navbar_container{
-  border-width: 0px 0px 1px 0px;
-  border-color: black;
-  border-style: solid;
-}
+
 .mat-toolbar.mat-primary {
   background: white;
   color: #fff;
@@ -51,3 +47,114 @@
   width: 130px;
 }
 
+.orange-container{
+  background-color: #ff5f21;
+  height: 600px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orange-container img{
+  width: 700px;
+}
+.orange-container h1 {
+  padding-top: 100px;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+.orange-container p{
+  font-size: 30px;
+  font-weight: 500;
+  max-width: 500px;
+  line-height: 50px;
+}
+.search-bar{
+  margin-top: 90px;
+  background-color: #ff5f21;
+  max-width: 80vw;
+  margin-bottom: 60px;
+}
+
+.search-bar input{
+  height: 100%;
+  border-radius: 20px;
+  border-width: 0px;
+  width: 35vw;
+  padding-left: 20px;
+}
+.search-bar input:focus{
+  outline: none;
+}
+.search-bar button{
+  padding: 0px 2px;
+}
+
+.city-group{
+  margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.city-group button{
+  padding: 0px;
+  text-align: center;
+  margin: 0vh 0.9vw;
+  width: 100%;
+  letter-spacing: 0.2vw;
+}
+.white-container{
+  padding: 100px 22vw;
+  height: 600px;
+  display: flex;
+}
+
+.white-container-item{
+  flex: 50%;
+}
+.white-container-item:first-child{
+  border-right: 0.5px solid black;
+  padding-right: 5vw;
+}
+.white-container-item:first-child p{
+  font-size: 25px;
+  line-height: 1.5em;
+  font-weight: 500;
+  margin-top: 50px;
+}
+.white-container-item:last-child{
+  border-left: 0.5px solid black;
+  padding-left: 5vw;
+}
+.white-container-item:last-child p{
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.white-container-item h1{
+  font-size: 40px;
+  line-height: 1.15em;
+  font-weight: 800;
+}
+
+.icon-check-circle{
+  position:relative;
+  top:4px;
+  right: 10px;
+}
+.link-register-place-owner{
+  padding: 0.6vh 3vw;
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 100px;
+  border-radius: 20px;
+  font-weight: 550;
+  font-size: 20px;
+}

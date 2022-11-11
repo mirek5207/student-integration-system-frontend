@@ -4,6 +4,7 @@ import {shareReplay} from "rxjs";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {PlaceownerComponent} from "./placeowner/placeowner.component";
 
 
 @Component({
@@ -29,6 +30,9 @@ export class AppComponent{
   }
   openRegisterClientDialog(){
     this.dialogRef.open(RegisterComponent, this.getRegisterDialogConfig())
+  }
+  openRegisterPlaceOwnerDialog(){
+    this.dialogRef.open(PlaceownerComponent, this.getRegisterDialogConfig())
   }
 
   getLoginDialogConfig(){
