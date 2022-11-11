@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ClientInfo} from "../shared/interfaces/client.interface";
 import {ClientService} from "../shared/services/client/client.service";
 import {AuthService} from "../shared/services/auth/auth.service";
+import {PlaceownerComponent} from "../placeowner/placeowner.component";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 
 
 @Component({

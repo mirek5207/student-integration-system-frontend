@@ -35,6 +35,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import { AdminGetModeratorComponent } from './admin/admin-get-moderator/admin-get-moderator.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AdminGetModeratorComponent } from './admin/admin-get-moderator/admin-ge
     LobbyDetailsDialogComponent,
     AdminGetModeratorsComponent,
     AdminCreateModeratorComponent,
-    AdminGetModeratorComponent
+    AdminGetModeratorComponent,
+    HomeComponent
   ],
     imports: [
         BrowserModule,
