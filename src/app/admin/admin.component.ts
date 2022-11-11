@@ -23,7 +23,6 @@ export class AdminComponent implements OnInit {
 
   async register(moderator: ModeratorInfo){
     await this.registerService.registerModerator(moderator)
-    console.log(moderator)
   }
 
 }
