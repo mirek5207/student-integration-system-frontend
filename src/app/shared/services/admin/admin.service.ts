@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {GetModerator, ModeratorInfo} from "../../interfaces/moderator.interface";
+import {GetModerator, ModeratorInfo, UpdateModerator} from "../../interfaces/moderator.interface";
 import {AUTHENTICATION_KEY} from "../../authenticationKey/authenticationKey";
 import {getUrl} from "../../API/api";
-import {Observable} from "rxjs";
 
 
 
@@ -34,6 +33,10 @@ export class AdminService {
 
   getModeratorById(id: number){
     return this.http.get<GetModerator>(getUrl(`Admin/getModerator/${id}`), this.httpOptions)
+  }
+
+  updateModerator(id: number, moderator: UpdateModerator){
+    return this.http.patch(getUrl(`Admin/updateModeratorAccount/${id}`),moderator, this.httpOptions)
   }
 
 }
