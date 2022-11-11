@@ -19,7 +19,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {path: 'getModerators', component: AdminGetModeratorsComponent},
-      {path: 'createModeratorAccount', component: AdminCreateModeratorComponent},
+      {path: 'createModerator', component: AdminCreateModeratorComponent},
       {path: 'getModerator/:id', component: AdminGetModeratorComponent}
     ]
   },
