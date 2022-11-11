@@ -7,22 +7,30 @@ export interface ModeratorInfo {
 }
 
 export interface GetModerator {
-  id: number
+  id: number,
+  firstName: string,
+  surName: string,
+  userId: number,
+  user: {
+    id: number,
+    login: string,
+    email: string,
+    account: {
+      id: number,
+      isActive: boolean,
+      accountCreationTime: string,
+      userId: number,
+      user: string
+    },
+    placeOwner: boolean,
+  }
+}
+
+export interface UpdateModerator{
+  login: string,
+  email: string,
   firstName: string
   surName: string
-  userId: number
-  "user": {
-    "id": number,
-    "login": string,
-    "email": string,
-    "account": {
-      "id": number,
-      "isActive": boolean,
-      "accountCreationTime": string,
-      "userId": number,
-      "user": string
-    },
-    "placeOwner": boolean,
-    "userRoles": string
-  }
+  hashedPassword: string,
+  isAccountActive: boolean
 }
