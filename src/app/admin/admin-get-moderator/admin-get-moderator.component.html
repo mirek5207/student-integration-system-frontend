@@ -1,1 +1,98 @@
-<p>admin-get-moderator works!</p>
+<ng-template [ngIf]="moderator" >
+  <div>
+  <div>
+  <h1>Details about moderator with id: {{moderator.id}}</h1>
+  <div>
+    <h2>Basic information</h2>
+    <div>
+        <h3>id: {{moderator.id}}</h3>
+        <h3>firstName: {{moderator.firstName}}</h3>
+        <h3>surName: {{moderator.surName}}</h3>
+        <h3>userId: {{moderator.userId}}</h3>
+    </div>
+    <h2>Account information</h2>
+    <div>
+      <h3>id: {{moderator.id}}</h3>
+      <h3>login: {{moderator.user.login}}</h3>
+      <h3>surName: {{moderator.user.email}}</h3>
+      <h3>id: {{moderator.user.account.id}}</h3>
+      <h3>Is active: {{moderator.user.account.isActive}}</h3>
+      <h3>Account creation time: {{moderator.user.account.accountCreationTime}}</h3>
+      <h3>User id:{{moderator.user.account.userId}}</h3>
+    </div>
+  </div>
+    <button>Edit moderator account</button>
+  </div>
+    <div>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title> Update Moderator </mat-card-title>
+        </mat-card-header>
+        <form (submit)="update(updateModerator)">
+          <mat-card-content>
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                placeholder="Login"
+                [(ngModel)]="updateModerator.login"
+                type="text"
+                name="login"
+              />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                placeholder="Email"
+                [(ngModel)]="updateModerator.email"
+                type="email"
+                name="Email"
+              />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                placeholder="First name"
+                [(ngModel)]="updateModerator.firstName"
+                type="text"
+                name="first name"
+              />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                placeholder="Surname"
+                [(ngModel)]="updateModerator.surName"
+                type="text"
+                name="Surname"
+              />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                placeholder="Password"
+                [(ngModel)]="updateModerator.hashedPassword"
+                type="password"
+                name="password"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Is Active</mat-label>
+              <mat-select [(ngModel)]="updateModerator.isAccountActive" name="isActivated">
+                <mat-option  [value]="true" >true</mat-option>
+                <mat-option [value]="false">false</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-actions>
+            <button type="submit" mat-button color="primary">Update</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</ng-template>
+
+
+
+
+
