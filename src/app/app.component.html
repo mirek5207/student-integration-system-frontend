@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="navbar_container">
-  <ng-container *ngIf="isAuthenticated$ | async else elseBlock" >
+  <ng-container *ngIf="isAuthenticated$ | async else elseBlock">
       <img src="../assets/logo.png" class = "logo">
       <a
         *ngFor="let link of navigationLinks"
@@ -21,43 +21,11 @@
 </mat-toolbar>
 
 <div class="container">
-  <div class="orange-container">
-    <h1>Checsz poznać nowych ludzi?</h1>
-    <p>Sprawdź swoją okolicę</p>
-    <div class="search-bar">
-      <input matInput placeholder="Podaj swoją lokalizację" name= "search">
-      <button matSuffix mat-button><mat-icon >search</mat-icon></button>
-    </div>
-    <div class="city-group">
-      <button mat-flat-button>WARSZAWA</button>
-      <button mat-flat-button>LUBLIN</button>
-      <button mat-flat-button>KRAKÓW</button>
-      <button mat-flat-button>KATOWICE</button>
-      <button mat-flat-button>WROCŁAW</button>
-    </div>
-  </div>
-  <div class="white-container">
-    <div class="white-container-item">
-      <h1>NIE CHCESZ DŁUŻEJ SIEDZIEĆ W DOMU?</h1>
-      <p>Zarejestruj się na naszej platformie.
-      Jeśli zastanawiasz się czy założyć konto, zobacz czego możesz się spodziewać po naszej platformie:</p>
-    </div>
-    <div class="white-container-item">
-      <h1>TA PLATFORMA JEST DLA CIEBIE, JEŚLI:</h1>
-      <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Chesz wyjść z domu</p>
-      <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Poznać nowych ludzi</p>
-      <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Zorganizować spotkanie ze znajomymi</p>
-      <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Zarezerwować miesce w lokalu</p>
-    </div>
-  </div>
-  <div class="orange-container">
-    <h1>Jesteś właścicielem lokalu</h1>
-    <p>Zarejestruj się, dodaj swój lokal już dziś,
-      daj możliwość poznania twojego miejsca naszym użytkownikom
-    </p>
-    <a (click)="openRegisterPlaceOwnerDialog()" class="link-register-place-owner">Rejestracja</a>
-  </div>
-  <div class="white-container"></div>
+  <ng-container *ngIf="isAuthenticated$ | async else elseBlockContainer"  >
+  </ng-container>
+  <ng-template #elseBlockContainer>
+    <app-home></app-home>
+  </ng-template>
   <router-outlet></router-outlet>
 </div>
 
