@@ -36,6 +36,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import { AdminGetModeratorComponent } from './admin/admin-get-moderator/admin-get-moderator.component';
 import { HomeComponent } from './home/home.component';
+import {MatSelectModule} from "@angular/material/select";
+
 
 @NgModule({
   declarations: [
@@ -55,28 +57,29 @@ import { HomeComponent } from './home/home.component';
     AdminGetModeratorsComponent,
     AdminCreateModeratorComponent,
     AdminGetModeratorComponent,
-    HomeComponent
+    HomeComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatMenuModule,
-        MatButtonToggleModule,
-        MatCardModule,
-        MatFormFieldModule,
-        FormsModule,
-        HttpClientModule,
-        MatListModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatInputModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    HttpClientModule,
+    MatListModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSelectModule,
+  ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
