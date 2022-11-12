@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {GetModerator, ModeratorInfo, UpdateModerator} from "../../interfaces/moderator.interface";
-import {AUTHENTICATION_KEY} from "../../authenticationKey/authenticationKey";
-import {getUrl} from "../../API/api";
+import {getUrl, httpOptions} from "../../API/api";
 
 
 
@@ -16,27 +15,23 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: `bearer ${localStorage.getItem(AUTHENTICATION_KEY) as string}`
-    })
-  }
+
 
   registerModerator(moderator: ModeratorInfo) {
-      return this.http.post(getUrl(this.model), moderator, this.httpOptions)
+      return this.http.post(getUrl(this.model), moderator, httpOptions)
         .subscribe(response => console.log(response))
   }
 
   getAllModerators(){
-    return this.http.get<GetModerator[]>(getUrl('Admin/getModerators'), this.httpOptions)
+    return this.http.get<GetModerator[]>(getUrl('Admin/getModerators'), httpOptions)
   }
 
   getModeratorById(id: number){
-    return this.http.get<GetModerator>(getUrl(`Admin/getModerator/${id}`), this.httpOptions)
+    return this.http.get<GetModerator>(getUrl(`Admin/getModerator/${id}`), httpOptions)
   }
 
   updateModerator(id: number, moderator: UpdateModerator){
-    return this.http.patch(getUrl(`Admin/updateModeratorAccount/${id}`),moderator, this.httpOptions)
+    return this.http.patch(getUrl(`Admin/updateModeratorAccount/${id}`),moderator, httpOptions)
   }
 
 }

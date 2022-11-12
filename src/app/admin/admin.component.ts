@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ModeratorInfo} from "../shared/interfaces/moderator.interface";
-import {AdminService} from "../shared/services/admin/admin.service";
+
 
 @Component({
   selector: 'app-admin',
@@ -9,20 +8,8 @@ import {AdminService} from "../shared/services/admin/admin.service";
 })
 export class AdminComponent implements OnInit {
 
-  registerNewModerator: ModeratorInfo = {
-    login: '',
-    email: '',
-    firstName: '',
-    surName: '',
-    hashedPassword: ''
-  }
-
-  constructor(private registerService: AdminService) { }
+  constructor() { }
 
   ngOnInit(): void {}
-
-  async register(moderator: ModeratorInfo){
-    await this.registerService.registerModerator(moderator)
-  }
 
 }
