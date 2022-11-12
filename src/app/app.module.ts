@@ -37,6 +37,7 @@ import {MatSortModule} from "@angular/material/sort";
 import { AdminGetModeratorComponent } from './admin/admin-get-moderator/admin-get-moderator.component';
 import { HomeComponent } from './home/home.component';
 import {MatSelectModule} from "@angular/material/select";
+import { PlacesListComponent } from './placeowner/places/places-list/places-list.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import {MatSelectModule} from "@angular/material/select";
     AdminCreateModeratorComponent,
     AdminGetModeratorComponent,
     HomeComponent,
+    PlacesListComponent,
   ],
   imports: [
     BrowserModule,
