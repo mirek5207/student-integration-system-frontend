@@ -9,6 +9,8 @@ import {LobbyComponent} from "./lobby/lobby.component";
 import {AdminGetModeratorsComponent} from "./admin/admin-get-moderators/admin-get-moderators.component";
 import {AdminCreateModeratorComponent} from "./admin/admin-create-moderator/admin-create-moderator.component";
 import {AdminGetModeratorComponent} from "./admin/admin-get-moderator/admin-get-moderator.component";
+import {CreatePlaceComponent} from "./placeowner/places/create-place/create-place.component";
+import {PlacesComponent} from "./placeowner/places/places.component";
 
 const routes: Routes = [
   { path: 'user/lobbies', component: LobbyComponent},
@@ -21,6 +23,15 @@ const routes: Routes = [
       {path: 'getModerators', component: AdminGetModeratorsComponent},
       {path: 'createModerator', component: AdminCreateModeratorComponent},
       {path: 'getModerator/:id', component: AdminGetModeratorComponent}
+    ]
+  },
+  { path: 'placeowner',
+    component: PlaceownerComponent,
+    children: [
+      {path: 'places', component: PlacesComponent},
+      {path: 'create', component: CreatePlaceComponent},
+      //{path: 'createModerator', component: AdminCreateModeratorComponent},
+      //{path: 'getModerator/:id', component: AdminGetModeratorComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
