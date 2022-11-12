@@ -1,0 +1,74 @@
+<mat-card>
+  <mat-card-title>
+    <span *ngIf="currentPlace.name; else elseBlock">
+      {{ currentPlace.name | titlecase }}
+    </span>
+    <ng-template #elseBlock> Select place </ng-template>
+  </mat-card-title>
+  <form #form="ngForm" (submit)="updatePlace(currentPlace)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="name"
+          [(ngModel)]="currentPlace.name"
+          type="text"
+          name="name"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          matInput
+          placeholder="latitude"
+          [(ngModel)]="currentPlace.latitude"
+          type="text"
+          name="latitude"
+          required
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          matInput
+          placeholder="longitude"
+          [(ngModel)]="currentPlace.longitude"
+          type="text"
+          name="longitude"
+          required
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          matInput
+          placeholder="numberOfReservedSeats"
+          [(ngModel)]="currentPlace.numberOfReservedSeats"
+          type="text"
+          name="numberOfReservedSeats"
+          required
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          matInput
+          placeholder="maxSeatsAvailableForReservation"
+          [(ngModel)]="currentPlace.maxSeatsAvailableForReservation"
+          type="text"
+          name="maxSeatsAvailableForReservation"
+          required
+        ></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        [disabled]="form.invalid"
+        type="submit"
+        mat-button
+        color="primary"
+      >
+        Save
+      </button>
+      <button type="button" mat-button (click)="form.reset()">Cancel</button>
+    </mat-card-actions>
+  </form>
+  <button (click)="deletePlace(currentPlace.id)">Delete place</button>
+</mat-card>

@@ -1,0 +1,15 @@
+<div class="places-container">
+  <div class="places-list">
+    <app-places-list
+      [places]="places$ | async"
+      (placeSelected)="selectPlace($event)"
+    ></app-places-list>
+  </div>
+  <div class="places-details">
+    <app-place-details
+      [selectedPlace]="selectedPlace"
+      (placeUpdated)="updatePlace($event)"
+      (placeDeleted)="deletePlace($event)"
+    ></app-place-details>
+  </div>
+</div>

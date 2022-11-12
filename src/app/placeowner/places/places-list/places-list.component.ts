@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Place} from "../../../shared/interfaces/placeOwner.interface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-places-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacesListComponent implements OnInit {
 
-  constructor() { }
+  @Input() places: any[] = []
+  @Output() placeSelected = new EventEmitter<any>();
 
-  ngOnInit(): void {
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {}
+
+  selectPlace(place: Place){
+    this.placeSelected.emit(place)
   }
+
+  redirectCreatePlace(){
+    this.router.navigate(["placeowner/create"]);
+  }
+
 
 }
