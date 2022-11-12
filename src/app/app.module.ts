@@ -38,6 +38,10 @@ import { AdminGetModeratorComponent } from './admin/admin-get-moderator/admin-ge
 import { HomeComponent } from './home/home.component';
 import {MatSelectModule} from "@angular/material/select";
 import { PlacesListComponent } from './placeowner/places/places-list/places-list.component';
+import { RegisterPlaceownerComponent } from './placeowner/register-placeowner/register-placeowner.component';
+import { CreatePlaceComponent } from './placeowner/places/create-place/create-place.component';
+import { PlaceDetailsComponent } from './placeowner/places/place-details/place-details.component';
+import { PlacesComponent } from './placeowner/places/places.component';
 
 
 @NgModule({
@@ -60,6 +64,10 @@ import { PlacesListComponent } from './placeowner/places/places-list/places-list
     AdminGetModeratorComponent,
     HomeComponent,
     PlacesListComponent,
+    RegisterPlaceownerComponent,
+    CreatePlaceComponent,
+    PlaceDetailsComponent,
+    PlacesComponent,
   ],
   imports: [
     BrowserModule,
