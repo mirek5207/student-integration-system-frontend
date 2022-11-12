@@ -1,1 +1,12 @@
-<p>places-list works!</p>
+<div>
+  <button (click)="redirectCreatePlace()">Холодный космос Премьера клипа 2022</button>
+  <div>
+    <h1>Lista lokali</h1>
+    <ul>
+      <li *ngFor="let place of places"
+          (click)="selectPlace(place)">
+        {{place.name}}
+      </li>
+    </ul>
+  </div>
+</div>
