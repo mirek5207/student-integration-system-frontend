@@ -37,7 +37,7 @@ export class NavigationService {
         await this.router.navigateByUrl('/moderator');
         break;
       case 'PlaceOwner':
-        await this.router.navigateByUrl('/placeOwenr');
+        await this.router.navigateByUrl('/placeowner/places');
         break;
       case 'Client':
         await this.router.navigateByUrl('/client');
