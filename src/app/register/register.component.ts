@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ClientInfo} from "../shared/interfaces/client.interface";
 import {RegisterService} from "../shared/services/register/register.service";
 import {AuthService} from "../shared/services/auth/auth.service";
-import {PlaceownerComponent} from "../placeowner/placeowner.component";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {RegisterPlaceownerComponent} from "../placeowner/register-placeowner/register-placeowner.component";
 
 @Component({
   selector: 'app-register',
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
       await this.authService.loginAfterRegistration()
   }
   openRegisterPlaceOwnerDialog(){
-    this.dialogRef.open(PlaceownerComponent, this.getRegisterDialogConfig())
+    this.dialogRef.open(RegisterPlaceownerComponent, this.getRegisterDialogConfig())
   }
   getRegisterDialogConfig(){
     const dialogConfig = new MatDialogConfig();
