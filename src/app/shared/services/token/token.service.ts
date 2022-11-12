@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UserInfo} from "../../interfaces/auth.interface";
 import {lastValueFrom, Observable} from "rxjs";
@@ -29,15 +29,22 @@ export class TokenService {
     localStorage.removeItem(AUTHENTICATION_KEY)
   }
 
-  getRole(){
-    if(localStorage.getItem(AUTHENTICATION_KEY) === null){
+  decodeToken() {
+    if (localStorage.getItem(AUTHENTICATION_KEY) === null) {
       return '';
     } else {
       const jwt = localStorage.getItem(AUTHENTICATION_KEY)
       const jwtData = jwt?.split('.')[1]
       const decodedJwtJsonData = window.atob(jwtData as string)
-      const decodedJwtData = JSON.parse(decodedJwtJsonData)
-      return decodedJwtData.role
+      return JSON.parse(decodedJwtJsonData)
     }
+  }
+
+  getRole(){
+    return this.decodeToken().role
+  }
+
+  getId(){
+   return this.decodeToken().id
   }
 }
