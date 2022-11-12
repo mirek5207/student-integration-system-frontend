@@ -1,0 +1,37 @@
+<div class="container">
+  <form (submit)="createPlace(registerNewPlace)">
+    <mat-card-content>
+      <input
+        matInput
+        placeholder="name"
+        [(ngModel)]="registerNewPlace.name"
+        type="text"
+        name="name"
+      />
+      <input
+        matInput
+        placeholder="latitude"
+        [(ngModel)]="registerNewPlace.latitude"
+        type="text"
+        name="latitude"
+      />
+      <input
+        matInput
+        placeholder="longitude"
+        [(ngModel)]="registerNewPlace.longitude"
+        type="text"
+        name="longitude"
+      />
+      <input
+        matInput
+        placeholder="maxSeatsAvailableForReservation"
+        [(ngModel)]="registerNewPlace.maxSeatsAvailableForReservation"
+        type="text"
+        name="maxSeatsAvailableForReservation"
+      />
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary" class="register-button">Create</button>
+    </mat-card-actions>
+  </form>
+</div>
