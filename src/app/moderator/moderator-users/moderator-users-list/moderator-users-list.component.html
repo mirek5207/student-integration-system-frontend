@@ -1,0 +1,21 @@
+<div class="list-container">
+  <div class="clients-list">
+    <h1>Clients</h1>
+    <ul>
+      <li *ngFor="let client of clients"
+          (click)="selectUser(client)">
+        {{client.firstName}}
+      </li>
+    </ul>
+  </div>
+  <div class="placeowners-list">
+    <h1>Placeowners</h1>
+    <ul>
+      <li *ngFor="let placeOwner of placeOwners"
+          (click)="selectUser(placeOwner)">
+        {{placeOwner.firstName}}
+      </li>
+    </ul>
+  </div>
+</div>
+

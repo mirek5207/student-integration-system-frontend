@@ -1,0 +1,12 @@
+.list-container {
+  display: flex;
+  justify-content: space-around;
+
+  .clients-list {
+    width: 49%;
+  }
+
+  .placeowners-list{
+    width: 49%;
+  }
+}

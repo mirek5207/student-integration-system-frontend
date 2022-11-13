@@ -1,0 +1,44 @@
+<mat-card>
+  <h1>
+    {{currentUser.id}}
+  </h1>
+  <h1>
+    {{currentUser.firstName}}
+  </h1>
+  <h1>
+    {{currentUser.surName}}
+  </h1>
+  <h1>
+    {{currentUser.user.login}}
+  </h1>
+  <h1>
+    {{currentUser.user.email}}
+  </h1>
+  <h1>
+    Is account active: {{currentUser.user.account.isActive}}
+  </h1>
+  <form #form="ngForm" (submit)="updateUserAccount({updateUserIsActive: updateUserIsActive, id: currentUser.id})">
+    <mat-form-field>
+      <mat-label>Is active account</mat-label>
+      <mat-select class="full-width" [(ngModel)]="updateUserIsActive" name="isActivated">
+        <mat-option [value]="true">
+          true
+        </mat-option>
+        <mat-option [value]="false">
+          false
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-card-actions>
+      <button
+        [disabled]="form.invalid"
+        type="submit"
+        mat-button
+        color="primary"
+      >
+        Update user
+      </button>
+      <button type="button" mat-button (click)="form.reset()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
