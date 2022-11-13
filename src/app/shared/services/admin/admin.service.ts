@@ -19,7 +19,6 @@ export class AdminService {
 
   registerModerator(moderator: ModeratorInfo) {
       return this.http.post(getUrl(this.model), moderator, httpOptions)
-        .subscribe(response => console.log(response))
   }
 
   getAllModerators(){

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+mat-card-header h1{
+  font-weight: 550;
+  font-size: 35px;
+}
+.mat-form-field{
+  width: 100%;
+  line-height: 3.5vh;
+}
+.register-button{
+  width:100%;
+}
+
