@@ -1,7 +1,7 @@
 export const navlinks: {name: string, url: string}[] = [
   {
-    name: 'Create system report',
-    url: '/systemReport'
+    name: 'Users',
+    url: 'moderator/users'
   },
   {
     name: 'Get reports',
