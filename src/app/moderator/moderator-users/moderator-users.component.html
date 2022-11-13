@@ -1,0 +1,18 @@
+<div class="moderator-users-container">
+  <div class="moderator-users-list">
+    <app-moderator-users-list
+      [clients]="clients$ | async"
+      [placeOwners]="placeowners$ | async"
+      (userSelected)="selectUser($event)"
+    >
+    </app-moderator-users-list >
+  </div>
+  <div class="moderator-user-details">
+    <app-moderator-user-details
+      [selectedUser]="selectedUser"
+      (userUpdated)="updateUser($event)"
+    >
+
+    </app-moderator-user-details>
+  </div>
+</div>

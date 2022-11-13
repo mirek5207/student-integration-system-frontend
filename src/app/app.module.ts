@@ -42,6 +42,11 @@ import { RegisterPlaceownerComponent } from './placeowner/register-placeowner/re
 import { CreatePlaceComponent } from './placeowner/places/create-place/create-place.component';
 import { PlaceDetailsComponent } from './placeowner/places/place-details/place-details.component';
 import { PlacesComponent } from './placeowner/places/places.component';
+import { ModeratorUsersComponent } from "./moderator/moderator-users/moderator-users.component";
+import { ModeratorComponent } from "./moderator/moderator.component";
+import { ModeratorReportsComponent } from "./moderator/moderator-reports/moderator-reports.component";
+import { ModeratorUserDetailsComponent } from './moderator/moderator-users/moderator-user-details/moderator-user-details.component';
+import { ModeratorUsersListComponent } from './moderator/moderator-users/moderator-users-list/moderator-users-list.component';
 
 
 @NgModule({
@@ -68,6 +73,11 @@ import { PlacesComponent } from './placeowner/places/places.component';
     CreatePlaceComponent,
     PlaceDetailsComponent,
     PlacesComponent,
+    ModeratorComponent,
+    ModeratorUsersComponent,
+    ModeratorReportsComponent,
+    ModeratorUserDetailsComponent,
+    ModeratorUsersListComponent
   ],
   imports: [
     BrowserModule,
