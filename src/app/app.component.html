@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="navbar_container">
   <ng-container *ngIf="isAuthenticated$ | async else elseBlock">
-      <img src="../assets/logo.png" class = "logo">
+<!--      <img src="../assets/logo.png" class = "logo">-->
       <a
         *ngFor="let link of navigationLinks"
         [routerLink]="link.url"
@@ -13,7 +13,8 @@
   </ng-container>
 
   <ng-template #elseBlock>
-    <img src="../assets/logo.png" class = "logo">
+<!--    <img src="../assets/logo.png" class = "logo">-->
+    <h1 class = "logo">STUDENTUS</h1>
     <span class="spacer"></span>
     <a (click)="openLoginDialog()" class="routerLink">Logowanie</a>
     <a (click)="openRegisterClientDialog()" class="routerLink">Rejestracja</a>

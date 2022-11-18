@@ -1,60 +1,15 @@
-.container{
-  text-align: center;
+.dialog-button{
+  margin-top: 6vh;
 }
-input{
-  width: 70%;
-  position: relative;
-  border-width: 0px 0px 1px 0px;
-  text-decoration: none;
-  color: #000;
-  margin: 20px 20px;
-  padding: 14px;
-  font-weight: bold;
-  font-size: 14px;
-  font-family: Arial;
+.dialog-input-container{
+  margin: 0.9vh;
 }
-input:focus{
-  border-width: 0px 0px 2px 0px;
-  outline: none;
+mat-card-header h1 {
+  margin-bottom: 5vh;
 }
-/* CSS */
-.login-button {
-  margin-top: 70px;
-  width: 40%;
-  background-color: #f66a0a;
-  border: 0;
-  border-radius: 100px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 60px;
-  padding: 0px 20px 0px 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-.login-button:hover,
-.login-button:focus {
-  background-color: #d05701;
-  color: #ffffff;
+.dialog-container {
+  padding: 0px 8%;
 }
 .close-button{
-  position: relative;
-  left: 44%;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border-width: 0px;
-  border-style: none;
-  border-color: white;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: center;
-  border-radius: 20px;
-  outline: none;
-}
-.close-button:hover{
-  background-color: #f1f0f0;
+  left: 62%;
 }

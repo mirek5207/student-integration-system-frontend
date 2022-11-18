@@ -29,13 +29,16 @@ export class RegisterComponent implements OnInit {
       await this.authService.loginAfterRegistration()
   }
   openRegisterPlaceOwnerDialog(){
-    this.dialogRef.open(RegisterPlaceownerComponent, this.getRegisterDialogConfig())
+    this.dialogRef.open(RegisterPlaceownerComponent, this.getDialogConfig("80vw","89vh","600px", "500px"))
   }
-  getRegisterDialogConfig(){
+  getDialogConfig(width: string, height: string, maxHeight: string, maxWidth: string){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "490px";
-    dialogConfig.height = "800px";
+    dialogConfig.width = width;
+    dialogConfig.height = height;
+    dialogConfig.maxHeight = maxHeight;
+    dialogConfig.maxWidth = maxWidth;
+    dialogConfig.panelClass = "dialog";
     return dialogConfig;
   }
 }

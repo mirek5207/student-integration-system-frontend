@@ -26,27 +26,23 @@ export class AppComponent{
   }
 
   openLoginDialog(){
-    this.dialogRef.open(LoginComponent, this.getLoginDialogConfig())
+    this.dialogRef.open(LoginComponent, this.getDialogConfig("490px","86vh","600px","490px"))
   }
   openRegisterClientDialog(){
-    this.dialogRef.open(RegisterComponent, this.getRegisterDialogConfig())
+    this.dialogRef.open(RegisterComponent, this.getDialogConfig("80vw","89vh","600px", "500px"))
   }
   openRegisterPlaceOwnerDialog(){
-    this.dialogRef.open(PlaceownerComponent, this.getRegisterDialogConfig())
+    this.dialogRef.open(PlaceownerComponent, this.getDialogConfig("80vw","89vh","600px", "500px"))
   }
 
-  getLoginDialogConfig(){
+  getDialogConfig(width: string, height: string, maxHeight: string, maxWidth: string){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "490px";
-    dialogConfig.height = "600px";
-    return dialogConfig;
-  }
-  getRegisterDialogConfig(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = "490px";
-    dialogConfig.height = "800px";
+    dialogConfig.width = width;
+    dialogConfig.height = height;
+    dialogConfig.maxHeight = maxHeight;
+    dialogConfig.maxWidth = maxWidth;
+    dialogConfig.panelClass = "dialog";
     return dialogConfig;
   }
 

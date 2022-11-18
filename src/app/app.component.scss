@@ -7,13 +7,12 @@
 }
 
 .mat-toolbar.mat-primary {
-  background: white;
+  background: #000000;
   color: #fff;
 }
 .routerLink{
   position: relative;
   text-decoration: none;
-  color: #000;
   margin: 0 12px;
   padding: 14px;
   font-weight: bold;
@@ -44,5 +43,10 @@
   color: #e56108;
 }
 .logo{
-  width: 130px;
+  text-align: center;
+  width: 9vw;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 5px;
+  color: #fcfcfc;
 }

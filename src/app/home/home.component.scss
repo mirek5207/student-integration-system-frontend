@@ -1,38 +1,39 @@
 @import "src/app/app.component";
-.orange-container{
-  background-color: #ff5f21;
-  height: 600px;
+.white-container{
+  background-color: #1e1d1d;
+  height: 85vh;
   text-align: center;
-  color: white;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.orange-container img{
+.white-container img{
   width: 700px;
 }
-.orange-container h1 {
+.white-container h1 {
   padding-top: 100px;
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 450%;
+  font-weight: 800;
+  line-height: 70px;
   margin-bottom: 50px;
 }
-.orange-container p{
-  font-size: 30px;
-  font-weight: 500;
-  max-width: 500px;
+.white-container p{
+  font-size: 350%;
+  font-weight: 700;
+  max-width: 700px;
   line-height: 50px;
 }
 .search-bar{
   margin-top: 90px;
-  background-color: #ff5f21;
   max-width: 80vw;
   margin-bottom: 60px;
 }
 
 .search-bar input{
+  background-color: white;
   height: 100%;
   border-radius: 20px;
   border-width: 0px;
@@ -49,48 +50,57 @@
 .city-group{
   margin-bottom: 40px;
   display: flex;
-  width: 100%;
+  width: 90%;
   table-layout: fixed;
   border-collapse: collapse;
 }
 .city-group button{
+  background-color: #e56108;
+  color: white;
   padding: 0px;
   text-align: center;
   margin: 0vh 0.9vw;
   width: 100%;
   letter-spacing: 0.2vw;
+  border-radius: 50px;
 }
-.white-container{
+.city-group button:hover{
+  background-color: rgba(229, 97, 8, 0.78);
+}
+.orange-container{
+  background-color: #000000;
   padding: 100px 22vw;
   height: 600px;
   display: flex;
 }
 
-.white-container-item{
+.orange-container-item{
+  color: white;
   flex: 50%;
 }
-.white-container-item:first-child{
-  border-right: 0.5px solid black;
+.orange-container-item:first-child{
+  border-right: 0.5px solid #fff;
   padding-right: 5vw;
 }
-.white-container-item:first-child p{
+.orange-container-item:first-child p{
   font-size: 25px;
   line-height: 1.5em;
   font-weight: 500;
   margin-top: 50px;
 }
-.white-container-item:last-child{
-  border-left: 0.5px solid black;
+.orange-container-item:last-child{
+  border-left: 0.5px solid #fff;
   padding-left: 5vw;
 }
-.white-container-item:last-child p{
+.orange-container-item:last-child p{
   font-size: 20px;
   line-height: 1em;
   font-weight: 500;
   margin-top: 50px;
 }
 
-.white-container-item h1{
+.orange-container-item h1{
+  color: #f64906;
   font-size: 40px;
   line-height: 1.15em;
   font-weight: 800;

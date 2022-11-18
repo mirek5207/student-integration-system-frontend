@@ -1,48 +1,63 @@
 <div class="container">
-  <button mat-dialog-close class="close-button" style="float: left"><-</button>
+  <button mat-dialog-close class="close-button"><-</button>
   <mat-card-header>
-    <mat-card-title> <img src="assets/logo.png">Rejestracja właściciela lokalu</mat-card-title>
+    <mat-card-title><h1>Rejestracja właściciela lokalu</h1></mat-card-title>
   </mat-card-header>
   <form (submit)="register(registerNewPlaceOwner)">
     <mat-card-content>
-      <input
-        matInput
-        placeholder="Login"
-        [(ngModel)]="registerNewPlaceOwner.login"
-        type="text"
-        name="login"
-      />
-      <input
-        matInput
-        placeholder="Email"
-        [(ngModel)]="registerNewPlaceOwner.email"
-        type="email"
-        name="Email"
-      />
-      <input
-        matInput
-        placeholder="First name"
-        [(ngModel)]="registerNewPlaceOwner.firstName"
-        type="text"
-        name="first name"
-      />
-      <input
-        matInput
-        placeholder="Surname"
-        [(ngModel)]="registerNewPlaceOwner.surName"
-        type="text"
-        name="Surname"
-      />
-      <input
-        matInput
-        placeholder="Password"
-        [(ngModel)]="registerNewPlaceOwner.hashedPassword"
-        type="password"
-        name="password"
-      />
+      <div class="dialog-input-container">
+        <label>Login</label><br>
+        <input
+          matInput
+          [(ngModel)]="registerNewPlaceOwner.login"
+          type="text"
+          name="login"
+          class="dialog-input"
+        /><br>
+      </div>
+      <div class="dialog-input-container">
+        <label>Email</label><br>
+        <input
+          matInput
+          [(ngModel)]="registerNewPlaceOwner.email"
+          type="email"
+          name="Email"
+          class="dialog-input"
+        /><br>
+      </div>
+      <div class="dialog-input-container">
+        <label>First Name</label><br>
+        <input
+          matInput
+          [(ngModel)]="registerNewPlaceOwner.firstName"
+          type="text"
+          name="first name"
+          class="dialog-input"
+        /><br>
+      </div>
+      <div class="dialog-input-container">
+        <label>Surname</label><br>
+        <input
+          matInput
+          [(ngModel)]="registerNewPlaceOwner.surName"
+          type="text"
+          name="Surname"
+          class="dialog-input"
+        /><br>
+      </div>
+      <div class="dialog-input-container">
+        <label>Password</label><br>
+        <input
+          matInput
+          [(ngModel)]="registerNewPlaceOwner.hashedPassword"
+          type="password"
+          name="password"
+          class="dialog-input"
+        /><br>
+      </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-dialog-close type="submit" mat-button color="primary" class="register-button">Register</button>
+      <button mat-dialog-close type="submit" mat-button color="primary" class="dialog-button">Zarejestruj</button>
     </mat-card-actions>
   </form>
 </div>
