@@ -55,14 +55,14 @@ export class AdminGetModeratorsComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = "450px";
-    dialogConfig.height = "630px";
+    dialogConfig.height = "580px";
     return dialogConfig;
   }
   getUpdateModeratorDialogConfig(id: number){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = "450px";
-    dialogConfig.height = "670px";
+    dialogConfig.height = "620px";
     dialogConfig.data = id.toString();
     return dialogConfig;
   }

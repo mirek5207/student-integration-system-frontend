@@ -8,13 +8,13 @@
 
     <!-- FirstName Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> FirstName </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Imię </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
     </ng-container>
 
     <!-- Surname Column -->
     <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Nazwisko</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.surName}} </mat-cell>
     </ng-container>
 
@@ -26,7 +26,7 @@
 
     <ng-container matColumnDef="button">
       <mat-header-cell *matHeaderCellDef><button mat-stroked-button color="warn" (click)="openRegisterModeratorDialog()">Dodaj</button></mat-header-cell>
-      <mat-cell *matCellDef="let element"> <button mat-stroked-button color="primary" (click)="openUpdateModeratorDialog(element.id)">Edit</button></mat-cell>
+      <mat-cell *matCellDef="let element"> <button mat-stroked-button color="primary" (click)="openUpdateModeratorDialog(element.id)">Edytuj</button></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
