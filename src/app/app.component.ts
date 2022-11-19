@@ -26,7 +26,7 @@ export class AppComponent{
   }
 
   openLoginDialog(){
-    this.dialogRef.open(LoginComponent, this.getDialogConfig("490px","86vh","600px","490px"))
+    this.dialogRef.open(LoginComponent, this.getDialogConfig("490px","86vh","570px","490px"))
   }
   openRegisterClientDialog(){
     this.dialogRef.open(RegisterComponent, this.getDialogConfig("80vw","89vh","600px", "500px"))

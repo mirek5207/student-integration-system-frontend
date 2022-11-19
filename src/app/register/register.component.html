@@ -1,14 +1,11 @@
 <div class="dialog-container">
   <button mat-dialog-close class= "close-button">X</button>
-  <mat-card-header>
-    <mat-card-title><h1>Rejestracja użytkownika</h1></mat-card-title>
-  </mat-card-header>
+  <h1 class = "header-h1">Rejestracja użytkownika</h1>
   <form (submit)="register(registerNewClient)" class="form">
-    <mat-card-content>
+    <div class="dialog-container-content">
       <div class="dialog-input-container">
         <label>Login</label><br>
         <input
-          matInput
           [(ngModel)]="registerNewClient.login"
           type="text"
           name="login"
@@ -18,7 +15,6 @@
       <div class="dialog-input-container">
         <label>Email</label><br>
         <input
-          matInput
           [(ngModel)]="registerNewClient.email"
           type="email"
           name="Email"
@@ -28,7 +24,6 @@
       <div class="dialog-input-container">
         <label>First Name</label><br>
         <input
-          matInput
           [(ngModel)]="registerNewClient.firstName"
           type="text"
           name="first name"
@@ -38,7 +33,6 @@
       <div class="dialog-input-container">
         <label>Surname</label><br>
         <input
-          matInput
           [(ngModel)]="registerNewClient.surName"
           type="text"
           name="Surname"
@@ -48,19 +42,14 @@
       <div class="dialog-input-container">
         <label>Password</label><br>
         <input
-          matInput
           [(ngModel)]="registerNewClient.hashedPassword"
           type="password"
           name="password"
           class="dialog-input"
         /><br>
       </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-dialog-close type="submit" mat-button color="primary" class="dialog-button">Zarejestruj</button>
-      <button (click)="openRegisterPlaceOwnerDialog()" mat-button color="primary" class="dialog-button-second">Jesteś właścicielem? Zarejestruj się</button>
-    </mat-card-actions>
+    </div>
+    <button mat-dialog-close type="submit" mat-button color="primary" class="dialog-button">Zarejestruj</button>
+    <button (click)="openRegisterPlaceOwnerDialog()" mat-button color="primary" class="dialog-button-second">Jesteś właścicielem? Zarejestruj się</button>
   </form>
-  <br>
-
 </div>

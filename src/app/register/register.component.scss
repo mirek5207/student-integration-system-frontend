@@ -1,17 +1,17 @@
-.mat-card-content{
+.dialog-container-content{
   display: flex;
   flex-wrap:wrap;
   margin-top: 4vh;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
 }
-.mat-card-content .dialog-input-container{
+.dialog-container-content .dialog-input-container{
   flex-basis:40%;
   margin: 0px 5%;
 }
 
-.dialog mat-dialog-container{
-  padding: 30px 12%;
-}
 .close-button{
   left: 50%;
+}
+.header-h1{
+  font-size: 200%;
 }

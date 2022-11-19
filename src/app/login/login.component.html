@@ -1,35 +1,27 @@
 <div class="dialog-container">
   <button mat-dialog-close class= "close-button">X</button>
-  <mat-card-header>
-    <mat-card-title><h1>Logowanie</h1></mat-card-title>
-  </mat-card-header>
+  <h1 class="header-h1">Logowanie użytkownika</h1>
   <form (submit)="login(userInfo)">
-    <mat-card-content>
-        <div class="dialog-input-container">
-          <label>Login</label><br>
-          <input
-            matInput
-            [(ngModel)]="userInfo.login"
-            type="text"
-            name="email"
-            class="dialog-input"
-          /><br>
-        </div>
-        <div class="dialog-input-container">
-          <label>Password</label><br>
-          <input
-            matInput
-            [(ngModel)]="userInfo.password"
-            type="password"
-            name="password"
-            class="dialog-input"
-          /><br>
-        </div>
-    </mat-card-content>
-    <mat-card-actions>
+      <div class="dialog-input-container">
+        <label>Login</label><br>
+        <input
+          [(ngModel)]="userInfo.login"
+          type="text"
+          name="email"
+          class="dialog-input"
+        /><br>
+      </div>
+      <div class="dialog-input-container">
+        <label>Password</label><br>
+        <input
+          [(ngModel)]="userInfo.password"
+          type="password"
+          name="password"
+          class="dialog-input"
+        /><br>
+      </div>
       <button mat-dialog-close type="submit" class="dialog-button">Login</button>
       <button mat-dialog-close type="submit" class="dialog-button-second">Nie masz konta? Zarejestruj się</button>
-    </mat-card-actions>
   </form>
 </div>
 <!-- HTML !-->

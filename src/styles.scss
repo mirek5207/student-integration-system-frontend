@@ -28,12 +28,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-align: center;
   }
 
-  mat-card-header h1{
-    text-align: center;
-    font-weight: 550;
-    font-size: 35px;
-  }
-
   .dialog-input-container{
     display: flex;
     flex-direction: column;
@@ -58,7 +52,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .dialog-input:focus{
     border-color: #588BAE;
     color: white;
-    border-width: 0px 0px 2px 0px;
     outline: none;
   }
   .dialog-button, .dialog-button-second{
