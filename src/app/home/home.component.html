@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="white-container">
-    <h1>Chcesz poznać nowych ludzi?</h1>
-    <p>Sprawdź swoją okolicę</p>
-    <div class="search-bar">
-      <input matInput placeholder="Podaj swoją lokalizację" name= "search">
-      <button matSuffix mat-button><mat-icon >search</mat-icon></button>
-    </div>
+  <div class="container-item-1">
+      <h1 class="container-item-1-header">Chcesz poznać nowych ludzi?</h1>
+      <p class="container-item-1-p1">Sprawdź swoją okolicę</p>
+      <div class="search-bar">
+        <input placeholder="Podaj swoją lokalizację" name= "search">
+        <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+      </div>
     <div class="city-group">
       <button mat-flat-button>WARSZAWA</button>
       <button mat-flat-button>LUBLIN</button>
@@ -14,13 +14,13 @@
       <button mat-flat-button>WROCŁAW</button>
     </div>
   </div>
-  <div class="orange-container">
-    <div class="orange-container-item">
+  <div class="container-item-2">
+    <div class="container-item-2-child">
       <h1>NIE CHCESZ DŁUŻEJ SIEDZIEĆ W DOMU?</h1>
       <p>Zarejestruj się na naszej platformie.
         Jeśli zastanawiasz się czy założyć konto, zobacz czego możesz się spodziewać po naszej platformie:</p>
     </div>
-    <div class="orange-container-item">
+    <div class="container-item-2-child">
       <h1>TA PLATFORMA JEST DLA CIEBIE, JEŚLI:</h1>
       <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Chesz wyjść z domu</p>
       <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Poznać nowych ludzi</p>
@@ -28,12 +28,15 @@
       <p><mat-icon class="icon-check-circle">check_circle</mat-icon>Zarezerwować miesce w lokalu</p>
     </div>
   </div>
-  <div class="white-container">
-    <h1>Jesteś właścicielem lokalu</h1>
-    <p>Zarejestruj się, dodaj swój lokal już dziś,
-      daj możliwość poznania twojego miejsca naszym użytkownikom
-    </p>
-    <a (click)="openRegisterPlaceOwnerDialog()" class="link-register-place-owner">Rejestracja</a>
+  <div class="container-item-1">
+    <div class = "container-item-1-child">
+      <h1 class="container-item-1-header2">Jesteś właścicielem lokalu</h1>
+      <p class="container-item-1-p2"><mat-icon class="icon-check-circle">check_circle</mat-icon>Zarejestruj się</p>
+      <p class="container-item-1-p2"><mat-icon class="icon-check-circle">check_circle</mat-icon>Dodaj swój lokal</p>
+      <p class="container-item-1-p2"><mat-icon class="icon-check-circle">check_circle</mat-icon>Ciesz się z nowych klientów lokalu</p>
+      <button (click)="openRegisterPlaceOwnerDialog()" class="button-register-place-owner">Rejestracja</button>
+    </div>
+
   </div>
-  <div class="white-container"></div>
+  <div class="container-item-1"></div>
 </div>

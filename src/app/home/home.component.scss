@@ -1,28 +1,54 @@
 @import "src/app/app.component";
-.white-container{
+.container-item-1{
   background-color: #1e1d1d;
-  height: 85vh;
+  height: 75vh;
   text-align: center;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5%;
+}
+hr{
+  border: 0;
+  border-top: 1px solid #c9c7c7;
+  width:100%
+}
+.container-item-1-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1c2938;
+  width: 60vw;
+  height: 100%;
+  border-radius: 50px;
+  border: 0.01px solid white;
 }
 
-.white-container img{
-  width: 700px;
-}
-.white-container h1 {
-  padding-top: 100px;
+.container-item-1-header {
   font-size: 450%;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 70px;
   margin-bottom: 50px;
 }
-.white-container p{
+.container-item-1-header2 {
+  font-size: 3.5vw;
+  margin-bottom: 50px;
+  font-weight: 500;
+  line-height: 70px;
+}
+.container-item-1-p1{
   font-size: 350%;
-  font-weight: 700;
+  font-weight: 500;
+  max-width: 700px;
+  line-height: 50px;
+}
+.container-item-1-p2{
+  text-align: left;
+  padding-left: 12%;
+  font-size: 2.0vw;
+  font-weight: 500;
   max-width: 700px;
   line-height: 50px;
 }
@@ -67,39 +93,39 @@
 .city-group button:hover{
   background-color: rgba(229, 97, 8, 0.78);
 }
-.orange-container{
+.container-item-2{
   background-color: #000000;
   padding: 100px 22vw;
   height: 600px;
   display: flex;
 }
 
-.orange-container-item{
+.container-item-2-child{
   color: white;
   flex: 50%;
 }
-.orange-container-item:first-child{
+.container-item-2-child:first-child{
   border-right: 0.5px solid #fff;
   padding-right: 5vw;
 }
-.orange-container-item:first-child p{
+.container-item-2-child:first-child p{
   font-size: 25px;
   line-height: 1.5em;
   font-weight: 500;
   margin-top: 50px;
 }
-.orange-container-item:last-child{
+.container-item-2-child:last-child{
   border-left: 0.5px solid #fff;
   padding-left: 5vw;
 }
-.orange-container-item:last-child p{
+.container-item-2-child:last-child p{
   font-size: 20px;
   line-height: 1em;
   font-weight: 500;
   margin-top: 50px;
 }
 
-.orange-container-item h1{
+.container-item-2-child h1{
   color: #f64906;
   font-size: 40px;
   line-height: 1.15em;
@@ -111,11 +137,12 @@
   top:4px;
   right: 10px;
 }
-.link-register-place-owner{
-  padding: 0.6vh 3vw;
+.button-register-place-owner{
+  align-self: center;
+  padding: 0.6vh 10vw;
   background-color: #fff;
   color: #000;
-  margin-bottom: 100px;
+  margin: 20px 20px;
   border-radius: 20px;
   font-weight: 550;
   font-size: 20px;
