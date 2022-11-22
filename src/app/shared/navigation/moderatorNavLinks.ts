@@ -1,7 +1,11 @@
 export const navlinks: {name: string, url: string}[] = [
   {
     name: 'Clients',
-    url: 'moderator/users'
+    url: 'moderator/clients'
+  },
+  {
+    name: 'Place Owners',
+    url: 'moderator/owners'
   },
   {
     name: 'Get reports',

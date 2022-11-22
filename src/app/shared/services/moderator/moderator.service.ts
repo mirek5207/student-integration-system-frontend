@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {getUrl, httpOptions} from "../../API/api";
 import {GetModerator, UpdateModerator} from "../../interfaces/moderator.interface";
 import {GetClient, UpdateClient} from "../../interfaces/client.interface";
+import {GetOwner} from "../../interfaces/placeOwner.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ModeratorService {
   }
 
   getAllPlaceowners(){
-    return this.http.get(getUrl(`Moderator/getAllPlaceOwner`), httpOptions)
+    return this.http.get<GetOwner[]>(getUrl(`Moderator/getAllPlaceOwner`), httpOptions)
   }
 
   updateAccountStatus(isAccountActive: boolean, id: number){

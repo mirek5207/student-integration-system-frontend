@@ -47,6 +47,9 @@ import { ModeratorComponent } from "./moderator/moderator.component";
 import { ModeratorReportsComponent } from "./moderator/moderator-reports/moderator-reports.component";
 import { ModeratorUsersListComponent } from './moderator/moderator-users/moderator-users-list/moderator-users-list.component';
 import { ModeratorUpdateUserComponent } from './moderator/moderator-users/moderator-update-user/moderator-update-user.component';
+import { ModeratorPlaceOwnersComponent } from './moderator/moderator-place-owners/moderator-place-owners.component';
+import { ModeratorPlaceOwnersListComponent } from './moderator/moderator-place-owners/moderator-place-owners-list/moderator-place-owners-list.component';
+import { ModeratorUpdatePlaceOwnerComponent } from './moderator/moderator-place-owners/moderator-update-place-owner/moderator-update-place-owner.component';
 
 
 @NgModule({
@@ -77,7 +80,10 @@ import { ModeratorUpdateUserComponent } from './moderator/moderator-users/modera
     ModeratorUsersComponent,
     ModeratorReportsComponent,
     ModeratorUsersListComponent,
-    ModeratorUpdateUserComponent
+    ModeratorUpdateUserComponent,
+    ModeratorPlaceOwnersComponent,
+    ModeratorPlaceOwnersListComponent,
+    ModeratorUpdatePlaceOwnerComponent
   ],
   imports: [
     BrowserModule,

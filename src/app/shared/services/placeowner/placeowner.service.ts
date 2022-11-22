@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {getUrl, httpOptions} from "../../API/api";
-import {Place} from "../../interfaces/placeOwner.interface";
+import {GetOwner, Place, UpdateOwner} from "../../interfaces/placeOwner.interface";
 import {HttpClient} from "@angular/common/http";
+import {GetClient, UpdateClient} from "../../interfaces/client.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class PlaceownerService {
 
   constructor(private http: HttpClient) { }
 
+  //--------------------Places--------------------\\
   createPlace(place: Place){
     this.http.post(getUrl('PlaceOwner/createPlace'), place, httpOptions).subscribe()
   }
@@ -26,4 +28,15 @@ export class PlaceownerService {
   deletePlace(id: number){
     return this.http.delete(getUrl(`PlaceOwner/deletePlace/${id}`), httpOptions)
   }
+
+  //--------------------Owners--------------------\\
+
+  getOwnerById(id: number){
+    return this.http.get<GetOwner>(getUrl(`PlaceOwner/getPlaceOwnerData/${id}`), httpOptions)
+  }
+  updateOwner(id: number, owner: UpdateOwner){
+    return this.http.patch(getUrl(`PlaceOwner/updatePlaceOwnerAccount/${id}`),owner, httpOptions)
+  }
+
+
 }

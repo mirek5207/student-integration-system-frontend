@@ -10,17 +10,9 @@ import {ModeratorService} from "../../shared/services/moderator/moderator.servic
 })
 export class ModeratorUsersComponent implements OnInit {
 
-  constructor(private moderatorService : ModeratorService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
-
-  // updateUser(updateUser: {updateUserIsActive: boolean, id: number}){
-  //     this.moderatorService.updateAccountStatus(updateUser.updateUserIsActive, updateUser.id).pipe(
-  //       tap( () => {this.getClients(); this.getPlaceowners()})
-  //     ).subscribe();
-  //     console.log("siema")
-  // }
-
 }

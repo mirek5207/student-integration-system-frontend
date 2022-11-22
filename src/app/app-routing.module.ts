@@ -13,6 +13,7 @@ import {CreatePlaceComponent} from "./placeowner/places/create-place/create-plac
 import {PlacesComponent} from "./placeowner/places/places.component";
 import {ModeratorComponent} from "./moderator/moderator.component";
 import {ModeratorUsersComponent} from "./moderator/moderator-users/moderator-users.component";
+import {ModeratorPlaceOwnersComponent} from "./moderator/moderator-place-owners/moderator-place-owners.component";
 
 const routes: Routes = [
   { path: 'user/lobbies', component: LobbyComponent},
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'moderator',
     component: ModeratorComponent,
     children: [
-      {path: 'users', component: ModeratorUsersComponent},
+      {path: 'clients', component: ModeratorUsersComponent},
+      {path: 'owners', component: ModeratorPlaceOwnersComponent},
       {path: 'create', component: CreatePlaceComponent},
       //{path: 'createModerator', component: AdminCreateModeratorComponent},
       //{path: 'getModerator/:id', component: AdminGetModeratorComponent}

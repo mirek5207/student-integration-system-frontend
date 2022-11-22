@@ -1,0 +1,66 @@
+<ng-template [ngIf]="owner">
+  <div class="container">
+    <mat-card-header>
+      <h1> Update Moderator </h1>
+    </mat-card-header>
+    <form (submit)="update(updateOwner)">
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Login"
+            [(ngModel)]="updateOwner.login"
+            type="text"
+            name="login"
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Email"
+            [(ngModel)]="updateOwner.email"
+            type="email"
+            name="Email"
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="First name"
+            [(ngModel)]="updateOwner.firstName"
+            type="text"
+            name="first name"
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <span></span>
+          <input
+            matInput
+            [(ngModel)]="updateOwner.surName"
+            type="text"
+            name="Surname"
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Password"
+            [(ngModel)]="updateOwner.hashedPassword"
+            type="password"
+            name="password"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Is Active</mat-label>
+          <mat-select [(ngModel)]="updateOwner.isAccountActive" name="isActivated">
+            <mat-option  [value]="true" >true</mat-option>
+            <mat-option [value]="false">false</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-dialog-close type="submit" mat-stroked-button  color="primary" class="register-button">Update</button>
+      </mat-card-actions>
+    </form>
+  </div>
+</ng-template>
