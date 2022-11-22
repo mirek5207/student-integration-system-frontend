@@ -1,12 +1,7 @@
 .moderator-users-container {
   display: flex;
   justify-content: space-around;
-
   .moderator-users-list {
-    width: 49%;
-  }
-
-  .moderator-user-details {
-    width: 49%;
+    width: 100%;
   }
 }

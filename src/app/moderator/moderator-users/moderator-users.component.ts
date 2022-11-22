@@ -10,35 +10,17 @@ import {ModeratorService} from "../../shared/services/moderator/moderator.servic
 })
 export class ModeratorUsersComponent implements OnInit {
 
-  clients$!: Observable<any>;
-  placeowners$!: Observable<any>;
-  selectedUser: any
-
   constructor(private moderatorService : ModeratorService) { }
 
   ngOnInit(): void {
-    this.getClients()
-    this.getPlaceowners()
+
   }
 
-  getClients(){
-    this.clients$ = this.moderatorService.getAllClients()
-  }
-
-  getPlaceowners(){
-    this.placeowners$ =  this.moderatorService.getAllPlaceowners()
-  }
-
-  selectUser(user: any){
-    console.log(user)
-    this.selectedUser = user
-  }
-
-  updateUser(updateUser: {updateUserIsActive: boolean, id: number}){
-      this.moderatorService.updateAccountStatus(updateUser.updateUserIsActive, updateUser.id).pipe(
-        tap( () => {this.getClients(); this.getPlaceowners()})
-      ).subscribe();
-      console.log("siema")
-  }
+  // updateUser(updateUser: {updateUserIsActive: boolean, id: number}){
+  //     this.moderatorService.updateAccountStatus(updateUser.updateUserIsActive, updateUser.id).pipe(
+  //       tap( () => {this.getClients(); this.getPlaceowners()})
+  //     ).subscribe();
+  //     console.log("siema")
+  // }
 
 }

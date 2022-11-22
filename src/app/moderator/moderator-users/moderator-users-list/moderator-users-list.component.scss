@@ -1,12 +1,6 @@
-.list-container {
-  display: flex;
-  justify-content: space-around;
-
-  .clients-list {
-    width: 49%;
-  }
-
-  .placeowners-list{
-    width: 49%;
-  }
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 90%;
 }
