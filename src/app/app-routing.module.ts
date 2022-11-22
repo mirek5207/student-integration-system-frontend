@@ -15,6 +15,7 @@ import {ModeratorComponent} from "./moderator/moderator.component";
 import {ModeratorUsersComponent} from "./moderator/moderator-users/moderator-users.component";
 import {ModeratorPlaceOwnersComponent} from "./moderator/moderator-place-owners/moderator-place-owners.component";
 import {ModeratorUserReportsComponent} from "./moderator/moderator-user-reports/moderator-user-reports.component";
+import {AdminSystemReportsComponent} from "./admin/admin-system-reports/admin-system-reports.component";
 
 const routes: Routes = [
   { path: 'user/lobbies', component: LobbyComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
     children: [
       {path: 'getModerators', component: AdminGetModeratorsComponent},
       {path: 'createModerator', component: AdminCreateModeratorComponent},
-      {path: 'getModerator/:id', component: AdminGetModeratorComponent}
+      {path: 'getModerator/:id', component: AdminGetModeratorComponent},
+      {path: 'systemReport', component: AdminSystemReportsComponent}
     ]
   },
   { path: 'placeowner',

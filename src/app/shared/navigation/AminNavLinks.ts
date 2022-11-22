@@ -4,8 +4,8 @@ export const navlinks: {name: string, url: string}[] = [
     url: 'admin/getModerators'
   },
   {
-    name: 'Reports',
-    url: '/getSystemReporst'
+    name: 'System Reports',
+    url: '/admin/systemReport'
   },
 ];
 

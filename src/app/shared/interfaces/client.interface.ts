@@ -33,3 +33,17 @@ export interface UpdateClient{
   hashedPassword: string,
   isAccountActive: boolean
 }
+
+export interface GetLobby{
+  id: number,
+  maxSeats: number,
+  name: string,
+  type: string,
+  placeId: number,
+  customPlaceId: number,
+  lobbyOwnerId: number,
+  lobbyOwner: object,
+  place?: object,
+  customPlace?: object,
+  lobbyGuests?: object
+}
