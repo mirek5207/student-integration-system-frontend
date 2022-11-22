@@ -14,6 +14,7 @@ import {PlacesComponent} from "./placeowner/places/places.component";
 import {ModeratorComponent} from "./moderator/moderator.component";
 import {ModeratorUsersComponent} from "./moderator/moderator-users/moderator-users.component";
 import {ModeratorPlaceOwnersComponent} from "./moderator/moderator-place-owners/moderator-place-owners.component";
+import {ModeratorUserReportsComponent} from "./moderator/moderator-user-reports/moderator-user-reports.component";
 
 const routes: Routes = [
   { path: 'user/lobbies', component: LobbyComponent},
@@ -42,9 +43,7 @@ const routes: Routes = [
     children: [
       {path: 'clients', component: ModeratorUsersComponent},
       {path: 'owners', component: ModeratorPlaceOwnersComponent},
-      {path: 'create', component: CreatePlaceComponent},
-      //{path: 'createModerator', component: AdminCreateModeratorComponent},
-      //{path: 'getModerator/:id', component: AdminGetModeratorComponent}
+      {path: 'users/reports', component: ModeratorUserReportsComponent},
     ]
   },
   { path: 'login', component: LoginComponent },

@@ -8,16 +8,8 @@ export const navlinks: {name: string, url: string}[] = [
     url: 'moderator/owners'
   },
   {
-    name: 'Get reports',
-    url: '/getUserReport'
-  },
-  {
-    name: 'Update status of report',
-    url: '/updateReportStatus'
-  },
-  {
-    name: 'Deactivate account',
-    url: '/deactivateAccount'
-  },
+    name: 'User Reports',
+    url: 'moderator/users/reports'
+  }
 
 ];

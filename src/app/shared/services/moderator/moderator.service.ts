@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {getUrl, httpOptions} from "../../API/api";
-import {GetModerator, UpdateModerator} from "../../interfaces/moderator.interface";
+import {GetModerator, GetUserReport, UpdateModerator} from "../../interfaces/moderator.interface";
 import {GetClient, UpdateClient} from "../../interfaces/client.interface";
 import {GetOwner} from "../../interfaces/placeOwner.interface";
 
@@ -22,5 +22,9 @@ export class ModeratorService {
 
   updateAccountStatus(isAccountActive: boolean, id: number){
     return this.http.patch(getUrl(`Moderator/updateStatusOfUserAccount/${id}`), {isActive: isAccountActive}, httpOptions)
+  }
+
+  getAllUserReports(){
+    return this.http.get<GetUserReport[]>(getUrl(`Moderator/getUserReports`), httpOptions)
   }
 }

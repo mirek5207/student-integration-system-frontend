@@ -34,3 +34,13 @@ export interface UpdateModerator{
   hashedPassword: string,
   isAccountActive: boolean
 }
+
+export interface GetUserReport{
+  "id": number,
+  "reportType": string,
+  "description": string,
+  "creationDate": Date,
+  "status": string,
+  "reportedUserId": number,
+  "reportingUserId": number
+}
