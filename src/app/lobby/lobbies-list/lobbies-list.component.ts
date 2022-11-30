@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {LobbyService} from "../../shared/services/lobby/lobby.service";
+import {Observable} from "rxjs";
+import {TokenService} from "../../shared/services/token/token.service";
+import {PlaceownerService} from "../../shared/services/placeowner/placeowner.service";
+import {ClientService} from "../../shared/services/client/client.service";
+import {ModeratorService} from "../../shared/services/moderator/moderator.service";
 
 @Component({
   selector: 'app-lobbies-list',
@@ -7,9 +13,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LobbiesListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  registerNewLobby: any = {
+    maxSeats: 0,
+    name: "",
+    type: "Public",
+    placeId: 3,
+    customPlaceId:  null,
+    ownerId: this.tokenService.getId()
   }
 
+  constructor(private lobbyService: LobbyService,
+              private tokenService: TokenService,
+              private clientService: ClientService) { }
+
+  lobbies!: any[]
+  locals!: any[]
+  myLobbies!: any[]
+
+  ngOnInit(): void {
+    this.getAllPublicLobbies()
+    this.getAllLocals()
+    this.getMyLobby()
+  }
+
+  getAllPublicLobbies(){
+    this.lobbyService.getAllPublicLobbies().subscribe(r => this.lobbies = r)
+  }
+
+  createLobby(lobby: any){
+    this.lobbyService.createLobby(lobby);
+  }
+
+  getAllLocals(){
+    this.clientService.getAllPlaces().subscribe(r => this.locals = r)
+  }
+
+  getMyLobby(){
+    this.lobbyService.getAllOwnerLobbies().subscribe(r => this.myLobbies = r)
+  }
+
+  getLobbyById(id: number){
+    this.lobbyService.getLobby(id).subscribe(r => console.log(r))
+    this.lobbyService.joinLobby(this.tokenService.getId(), id).subscribe(r => console.log("Dolaczylem"))
+  }
 }
