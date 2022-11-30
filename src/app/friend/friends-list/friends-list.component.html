@@ -1,0 +1,15 @@
+<h1>Dodaj użytkowników do znajomych</h1>
+
+<div>
+  <div>
+    <h1>Lista wszystkich użytkowników</h1>
+    <ul>
+      <li *ngFor="let client of clients"
+          (click)="addUserToFriendship(client.user.id)"
+      >
+        {{client.id}} {{client.firstName}}: {{client.surName}}: {{client.id}}
+      </li>
+    </ul>
+  </div>
+</div>
+
