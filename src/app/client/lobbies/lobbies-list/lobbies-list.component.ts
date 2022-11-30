@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LobbyService} from "../../shared/services/lobby/lobby.service";
-import {Observable} from "rxjs";
-import {TokenService} from "../../shared/services/token/token.service";
-import {PlaceownerService} from "../../shared/services/placeowner/placeowner.service";
-import {ClientService} from "../../shared/services/client/client.service";
-import {ModeratorService} from "../../shared/services/moderator/moderator.service";
+import {LobbyService} from "../../../shared/services/lobby/lobby.service";
+import {TokenService} from "../../../shared/services/token/token.service";
+import {ClientService} from "../../../shared/services/client/client.service";
 
 @Component({
   selector: 'app-lobbies-list',
@@ -56,4 +53,5 @@ export class LobbiesListComponent implements OnInit {
     this.lobbyService.getLobby(id).subscribe(r => console.log(r))
     this.lobbyService.joinLobby(this.tokenService.getId(), id).subscribe(r => console.log("Dolaczylem"))
   }
+
 }

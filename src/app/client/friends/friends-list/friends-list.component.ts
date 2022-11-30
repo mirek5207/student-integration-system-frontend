@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FriendService} from "../../shared/services/friend/friend.service";
-import {ModeratorService} from "../../shared/services/moderator/moderator.service";
-import {GetClient} from "../../shared/interfaces/client.interface";
-import {Observable} from "rxjs";
-import {TokenService} from "../../shared/services/token/token.service";
+import {GetClient} from "../../../shared/interfaces/client.interface";
+import {FriendService} from "../../../shared/services/friend/friend.service";
+import {ModeratorService} from "../../../shared/services/moderator/moderator.service";
+import {TokenService} from "../../../shared/services/token/token.service";
 
 @Component({
   selector: 'app-friends-list',
@@ -28,5 +27,6 @@ export class FriendsListComponent implements OnInit {
   addUserToFriendship(id: number){
     this.friendService.sendInvite(this.tokenService.getId(), id).subscribe(r => console.log(r))
   }
+
 
 }

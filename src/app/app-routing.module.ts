@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import {AdminComponent} from "./admin/admin.component";
-import {ClientComponent} from "./client/client.component";
 import {PlaceownerComponent} from "./placeowner/placeowner.component";
 import {RegisterComponent} from "./register/register.component";
-import {LobbyComponent} from "./lobby/lobby.component";
 import {AdminGetModeratorsComponent} from "./admin/admin-get-moderators/admin-get-moderators.component";
 import {AdminCreateModeratorComponent} from "./admin/admin-create-moderator/admin-create-moderator.component";
 import {AdminGetModeratorComponent} from "./admin/admin-get-moderator/admin-get-moderator.component";
@@ -16,18 +14,26 @@ import {ModeratorUsersComponent} from "./moderator/moderator-users/moderator-use
 import {ModeratorPlaceOwnersComponent} from "./moderator/moderator-place-owners/moderator-place-owners.component";
 import {ModeratorUserReportsComponent} from "./moderator/moderator-user-reports/moderator-user-reports.component";
 import {AdminSystemReportsComponent} from "./admin/admin-system-reports/admin-system-reports.component";
-import {FriendComponent} from "./friend/friend.component";
-import {FriendsListComponent} from "./friend/friends-list/friends-list.component";
+import {FriendsListComponent} from "./client/friends/friends-list/friends-list.component";
+import {ClientComponent} from "./client/client.component";
+import {LobbiesComponent} from "./client/lobbies/lobbies.component";
 
 const routes: Routes = [
-  { path: 'user/lobbies', component: LobbyComponent},
-  { path: 'user/friends', component: FriendsListComponent},
-  { path: 'createAccount', component: RegisterComponent},
-  { path: 'placeowner', component: PlaceownerComponent },
-  { path: 'user',
-    component: FriendComponent,
+  // { path: 'user/lobbies', component: LobbyComponent},
+  // { path: 'user/friends', component: FriendsListComponent},
+  // { path: 'createAccount', component: RegisterComponent},
+  // { path: 'placeowner', component: PlaceownerComponent},
+  // { path: 'user',
+  //   component: FriendComponent,
+  //   children: [
+  //     { path: 'friends', component: FriendsListComponent}
+  //   ]
+  // },
+  { path: 'client',
+    component: ClientComponent,
     children: [
-      { path: 'friends', component: FriendsListComponent}
+      {path: 'lobbies', component: LobbiesComponent},
+      {path: 'friends', component: FriendsListComponent},
     ]
   },
   { path: 'admin',

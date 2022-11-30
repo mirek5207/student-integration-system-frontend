@@ -20,12 +20,9 @@ import { PlaceownerComponent } from './placeowner/placeowner.component';
 import { RegisterComponent } from './register/register.component';
 import { SystemReportComponent } from './system-report/system-report.component';
 import { UserReportComponent } from './user-report/user-report.component';
-import { LobbyComponent } from './lobby/lobby.component';
-import { LobbiesListComponent } from './lobby/lobbies-list/lobbies-list.component';
-import { LobbyDetailsComponent } from './lobby/lobbies-list/lobby-details/lobby-details.component';
-import { MapComponent } from './lobby/map/map.component';
+import { LobbiesListComponent } from './client/lobbies/lobbies-list/lobbies-list.component';
+import { MapComponent } from './client/lobbies/map/map.component';
 import {MatListModule} from "@angular/material/list";
-import {LobbyDetailsDialogComponent} from "./lobby/lobbies-list/lobby-details/lobby-details.component";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
@@ -54,8 +51,9 @@ import { ModeratorUserReportsComponent } from './moderator/moderator-user-report
 import { ModeratorUserReportsListComponent } from './moderator/moderator-user-reports/moderator-user-reports-list/moderator-user-reports-list.component';
 import { AdminSystemReportsComponent } from './admin/admin-system-reports/admin-system-reports.component';
 import { AdminSystemReportsListComponent } from './admin/admin-system-reports/admin-system-reports-list/admin-system-reports-list.component';
-import { FriendComponent } from './friend/friend.component';
-import { FriendsListComponent } from './friend/friends-list/friends-list.component';
+import { FriendsListComponent } from './client/friends/friends-list/friends-list.component';
+import { LobbiesComponent } from './client/lobbies/lobbies.component';
+import { FriendsComponent } from './client/friends/friends.component';
 
 
 @NgModule({
@@ -68,11 +66,8 @@ import { FriendsListComponent } from './friend/friends-list/friends-list.compone
     RegisterComponent,
     SystemReportComponent,
     UserReportComponent,
-    LobbyComponent,
     LobbiesListComponent,
-    LobbyDetailsComponent,
     MapComponent,
-    LobbyDetailsDialogComponent,
     AdminGetModeratorsComponent,
     AdminCreateModeratorComponent,
     AdminGetModeratorComponent,
@@ -94,8 +89,10 @@ import { FriendsListComponent } from './friend/friends-list/friends-list.compone
     ModeratorUserReportsListComponent,
     AdminSystemReportsComponent,
     AdminSystemReportsListComponent,
-    FriendComponent,
-    FriendsListComponent
+    FriendsListComponent,
+    LobbiesComponent,
+    LobbiesListComponent,
+    FriendsComponent
   ],
   imports: [
     BrowserModule,

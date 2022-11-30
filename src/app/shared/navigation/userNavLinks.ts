@@ -1,18 +1,18 @@
 export const navlinks: {name: string, url: string}[] = [
   {
-    name: 'Create system report',
-    url: '/report'
+    name: 'Zgłoszenia systemowe',
+    url: 'client/report'
   },
   {
-    name: 'Report user',
+    name: 'Zgłoszenie użytkownika',
     url: 'user/second'
   },
   {
-    name: 'Show lobbies',
-    url: 'user/lobbies'
+    name: 'Pokoje',
+    url: 'client/lobbies'
   },
   {
-    name: 'Add to friends',
-    url: 'user/friends'
+    name: 'Przyjaciele',
+    url: 'client/friends'
   }
 ];
