@@ -8,11 +8,11 @@ import {GetClient, UpdateClient} from "../../interfaces/client.interface";
   providedIn: 'root'
 })
 export class ClientService {
-  model = 'Client/createAccount'
+
   constructor(private http: HttpClient) { }
 
   registerClient(moderator: ModeratorInfo) {
-    return this.http.post(getUrl(this.model), moderator)
+    return this.http.post(getUrl('Client/createAccount'), moderator)
       .subscribe(response => console.log(response))
   }
   getClientById(id: number){
@@ -20,5 +20,9 @@ export class ClientService {
   }
   updateClient(id: number, client: UpdateClient){
     return this.http.patch(getUrl(`Client/updateClientAccount/${id}`),client, httpOptions)
+  }
+
+  getAllPlaces(){
+    return this.http.get<any[]>(getUrl(`Client/getAllPlaces`), httpOptions)
   }
 }
