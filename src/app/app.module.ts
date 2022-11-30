@@ -54,6 +54,8 @@ import { ModeratorUserReportsComponent } from './moderator/moderator-user-report
 import { ModeratorUserReportsListComponent } from './moderator/moderator-user-reports/moderator-user-reports-list/moderator-user-reports-list.component';
 import { AdminSystemReportsComponent } from './admin/admin-system-reports/admin-system-reports.component';
 import { AdminSystemReportsListComponent } from './admin/admin-system-reports/admin-system-reports-list/admin-system-reports-list.component';
+import { FriendComponent } from './friend/friend.component';
+import { FriendsListComponent } from './friend/friends-list/friends-list.component';
 
 
 @NgModule({
@@ -91,7 +93,9 @@ import { AdminSystemReportsListComponent } from './admin/admin-system-reports/ad
     ModeratorUserReportsComponent,
     ModeratorUserReportsListComponent,
     AdminSystemReportsComponent,
-    AdminSystemReportsListComponent
+    AdminSystemReportsListComponent,
+    FriendComponent,
+    FriendsListComponent
   ],
   imports: [
     BrowserModule,
