@@ -1,2 +1,49 @@
-<h1>Dostępne lobby</h1>
-<app-lobby-details></app-lobby-details>
+<div>
+  <div>
+    <h1>Lista wszystkich lobby</h1>
+    <ul>
+      <li *ngFor="let lobby of lobbies"
+          (click)="getLobbyById(lobby.id)"
+      >
+        {{lobby.id}} {{lobby.name}}: {{lobby.maxSeats}}: {{lobby.type}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h1>Utworz lobby</h1>
+<div class="container">
+  <form (submit)="createLobby(registerNewLobby)">
+      <input
+        matInput
+        placeholder="Available seats"
+        [(ngModel)]="registerNewLobby.maxSeats"
+        type="text"
+        name="maxSeats"
+      />
+    <select [(ngModel)]="registerNewLobby.type" name="type">
+      <option value="Public">Publiczne</option>
+      <option value="Private">Prywatne</option>
+    </select>
+      <select [(ngModel)]="registerNewLobby.placeId" name="place">
+        <option *ngFor="let local of locals" [ngValue]="local.id" >{{local.name}}</option>
+      </select>
+      <input
+        matInput
+        placeholder="Nazwa"
+        [(ngModel)]="registerNewLobby.name"
+        type="text"
+        name="latitude"
+      />
+      <button type="submit" mat-button color="primary" class="register-button">Create</button>
+  </form>
+</div>
+
+<h1>Moje lobby</h1>
+<div>
+    <ul>
+      <li *ngFor="let myLobby of myLobbies">
+        {{myLobby.id}} {{myLobby.name}}: {{myLobby.maxSeats}}: {{myLobby.type}}
+      </li>
+    </ul>
+</div>
