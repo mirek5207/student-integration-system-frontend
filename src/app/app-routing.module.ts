@@ -16,12 +16,20 @@ import {ModeratorUsersComponent} from "./moderator/moderator-users/moderator-use
 import {ModeratorPlaceOwnersComponent} from "./moderator/moderator-place-owners/moderator-place-owners.component";
 import {ModeratorUserReportsComponent} from "./moderator/moderator-user-reports/moderator-user-reports.component";
 import {AdminSystemReportsComponent} from "./admin/admin-system-reports/admin-system-reports.component";
+import {FriendComponent} from "./friend/friend.component";
+import {FriendsListComponent} from "./friend/friends-list/friends-list.component";
 
 const routes: Routes = [
   { path: 'user/lobbies', component: LobbyComponent},
+  { path: 'user/friends', component: FriendsListComponent},
   { path: 'createAccount', component: RegisterComponent},
   { path: 'placeowner', component: PlaceownerComponent },
-  { path: 'client', component: ClientComponent },
+  { path: 'user',
+    component: FriendComponent,
+    children: [
+      { path: 'friends', component: FriendsListComponent}
+    ]
+  },
   { path: 'admin',
     component: AdminComponent,
     children: [

@@ -10,5 +10,9 @@ export const navlinks: {name: string, url: string}[] = [
   {
     name: 'Show lobbies',
     url: 'user/lobbies'
+  },
+  {
+    name: 'Add to friends',
+    url: 'user/friends'
   }
 ];
