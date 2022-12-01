@@ -21,7 +21,6 @@ import { RegisterComponent } from './register/register.component';
 import { SystemReportComponent } from './system-report/system-report.component';
 import { UserReportComponent } from './user-report/user-report.component';
 import { LobbiesListComponent } from './client/lobbies/lobbies-list/lobbies-list.component';
-import { MapComponent } from './client/lobbies/map/map.component';
 import {MatListModule} from "@angular/material/list";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
@@ -54,6 +53,12 @@ import { AdminSystemReportsListComponent } from './admin/admin-system-reports/ad
 import { FriendsListComponent } from './client/friends/friends-list/friends-list.component';
 import { LobbiesComponent } from './client/lobbies/lobbies.component';
 import { FriendsComponent } from './client/friends/friends.component';
+import { OwnerLobbiesListComponent } from './client/lobbies/lobbies-list/owner-lobbies-list/owner-lobbies-list.component';
+import { GuestLobbiesListComponent } from './client/lobbies/lobbies-list/guest-lobbies-list/guest-lobbies-list.component';
+import { CreateLobbyComponent } from './client/lobbies/create-lobby/create-lobby.component';
+import { LobbiesNavComponent } from './client/lobbies/lobbies-nav/lobbies-nav.component';
+import { LobbiesInvitesComponent } from './client/lobbies/lobbies-invites/lobbies-invites.component';
+import { MapComponent } from './client/home/map/map.component';
 
 
 @NgModule({
@@ -67,7 +72,6 @@ import { FriendsComponent } from './client/friends/friends.component';
     SystemReportComponent,
     UserReportComponent,
     LobbiesListComponent,
-    MapComponent,
     AdminGetModeratorsComponent,
     AdminCreateModeratorComponent,
     AdminGetModeratorComponent,
@@ -92,7 +96,13 @@ import { FriendsComponent } from './client/friends/friends.component';
     FriendsListComponent,
     LobbiesComponent,
     LobbiesListComponent,
-    FriendsComponent
+    FriendsComponent,
+    OwnerLobbiesListComponent,
+    GuestLobbiesListComponent,
+    CreateLobbyComponent,
+    LobbiesNavComponent,
+    LobbiesInvitesComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

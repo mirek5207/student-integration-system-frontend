@@ -1,0 +1,30 @@
+.lobby{
+  display: flex;
+  padding-left: 10px;
+  margin-top: 10px;
+  background-color: white;
+  max-width: 90%;
+  height: 70px;
+  border-radius: 10px;
+}
+.lobby-items{
+  margin-left: 10px;
+  flex-direction: column;
+}
+.lobby>.group-icon{
+  margin: auto;
+}
+.group-icon{
+  width: 65px;
+  height: 65px;
+}
+.view-icon{
+  width: 20px;
+}
+.view-button{
+  outline: none;
+  border: none;
+}
+.view-button:hover{
+  background-color: gray;
+}

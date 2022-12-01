@@ -19,8 +19,7 @@ export class LobbyService {
   }
 
   getAllOwnerLobbies(){
-    const params = new HttpParams()
-      .set('userId', this.authService.getId())
+    const params = new HttpParams().set('userId', this.authService.getId())
 
     return this.http.get<any[]>(getUrl(`Lobby/allOwnerLobbies`), {
       headers: httpOptions.headers,

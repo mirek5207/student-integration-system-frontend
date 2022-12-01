@@ -10,15 +10,6 @@ import {ClientService} from "../../../shared/services/client/client.service";
 })
 export class LobbiesListComponent implements OnInit {
 
-  registerNewLobby: any = {
-    maxSeats: 0,
-    name: "",
-    type: "Public",
-    placeId: 3,
-    customPlaceId:  null,
-    ownerId: this.tokenService.getId()
-  }
-
   constructor(private lobbyService: LobbyService,
               private tokenService: TokenService,
               private clientService: ClientService) { }
@@ -35,10 +26,6 @@ export class LobbiesListComponent implements OnInit {
 
   getAllPublicLobbies(){
     this.lobbyService.getAllPublicLobbies().subscribe(r => this.lobbies = r)
-  }
-
-  createLobby(lobby: any){
-    this.lobbyService.createLobby(lobby);
   }
 
   getAllLocals(){
