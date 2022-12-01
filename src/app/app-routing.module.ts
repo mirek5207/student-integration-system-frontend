@@ -17,6 +17,9 @@ import {AdminSystemReportsComponent} from "./admin/admin-system-reports/admin-sy
 import {FriendsListComponent} from "./client/friends/friends-list/friends-list.component";
 import {ClientComponent} from "./client/client.component";
 import {LobbiesComponent} from "./client/lobbies/lobbies.component";
+import {LobbiesListComponent} from "./client/lobbies/lobbies-list/lobbies-list.component";
+import {LobbiesInvitesComponent} from "./client/lobbies/lobbies-invites/lobbies-invites.component";
+import {CreateLobbyComponent} from "./client/lobbies/create-lobby/create-lobby.component";
 
 const routes: Routes = [
   // { path: 'user/lobbies', component: LobbyComponent},
@@ -32,7 +35,14 @@ const routes: Routes = [
   { path: 'client',
     component: ClientComponent,
     children: [
-      {path: 'lobbies', component: LobbiesComponent},
+      {path: 'lobbies',
+        component: LobbiesComponent,
+        children: [
+          {path: 'myLobbies', component: LobbiesListComponent},
+          {path: 'invitations', component: LobbiesInvitesComponent},
+          {path: 'create', component: CreateLobbyComponent}
+        ]
+      },
       {path: 'friends', component: FriendsListComponent},
     ]
   },

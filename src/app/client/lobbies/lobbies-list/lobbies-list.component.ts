@@ -21,7 +21,6 @@ export class LobbiesListComponent implements OnInit {
   ngOnInit(): void {
     this.getAllPublicLobbies()
     this.getAllLocals()
-    this.getMyLobby()
   }
 
   getAllPublicLobbies(){
@@ -30,10 +29,6 @@ export class LobbiesListComponent implements OnInit {
 
   getAllLocals(){
     this.clientService.getAllPlaces().subscribe(r => this.locals = r)
-  }
-
-  getMyLobby(){
-    this.lobbyService.getAllOwnerLobbies().subscribe(r => this.myLobbies = r)
   }
 
   getLobbyById(id: number){
