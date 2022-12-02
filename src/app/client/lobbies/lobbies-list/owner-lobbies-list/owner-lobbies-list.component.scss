@@ -8,7 +8,7 @@
 .lobby{
   display: flex;
   margin: 10px 2%;
-  background-color: #ffffff;
+  background-color: #d2d1d1;
   width: 96%;
   height: 70px;
   border-radius: 10px;
@@ -34,14 +34,17 @@
 .delete-icon{
   width: 24px;
 }
-.view-button, .delete-button{
+.accept-icon{
+  width: 24px;
+}
+.view-button, .delete-button, .accept-button{
   margin-right: 10px;
   width: 40px;
   height: 40px;
-  background-color: white;
+  background-color: transparent;
   outline: none;
   border: none;
 }
-.view-button:hover,.delete-button:hover{
+.view-button:hover,.delete-button:hover, .accept-button:hover{
   background-color: #efefef;
 }

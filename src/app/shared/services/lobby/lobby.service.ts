@@ -43,9 +43,9 @@ export class LobbyService {
 
   getAllLobbyInvites(){
     const params = new HttpParams()
-      .set('userId', this.authService.getRole())
+      .set('userId', this.authService.getId())
 
-    return this.http.get(getUrl(`Lobby/allLobbyInvites`), {
+    return this.http.get<any[]>(getUrl(`Lobby/allLobbyInvites`), {
       headers: httpOptions.headers,
       params: params
     })
@@ -93,10 +93,11 @@ export class LobbyService {
       params: params
     })}
 
-  acceptInvite(userId: number, lobbyId: number){
+  acceptInvite(lobbyId: number){
     const params = new HttpParams()
-      .set('userId', userId)
+      .set('userId', this.authService.getId())
       .set('lobbyId', lobbyId)
+    console.log(params.toString())
 
     return this.http.put(getUrl(`Lobby/acceptInvite`), {}, {
       headers: httpOptions.headers,

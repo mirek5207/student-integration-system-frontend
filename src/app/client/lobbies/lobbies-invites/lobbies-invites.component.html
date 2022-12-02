@@ -1,1 +1,34 @@
-<p>lobbies-invites works!</p>
+<div class="container">
+  <span class="header"></span>
+  <div>
+    <div *ngFor = "let lobbyInvites of lobbiesInvites" class = "lobby">
+      <div class="lobby-items">
+        <div class="lobby-item"><img *ngIf= "lobbyInvites.type.toString().includes('Public');"src="assets/public-group.png" class="group-icon"></div>
+        <div class="lobby-item"><img *ngIf= "lobbyInvites.type.toString().includes('Private');"src="" class="group-icon"></div>
+      </div> <hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Założyciel</div>
+        <div class="lobby-item">{{lobbyInvites.lobbyOwner.client.firstName}} {{lobbyInvites.lobbyOwner.client.surName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Nazwa Lobby</div>
+        <div class="lobby-item">{{lobbyInvites.name}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Data rozpoczęcia</div>
+        <div class="lobby-item">{{lobbyInvites.startDate | date : 'short'}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Liczba zajętych miejsc</div>
+        <div class="lobby-item">{{lobbyInvites.maxSeats}}/{{lobbyInvites.maxSeats}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <button (click)="acceptInvite(lobbyInvites.id)" class="accept-button"><img src="assets/accept-icon.jpg" class="accept-icon"></button>
+        <button class="view-button"><img src="assets/view.png" class="view-icon"></button>
+        <button class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

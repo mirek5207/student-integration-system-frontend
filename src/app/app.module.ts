@@ -59,6 +59,7 @@ import { CreateLobbyComponent } from './client/lobbies/create-lobby/create-lobby
 import { LobbiesNavComponent } from './client/lobbies/lobbies-nav/lobbies-nav.component';
 import { LobbiesInvitesComponent } from './client/lobbies/lobbies-invites/lobbies-invites.component';
 import { MapComponent } from './client/home/map/map.component';
+import { OwnerLobbyDetailsComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details.component';
 
 
 @NgModule({
@@ -103,6 +104,7 @@ import { MapComponent } from './client/home/map/map.component';
     LobbiesNavComponent,
     LobbiesInvitesComponent,
     MapComponent,
+    OwnerLobbyDetailsComponent,
   ],
   imports: [
     BrowserModule,

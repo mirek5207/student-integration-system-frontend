@@ -19,21 +19,16 @@ export class LobbiesListComponent implements OnInit {
   myLobbies!: any[]
 
   ngOnInit(): void {
-    this.getAllPublicLobbies()
-    this.getAllLocals()
+    // this.getAllPublicLobbies()
+    // this.getAllLocals()
   }
 
-  getAllPublicLobbies(){
-    this.lobbyService.getAllPublicLobbies().subscribe(r => this.lobbies = r)
-  }
-
-  getAllLocals(){
-    this.clientService.getAllPlaces().subscribe(r => this.locals = r)
-  }
-
-  getLobbyById(id: number){
-    this.lobbyService.getLobby(id).subscribe(r => console.log(r))
-    this.lobbyService.joinLobby(this.tokenService.getId(), id).subscribe(r => console.log("Dolaczylem"))
-  }
+  // getAllPublicLobbies(){
+  //   this.lobbyService.getAllPublicLobbies().subscribe(r => this.lobbies = r)
+  // }
+  //
+  // getAllLocals(){
+  //   this.clientService.getAllPlaces().subscribe(r => this.locals = r)
+  // }
 
 }

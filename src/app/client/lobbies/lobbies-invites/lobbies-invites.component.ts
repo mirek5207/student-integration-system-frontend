@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LobbyService} from "../../../shared/services/lobby/lobby.service";
 
 @Component({
   selector: 'app-lobbies-invites',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LobbiesInvitesComponent implements OnInit {
 
-  constructor() { }
+  lobbiesInvites!: any[]
+  constructor(private lobbyService : LobbyService) { }
 
   ngOnInit(): void {
+    this.getAllLobbyInvites()
   }
 
+  getAllLobbyInvites(){
+    this.lobbyService.getAllLobbyInvites().subscribe(r=> this.lobbiesInvites = r);
+  }
+  acceptInvite(lobbyId: number){
+    console.log(lobbyId)
+    this.lobbyService.acceptInvite(lobbyId)
+  }
 }

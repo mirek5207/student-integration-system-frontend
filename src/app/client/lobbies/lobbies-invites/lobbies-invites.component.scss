@@ -1,0 +1,15 @@
+@import "src/app/client/lobbies/lobbies-list/owner-lobbies-list/owner-lobbies-list.component";
+.container{
+  margin: 0px;
+  min-height: 85vh;
+  background-color: white
+}
+.lobby{
+  background-color: #cccccc;
+}
+.lobby-items{
+  text-align: center
+}
+.delete-button, .accept-button, .view-button{
+  background-color: transparent;
+}

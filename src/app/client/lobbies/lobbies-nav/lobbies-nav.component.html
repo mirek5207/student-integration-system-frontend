@@ -1,5 +1,5 @@
 <div class="navbar-container">
-  <a routerLink="create" class="routerLink">Utwórz pokój</a>
-  <a routerLink="myLobbies" class="routerLink">Moje pokoje</a>
-  <a routerLink="invitations" class="routerLink">Zaproszenia</a>
+  <a (click)="navigateTo('/client/lobbies')" class="routerLink">Moje pokoje</a>
+  <a (click)="navigateTo('/client/lobbies/create')" class="routerLink">Utwórz pokój</a>
+  <a (click)="navigateTo('/client/lobbies/invitations')" class="routerLink">Zaproszenia</a>
 </div>

@@ -13,8 +13,8 @@ export class LobbiesNavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // navigateTo(path: string)
-  // {
-  //   this.router.navigate([path], {relativeTo: LobbiesListComponent})
-  // }
+  navigateTo(path: string)
+  {
+    this.router.navigate([path])
+  }
 }
