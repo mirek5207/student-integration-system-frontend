@@ -1,7 +1,15 @@
-.box{
+.container{
   display:flex;
-  margin-top: 30px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 90vh;
 }
+.container-item{
+  flex: 50%;
+}
+.container-item:first-child{
+  background-color: #e0e0e0;
+}
+.container-item:nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+
