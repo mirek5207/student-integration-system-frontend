@@ -64,6 +64,8 @@ import { OwnerLobbyDetailsNavComponent } from './client/lobbies/owner-lobby-deta
 import { OwnerLobbyDetailsDataComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-data/owner-lobby-details-data.component';
 import { OwnerLobbyDetailsGuestListComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-guest-list/owner-lobby-details-guest-list.component';
 import { OwnerLobbyDetailsPlaceReservationComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component';
+import { CreateLobbyMapComponent } from './client/lobbies/create-lobby/create-lobby-map/create-lobby-map.component'
+import {AgmCoreModule} from "@agm/core";
 
 
 @NgModule({
@@ -113,6 +115,7 @@ import { OwnerLobbyDetailsPlaceReservationComponent } from './client/lobbies/own
     OwnerLobbyDetailsDataComponent,
     OwnerLobbyDetailsGuestListComponent,
     OwnerLobbyDetailsPlaceReservationComponent,
+    CreateLobbyMapComponent
   ],
   imports: [
     BrowserModule,
@@ -134,6 +137,10 @@ import { OwnerLobbyDetailsPlaceReservationComponent } from './client/lobbies/own
     MatPaginatorModule,
     MatSortModule,
     MatSelectModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'Tu bedzie Api KEY',
+      libraries: ['places']
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

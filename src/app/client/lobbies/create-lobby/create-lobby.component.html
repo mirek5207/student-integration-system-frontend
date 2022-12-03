@@ -1,36 +1,40 @@
 
 <div class="container">
-  <div class="container-item">
-    <h1>Utworz lobby</h1>
-    <input
-      placeholder="Nazwa"
-      [(ngModel)]="registerNewLobby.name"
-      type="text"
-      name="latitude"
-    />
-    <input
-      placeholder="Available seats"
-      [(ngModel)]="registerNewLobby.maxSeats"
-      type="text"
-      name="maxSeats"
-    />
-    <select [(ngModel)]="registerNewLobby.type" name="type">
-      <option value="Public">Publiczne</option>
-      <option value="Private">Prywatne</option>
-    </select>
-    <select [(ngModel)]="registerNewLobby.placeId" name="place">
-      <option *ngFor="let local of locals" [ngValue]="local.id" >{{local.name}}</option>
-    </select>
-    <button (click)="registerNewLobby.maxSeats" mat-button color="primary" class="register-button">Create</button>
-  </div>
+  <div class="center">
+      <h1>Utworz lobby</h1>
+      <div class="inputbox">
+      <input
+        [(ngModel)]="registerNewLobby.name"
+        type="text"
+        name="latitude"
+      />
+        <span>Nazwa</span>
+      </div>
+      <div class="inputbox">
+      <input
 
-  <div class = "container-item">
-    <div class = "container-item-map">
-      Mapa
-    </div>
-    <div class="container-item-places">
-      Lista miejsc pod mapą
+        [(ngModel)]="registerNewLobby.maxSeats"
+        type="text"
+        name="maxSeats"
+      />
+        <span>Ilość miejsc</span>
+      </div>
+      <div class="inputbox">
+      <select [(ngModel)]="registerNewLobby.type" name="type">
+        <option value="Public">Publiczne</option>
+        <option value="Private">Prywatne</option>
+      </select>
+
+      </div>
+      <!--<select [(ngModel)]="registerNewLobby.placeId" name="place">
+        <option *ngFor="let local of locals" [ngValue]="local.id" >{{local.name}}</option>
+      </select>-->
+    <div class="inputbox">
+      <button (click)="registerNewLobby.maxSeats" mat-button color="primary" class="register-button">Create</button>
     </div>
   </div>
+    <div class="container-item">
+      <app-create-lobby-map></app-create-lobby-map>
+    </div>
 </div>
 
