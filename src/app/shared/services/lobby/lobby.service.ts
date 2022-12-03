@@ -37,7 +37,7 @@ export class LobbyService {
     const params = new HttpParams()
       .set('userId', this.authService.getId())
 
-    return this.http.get(getUrl(`Lobby/allGuestLobbies`), {
+    return this.http.get<any[]>(getUrl(`Lobby/allGuestLobbies`), {
       headers: httpOptions.headers,
       params: params
     })
@@ -60,8 +60,7 @@ export class LobbyService {
     return this.http.post(getUrl(`Lobby/createLobby`), lobby, {
       headers: httpOptions.headers,
       params: params
-    })
-      .subscribe(response => console.log(response))
+    }).subscribe(response => console.log(response))
   }
 
   joinLobby(id: number, lobbyId: number){
