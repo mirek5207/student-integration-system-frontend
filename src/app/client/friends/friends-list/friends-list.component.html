@@ -1,15 +1,17 @@
-<h1>Dodaj użytkowników do znajomych</h1>
+<div class="leaderboard">
+  <header>
+    <h1 class="leaderboard__title">
+      <span class="leaderboard__title--top">Dodaj</span>
+      <span class="leaderboard__title--bottom">Znajomych</span></h1>
+  </header>
 
-<div>
-  <div>
-    <h1>Lista wszystkich użytkowników</h1>
-    <ul>
-      <li *ngFor="let client of clients"
-          (click)="addUserToFriendship(client.user.id)"
-      >
-        {{client.id}} {{client.firstName}}: {{client.surName}}: {{client.id}}
-      </li>
-    </ul>
-  </div>
+  <main class="leaderboard__profiles">
+    <article class="leaderboard__profile" *ngFor="let client of clients"
+             (click)="addUserToFriendship(client.user.id)">
+      <span>Tu bedzie ikona zdjecia</span>
+      <!--<img src="Tu bedzie zdecie" alt="alternatyfka">-->
+      <span class="leaderboard__name">{{client.firstName}} {{client.surName}}</span>
+    </article>
+  </main>
 </div>
 
