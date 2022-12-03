@@ -19,6 +19,10 @@ export class OwnerLobbiesListComponent implements OnInit {
   getMyLobby(){
     this.lobbyService.getAllOwnerLobbies().subscribe(r => this.myLobbies = r)
   }
+  deleteLobby(lobbyId: number){
+    window.location.reload()
+    this.lobbyService.deleteLobby(lobbyId)
+  }
   navigateTo(path: string, placeId: number)
   {
     let typeOfPlace;

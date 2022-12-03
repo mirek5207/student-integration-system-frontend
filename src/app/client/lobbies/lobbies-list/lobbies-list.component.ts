@@ -10,25 +10,13 @@ import {ClientService} from "../../../shared/services/client/client.service";
 })
 export class LobbiesListComponent implements OnInit {
 
-  constructor(private lobbyService: LobbyService,
-              private tokenService: TokenService,
-              private clientService: ClientService) { }
+  constructor(private lobbyService: LobbyService) { }
 
   lobbies!: any[]
   locals!: any[]
   myLobbies!: any[]
 
   ngOnInit(): void {
-    // this.getAllPublicLobbies()
-    // this.getAllLocals()
+
   }
-
-  // getAllPublicLobbies(){
-  //   this.lobbyService.getAllPublicLobbies().subscribe(r => this.lobbies = r)
-  // }
-  //
-  // getAllLocals(){
-  //   this.clientService.getAllPlaces().subscribe(r => this.locals = r)
-  // }
-
 }

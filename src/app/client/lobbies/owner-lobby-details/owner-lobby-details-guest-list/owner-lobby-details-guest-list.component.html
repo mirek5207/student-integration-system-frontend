@@ -4,9 +4,12 @@
       <h1>Filtracja</h1>
     </div>
     <hr><br>
-    <div *ngFor="let guest of guests" class = "lobby">
+    <div *ngFor="let guest of guests;let i=index;" class = "lobby">
       <div class="lobby-items">
         <div class="lobby-item"><img src="assets/person-icon.png" class="person-icon"></div>
+      </div>
+      <div class="lobby-items">
+        <div class="lobby-item" style="font-size: 20px">{{i+1}}</div>
       </div><hr>
       <div class="lobby-items">
         <div class="lobby-item">Imie</div>
@@ -21,9 +24,8 @@
         <div class="lobby-item">{{guest.client.user.email}}</div>
       </div><hr>
       <div class="lobby-items">
-        <div class="lobby-item">Status</div>
-        <div class="lobby-item" *ngIf="guest.status == 'Joined'">Dołączono</div>
-        <div class="lobby-item" *ngIf="guest.status == 'Sent'">Wysłano zaproszenie</div>
+        <div class="lobby-item" *ngIf="guest.status == 'Joined'"><img src="assets/accept-icon.jpg" class="accept-icon" title="Osoba zaakceptowała zaproszenie do lobby"></div>
+        <div class="lobby-item" *ngIf="guest.status == 'Sent'"><img src="assets/unknown-person-icon.png" class="unknown-person"title="Osoba nie zaakceptowała zaproszenie do lobby"></div>
       </div>
       <div class="lobby-items">
 <!--        <button routerLink="owner" class="view-button"><img src="assets/view.png" class="view-icon"></button>-->

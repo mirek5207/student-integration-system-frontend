@@ -6,3 +6,25 @@
   margin-top: 10px;
   width: 100px;
 }
+.lobby{
+  margin-bottom:40px;
+}
+.lobby-items{
+  text-align: center;
+}
+.lobby-items .lobby-item:first-child{
+  font-size: 15px;
+  font-weight: 500;
+}
+.lobby-items .lobby-item:nth-child(2){
+  margin-top: 5px;
+}
+.accept-icon, .unknown-person{
+  margin-top: 2px;
+  width:25px;
+}
+
+.lobby-items-filter{
+  display: flex;
+  flex-direction: row;
+}

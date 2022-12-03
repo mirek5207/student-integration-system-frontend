@@ -99,7 +99,9 @@ export class LobbyService {
     const userId = this.authService.getId()
     return this.http.put(getUrl(`Lobby/acceptInvite/${userId}/${lobbyId}`), {}, httpOptions).subscribe(value => console.log(value))
   }
-
+  deleteLobby(lobbyId: number){
+    return this.http.delete(getUrl(`Lobby/deleteLobby/${lobbyId}`), httpOptions).subscribe(value => console.log(value))
+  }
 }
 
 

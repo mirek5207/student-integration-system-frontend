@@ -18,4 +18,9 @@ export class GuestLobbiesListComponent implements OnInit {
   getMyLobby(){
     this.lobbyService.getAllGuestLobbies().subscribe(r => this.myLobbies = r)
   }
+  leaveLobby(lobbyId: number){
+    window.location.reload()
+    this.lobbyService.leaveLobby(lobbyId)
+  }
+
 }
