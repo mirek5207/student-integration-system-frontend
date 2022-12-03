@@ -60,6 +60,10 @@ import { LobbiesNavComponent } from './client/lobbies/lobbies-nav/lobbies-nav.co
 import { LobbiesInvitesComponent } from './client/lobbies/lobbies-invites/lobbies-invites.component';
 import { MapComponent } from './client/home/map/map.component';
 import { OwnerLobbyDetailsComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details.component';
+import { OwnerLobbyDetailsNavComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-nav/owner-lobby-details-nav.component';
+import { OwnerLobbyDetailsDataComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-data/owner-lobby-details-data.component';
+import { OwnerLobbyDetailsGuestListComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-guest-list/owner-lobby-details-guest-list.component';
+import { OwnerLobbyDetailsPlaceReservationComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component';
 
 
 @NgModule({
@@ -105,6 +109,10 @@ import { OwnerLobbyDetailsComponent } from './client/lobbies/owner-lobby-details
     LobbiesInvitesComponent,
     MapComponent,
     OwnerLobbyDetailsComponent,
+    OwnerLobbyDetailsNavComponent,
+    OwnerLobbyDetailsDataComponent,
+    OwnerLobbyDetailsGuestListComponent,
+    OwnerLobbyDetailsPlaceReservationComponent,
   ],
   imports: [
     BrowserModule,

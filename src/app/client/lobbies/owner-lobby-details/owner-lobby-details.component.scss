@@ -1,0 +1,10 @@
+.container{
+  display: flex;
+  min-height: 80vh;
+}
+.container-item:first-child{
+  flex: 20%;
+}
+.container-item:nth-child(2){
+  flex: 80%;
+}

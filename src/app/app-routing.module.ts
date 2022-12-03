@@ -21,6 +21,13 @@ import {LobbiesListComponent} from "./client/lobbies/lobbies-list/lobbies-list.c
 import {LobbiesInvitesComponent} from "./client/lobbies/lobbies-invites/lobbies-invites.component";
 import {CreateLobbyComponent} from "./client/lobbies/create-lobby/create-lobby.component";
 import {OwnerLobbyDetailsComponent} from "./client/lobbies/owner-lobby-details/owner-lobby-details.component";
+import {OwnerLobbyDetailsDataComponent} from "./client/lobbies/owner-lobby-details/owner-lobby-details-data/owner-lobby-details-data.component";
+import {
+  OwnerLobbyDetailsGuestListComponent
+} from "./client/lobbies/owner-lobby-details/owner-lobby-details-guest-list/owner-lobby-details-guest-list.component";
+import {
+  OwnerLobbyDetailsPlaceReservationComponent
+} from "./client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -32,7 +39,14 @@ const routes: Routes = [
           {path: '', component: LobbiesListComponent},
           {path: 'invitations', component: LobbiesInvitesComponent},
           {path: 'create', component: CreateLobbyComponent},
-          {path: ':id', component: OwnerLobbyDetailsComponent},
+          {path: ':id',
+            component: OwnerLobbyDetailsComponent,
+            children: [
+              {path: '', component: OwnerLobbyDetailsDataComponent},
+              {path: 'guests', component: OwnerLobbyDetailsGuestListComponent},
+              {path: 'place/reservation', component: OwnerLobbyDetailsPlaceReservationComponent}
+            ]
+          },
         ]
       },
       {path: 'friends', component: FriendsListComponent},
