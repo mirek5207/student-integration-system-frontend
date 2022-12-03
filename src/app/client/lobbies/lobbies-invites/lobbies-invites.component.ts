@@ -19,7 +19,12 @@ export class LobbiesInvitesComponent implements OnInit {
     this.lobbyService.getAllLobbyInvites().subscribe(r=> this.lobbiesInvites = r);
   }
   acceptInvite(lobbyId: number){
-    console.log(lobbyId)
+    window.location.reload()
     this.lobbyService.acceptInvite(lobbyId)
+  }
+
+  declineInvite(lobbyId: number){
+    window.location.reload()
+    this.lobbyService.leaveLobby(lobbyId)
   }
 }

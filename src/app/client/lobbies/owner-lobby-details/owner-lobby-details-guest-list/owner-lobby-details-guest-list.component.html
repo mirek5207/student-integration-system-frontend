@@ -1,1 +1,34 @@
-<p>owner-lobby-details-guest-list works!</p>
+<div class="container">
+  <div>
+    <div>
+      <h1>Filtracja</h1>
+    </div>
+    <hr><br>
+    <div *ngFor="let guest of guests" class = "lobby">
+      <div class="lobby-items">
+        <div class="lobby-item"><img src="assets/person-icon.png" class="person-icon"></div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Imie</div>
+        <div class="lobby-item">{{guest.client.firstName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Nazwisko</div>
+        <div class="lobby-item">{{guest.client.surName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Email</div>
+        <div class="lobby-item">{{guest.client.user.email}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Status</div>
+        <div class="lobby-item" *ngIf="guest.status == 'Joined'">Dołączono</div>
+        <div class="lobby-item" *ngIf="guest.status == 'Sent'">Wysłano zaproszenie</div>
+      </div>
+      <div class="lobby-items">
+<!--        <button routerLink="owner" class="view-button"><img src="assets/view.png" class="view-icon"></button>-->
+<!--        <button class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>-->
+      </div>
+    </div>
+  </div>
+</div>

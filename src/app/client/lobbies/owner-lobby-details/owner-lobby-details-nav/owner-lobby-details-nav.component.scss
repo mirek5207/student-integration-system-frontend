@@ -1,7 +1,6 @@
 .container{
-  border-right: 1px solid black;
+  border-right: 0.1px solid black;
   min-height: 80vh;
-  background-color: #e56108;
 }
 .container-item{
   display: flex;
@@ -11,14 +10,17 @@
 }
 .container-item a {
   padding: 15px 10px;
+  font-weight: 500;
+  border-bottom: 0.1px solid gray;
   width: 100%;
 }
 .container-item:hover{
-  background-color: #ff6c01;
+  background-color: #80afd3;
 }
+
 .link{
   text-decoration: none;
-  color: #ffffff;
+  color: black;
 }
 .link span {
   padding-left: 10px;

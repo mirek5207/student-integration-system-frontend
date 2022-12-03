@@ -11,13 +11,15 @@ export class LobbyService {
   constructor(private http: HttpClient, private authService: TokenService) { }
 
   getLobby(id: number){
-    return this.http.get(getUrl(`Lobby/getLobby${id}`), httpOptions)
+    return this.http.get<any[]>(getUrl(`Lobby/getLobby/${id}`), httpOptions)
   }
 
   getLobbies(){
     return this.http.get<any[]>(getUrl(`Lobby/allLobbies`), httpOptions)
   }
-
+  getLobbyGuests(id: number) {
+    return this.http.get<any[]>(getUrl(`Lobby/getLobbyGuests/${id}`), httpOptions)
+  }
   getAllOwnerLobbies(){
     const params = new HttpParams().set('userId', this.authService.getId())
 
@@ -83,26 +85,20 @@ export class LobbyService {
       .subscribe(response => response)
   }
 
-  leaveLobby(userId: number, lobbyId: number){
+  leaveLobby(lobbyId: number){
     const params = new HttpParams()
-      .set('userId', userId)
+      .set('userId', this.authService.getId())
       .set('lobbyId', lobbyId)
 
     return this.http.delete(getUrl(`Lobby/leaveLobby`),{
       headers: httpOptions.headers,
       params: params
-    })}
+    }).subscribe(value => console.log(value))
+  }
 
   acceptInvite(lobbyId: number){
-    const params = new HttpParams()
-      .set('userId', this.authService.getId())
-      .set('lobbyId', lobbyId)
-    console.log(params.toString())
-
-    return this.http.put(getUrl(`Lobby/acceptInvite`), {}, {
-      headers: httpOptions.headers,
-      params: params
-    });
+    const userId = this.authService.getId()
+    return this.http.put(getUrl(`Lobby/acceptInvite/${userId}/${lobbyId}`), {}, httpOptions).subscribe(value => console.log(value))
   }
 
 }

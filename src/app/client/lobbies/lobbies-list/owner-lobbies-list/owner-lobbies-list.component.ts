@@ -19,8 +19,11 @@ export class OwnerLobbiesListComponent implements OnInit {
   getMyLobby(){
     this.lobbyService.getAllOwnerLobbies().subscribe(r => this.myLobbies = r)
   }
-  navigateTo(path: string)
+  navigateTo(path: string, placeId: number)
   {
-    this._router.navigate([path])
+    let typeOfPlace;
+    if(placeId == null) typeOfPlace = 'customPlace'
+    else typeOfPlace = 'place'
+    this._router.navigate([path],{queryParams: {type:typeOfPlace}});
   }
 }

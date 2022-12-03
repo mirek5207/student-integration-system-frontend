@@ -9,6 +9,7 @@ import {Subscription} from "rxjs";
 })
 export class OwnerLobbyDetailsNavComponent implements OnInit {
   id!: number;
+  type!: string;
   private routeSub!: Subscription;
   constructor(private router: Router,private route: ActivatedRoute) { }
 
@@ -16,10 +17,13 @@ export class OwnerLobbyDetailsNavComponent implements OnInit {
     this.routeSub = this.route.params.subscribe(params => {
       this.id = params['id']
     });
-    console.log(this.id)
+    this.routeSub = this.route.queryParams.subscribe(params => {
+      this.type = params['type']
+    });
   }
   navigateTo(path: string)
   {
-    this.router.navigate([path])
+    this.router.navigate([path], {queryParams: {id: this.id, type: this.type}})
   }
+
 }
