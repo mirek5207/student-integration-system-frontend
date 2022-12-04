@@ -28,6 +28,6 @@ export class OwnerLobbiesListComponent implements OnInit {
     let typeOfPlace;
     if(placeId == null) typeOfPlace = 'customPlace'
     else typeOfPlace = 'place'
-    this._router.navigate([path],{queryParams: {type:typeOfPlace}});
+    this._router.navigate([path],{queryParams: {placeId: placeId, type:typeOfPlace}});
   }
 }

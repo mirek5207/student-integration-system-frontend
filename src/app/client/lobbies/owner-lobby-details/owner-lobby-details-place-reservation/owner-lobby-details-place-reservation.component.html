@@ -1,27 +1,42 @@
-
 <div class="container">
-  <div class="center">
-    <div class="inputbox">
-      <input
-        type="text"
-        name="latitude"
-      />
-      <span>Nazwa</span>
-    </div>
-    <div class="inputbox">
-      <input
-        type="text"
-        name="maxSeats"
-      />
-      <span>Ilość miejsc</span>
-    </div>
-    <div class="inputbox">
-        <option value="Public">Publiczne</option>
-        <option value="Private">Prywatne</option>
-    </div>
-    <div class="inputbox">
-      <button  mat-button color="primary" class="register-button">Create</button>
-    </div>
+  <div class = "container-item">
+    <h1>Rezerwacja miejsca</h1>
+  </div>
+  <div class = "container-item">
+    <label>Liczba miejsc do rezerwacji</label>
+    <input
+      required
+      type="number"
+      [(ngModel)]="createReservation.numberOfGuests"
+    >
+  </div>
+  <div class = "container-item">
+    <label>Telefon</label>
+    <input
+      required
+      type="phone"
+      placeholder="111-222-333"
+      [(ngModel)]="createReservation.phoneNumber"
+    />
+  </div>
+  <div class = "container-item">
+    <label>Start date</label>
+    <input
+      type="datetime-local"
+      [(ngModel)]="createReservation.startDate"
+      required
+    >
+  </div>
+  <div class = "container-item">
+    <label>End date</label>
+    <input
+      type="datetime-local"
+      [(ngModel)]="createReservation.endDate"
+      required
+    >
+  </div>
+  <div class = "container-item">
+    <button (click)="registerReservation()" mat-flat-button color="warn">Zarezerwuj</button>
   </div>
 </div>
 

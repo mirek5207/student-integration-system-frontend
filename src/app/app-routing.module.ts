@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import {AdminComponent} from "./admin/admin.component";
 import {PlaceownerComponent} from "./placeowner/placeowner.component";
-import {RegisterComponent} from "./register/register.component";
 import {AdminGetModeratorsComponent} from "./admin/admin-get-moderators/admin-get-moderators.component";
 import {AdminCreateModeratorComponent} from "./admin/admin-create-moderator/admin-create-moderator.component";
 import {AdminGetModeratorComponent} from "./admin/admin-get-moderator/admin-get-moderator.component";

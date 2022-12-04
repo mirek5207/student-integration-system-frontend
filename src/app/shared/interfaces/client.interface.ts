@@ -33,7 +33,21 @@ export interface UpdateClient{
   hashedPassword: string,
   isAccountActive: boolean
 }
-
+export interface CreateReservation {
+  startDate: Date,
+  endDate: Date,
+  numberOfGuests: number,
+  phoneNumber: string,
+  placeId: number
+  lobbyId: number
+}
+export interface UpdateReservation {
+  startDate: Date,
+  endDate: Date,
+  numberOfGuests: number,
+  phoneNumber: string,
+  lobbyId: number
+}
 export interface GetLobby{
   id: number,
   maxSeats: number,
@@ -47,3 +61,4 @@ export interface GetLobby{
   customPlace?: object,
   lobbyGuests?: object
 }
+

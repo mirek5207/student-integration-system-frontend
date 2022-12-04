@@ -2,7 +2,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+body .mat-typography{ height: 100%; }
+app-root {
+  display: block;
+  height: 100%;
+}
 .refresh-icon{
   color: green;
   padding: 0px 5px;
