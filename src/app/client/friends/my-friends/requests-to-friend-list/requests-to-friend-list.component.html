@@ -1,0 +1,18 @@
+<div class="center-div">
+  <div class="leaderboard">
+    <header>
+      <h1 class="leaderboard__title">
+        <span class="leaderboard__title--top">Prośba o dołączenie</span>
+        <span class="leaderboard__title--bottom">Do listy znajomych</span></h1>
+    </header>
+
+    <main class="leaderboard__profiles">
+      <article class="leaderboard__profile" *ngFor="let invitation of invitations">
+        <mat-icon class="leaderboard__icon">account_circle</mat-icon>
+        <span class="leaderboard__name">{{invitation.friendSender.firstName}} {{invitation.friendSender.surName}}</span>
+        <button (click)="acceptInvitation(invitation.id)">Accept invitation</button>
+        <button (click)="rejectInvitation(invitation.id)">Reject invitation</button>
+      </article>
+    </main>
+  </div>
+</div>

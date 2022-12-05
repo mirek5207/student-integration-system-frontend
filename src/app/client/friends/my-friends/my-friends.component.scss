@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+
+  .friend-list{
+    width: 33%;
+  }
+
+  .my-invitations{
+    width: 33%;
+  }
+
+  .requests-list {
+    width: 33%;
+  }
+}
