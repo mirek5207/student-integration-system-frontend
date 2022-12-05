@@ -11,13 +11,9 @@ import {LobbyService} from "../../../shared/services/lobby/lobby.service";
 })
 export class OwnerLobbyDetailsComponent implements OnInit {
 
-  constructor(private lobbyService: LobbyService, private tokenService: TokenService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-  }
-  getLobbyById(id: number){
-    this.lobbyService.getLobby(id).subscribe(r => console.log(r))
-    //this.lobbyService.joinLobby(this.tokenService.getId(), id).subscribe(r => console.log("Dolaczylem"))
   }
 }

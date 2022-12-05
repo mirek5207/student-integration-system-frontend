@@ -34,7 +34,6 @@ export class OwnerLobbyDetailsPlaceReservationComponent implements OnInit {
   async registerReservation(){
     this.createReservation.lobbyId = parseInt(String(this.lobbyId))
     this.createReservation.placeId = parseInt(String(this.placeId))
-    console.log(this.createReservation)
     await this.reservationService.createReservation(this.createReservation)
   }
 

@@ -1,1 +1,49 @@
-<p>owner-lobby-details-data works!</p>
+<div class="container">
+  <div class = "container-item">
+    <h1>Podstawowe informacje</h1>
+  </div>
+  <div class = "container-item">
+    <label>Nazwa</label>
+        <input
+          required
+          type="text"
+          [value]=lobby?.name
+        >
+  </div>
+  <div class = "container-item">
+    <label>Typ pokoju</label>
+        <input
+          required
+          type="text"
+          [value]=lobby?.type
+        >
+  </div>
+  <div class = "container-item">
+    <label>Miejsce spotkania</label>
+        <input
+          required
+          type="text"
+          [value]=lobby?.place.name
+        >
+  </div>
+  <div class = "container-item">
+    <label>Masymalna liczba miejsc w lobby</label>
+    <input
+      required
+      type="number"
+      [value]=lobby?.maxSeats
+    >
+  </div>
+  <div class = "container-item">
+    <label>Czas rozpoczęcia spotkania</label>
+    <input
+      required
+      type="datetime-local"
+      placeholder="111-222-333"
+      [value] = "lobby?.startDate | date : 'yyyy-MM-ddThh:mm'"
+    />
+  </div>
+  <div class = "container-item">
+    <button  mat-flat-button color="primary">Edytuj</button><br>
+  </div>
+</div>

@@ -3,6 +3,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body .mat-typography{ height: 100%; }
+.mat-h1, .mat-headline, .mat-typography .mat-h1, .mat-typography .mat-headline, .mat-typography h1 {
+  margin: 0px;
+}
+
 app-root {
   display: block;
   height: 100%;

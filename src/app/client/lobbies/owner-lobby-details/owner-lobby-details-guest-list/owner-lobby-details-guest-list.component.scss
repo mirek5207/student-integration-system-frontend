@@ -1,6 +1,7 @@
 @import "src/app/client/lobbies/lobbies-list/owner-lobbies-list/owner-lobbies-list.component.scss";
-.header{
-  margin-bottom: 1000px;
+.container{
+  margin: 0;
+  min-height: 100%;
 }
 .person-icon{
   margin-top: 10px;
@@ -12,9 +13,16 @@
 .lobby-items{
   text-align: center;
 }
-.lobby-items .lobby-item:first-child{
-  font-size: 15px;
-  font-weight: 500;
+.container-item:first-child{
+  width: 100%;
+  height: 100%;
+  background-color: #1c1414;
+  text-align: center;
+  padding: 13px 0px;
+  color: white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 .lobby-items .lobby-item:nth-child(2){
   margin-top: 5px;

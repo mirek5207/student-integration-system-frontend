@@ -1,20 +1,19 @@
 <div class="container">
-  <span class="header">Pokoje, założone prze ciebie</span>
-  <hr>
-  <div>
-    <div *ngFor="let myLobby of myLobbies" class = "lobby">
-      <div class="lobby-items">
-        <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPublic);"src="assets/public-group.png" class="group-icon"></div>
-        <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPrivate);"src="assets/public-group.png" class="group-icon"></div>
-      </div>
-      <div class="lobby-items">
-        <div class="lobby-item">{{myLobby.name}}</div>
-        <div class="lobby-item">Maksymalna ilość miejsc: {{myLobby.maxSeats}}</div>
-      </div>
-      <div class="lobby-items">
-        <button (click)="navigateTo('/client/lobbies/' + myLobby.id, myLobby.placeId)"  routerLink="owner" class="view-button"><img src="assets/view.png" class="view-icon"></button>
-        <button (click)="deleteLobby(myLobby.id)" class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
-      </div>
+  <div class="lobby-header">
+    <span class="header">Pokoje, założone prze ciebie</span>
+  </div>
+  <div *ngFor="let myLobby of myLobbies" class = "lobby">
+    <div class="lobby-items">
+      <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPublic);"src="assets/public-group.png" class="group-icon"></div>
+      <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPrivate);"src="assets/public-group.png" class="group-icon"></div>
+    </div>
+    <div class="lobby-items">
+      <div class="lobby-item">{{myLobby.name}}</div>
+      <div class="lobby-item">Maksymalna ilość miejsc: {{myLobby.maxSeats}}</div>
+    </div>
+    <div class="lobby-items">
+      <button (click)="navigateTo('/client/lobbies/' + myLobby.id, myLobby.placeId)"  routerLink="owner" class="view-button"><img src="assets/view.png" class="view-icon"></button>
+      <button (click)="deleteLobby(myLobby.id)" class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
     </div>
   </div>
 </div>
