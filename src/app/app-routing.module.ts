@@ -27,6 +27,8 @@ import {
 import {
   OwnerLobbyDetailsPlaceReservationComponent
 } from "./client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component";
+import {FriendsComponent} from "./client/friends/friends.component";
+import {MyFriendsComponent} from "./client/friends/my-friends/my-friends.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -48,7 +50,12 @@ const routes: Routes = [
           },
         ]
       },
-      {path: 'friends', component: FriendsListComponent},
+      {path: 'friends', component: FriendsComponent,
+      children: [
+        {path:'', component: FriendsListComponent},
+        {path:'myfriends', component: MyFriendsComponent},
+
+      ]},
     ]
   },
   { path: 'admin',
