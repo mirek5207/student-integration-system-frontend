@@ -66,6 +66,11 @@ import { OwnerLobbyDetailsGuestListComponent } from './client/lobbies/owner-lobb
 import { OwnerLobbyDetailsPlaceReservationComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component';
 import { CreateLobbyMapComponent } from './client/lobbies/create-lobby/create-lobby-map/create-lobby-map.component'
 import {AgmCoreModule} from "@agm/core";
+import { FriendsNavComponent } from './client/friends/friends-nav/friends-nav.component';
+import { MyFriendsComponent } from './client/friends/my-friends/my-friends.component';
+import { MyFriendsListComponent } from './client/friends/my-friends/my-friends-list/my-friends-list.component';
+import { RequestsToFriendListComponent } from './client/friends/my-friends/requests-to-friend-list/requests-to-friend-list.component';
+import { MyInvitationsComponent } from './client/friends/my-friends/my-invitations/my-invitations.component';
 
 
 @NgModule({
@@ -115,7 +120,12 @@ import {AgmCoreModule} from "@agm/core";
     OwnerLobbyDetailsDataComponent,
     OwnerLobbyDetailsGuestListComponent,
     OwnerLobbyDetailsPlaceReservationComponent,
-    CreateLobbyMapComponent
+    CreateLobbyMapComponent,
+    FriendsNavComponent,
+    MyFriendsComponent,
+    MyFriendsListComponent,
+    RequestsToFriendListComponent,
+    MyInvitationsComponent
   ],
   imports: [
     BrowserModule,
