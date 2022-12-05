@@ -1,17 +1,18 @@
-<div class="leaderboard">
-  <header>
-    <h1 class="leaderboard__title">
-      <span class="leaderboard__title--top">Dodaj</span>
-      <span class="leaderboard__title--bottom">Znajomych</span></h1>
-  </header>
+<div class="center-div">
+  <div class="leaderboard">
+    <header>
+      <h1 class="leaderboard__title">
+        <span class="leaderboard__title--top">Dodaj</span>
+        <span class="leaderboard__title--bottom">Znajomych</span></h1>
+    </header>
 
-  <main class="leaderboard__profiles">
-    <article class="leaderboard__profile" *ngFor="let client of clients"
-             (click)="addUserToFriendship(client.user.id)">
-      <span>Tu bedzie ikona zdjecia</span>
-      <!--<img src="Tu bedzie zdecie" alt="alternatyfka">-->
-      <span class="leaderboard__name">{{client.firstName}} {{client.surName}}</span>
-    </article>
-  </main>
+    <main class="leaderboard__profiles">
+      <article class="leaderboard__profile" *ngFor="let client of clients"
+               (click)="addUserToFriendship(client.user.id)">
+        <mat-icon class="leaderboard__icon">account_circle</mat-icon>
+        <span class="leaderboard__name">{{client.firstName}} {{client.surName}}</span>
+      </article>
+    </main>
+  </div>
 </div>
 
