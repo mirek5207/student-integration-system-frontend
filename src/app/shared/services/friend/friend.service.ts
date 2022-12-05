@@ -21,7 +21,7 @@ export class FriendService {
   getAllFriendships(userId: number){
     const params = new HttpParams()
       .set('userId', userId)
-    return this.http.get(getUrl(`Friend/getFriendship`), {
+    return this.http.get<any[]>(getUrl(`Friend/getAllFriendships`), {
       headers: httpOptions.headers,
       params: params
     })
@@ -30,16 +30,16 @@ export class FriendService {
   getAllInvites(userId: number){
     const params = new HttpParams()
       .set('userId', userId)
-    return this.http.get(getUrl(`Friend/getAllInvites`), {
+    return this.http.get<any[]>(getUrl(`Friend/getAllInvites`), {
       headers: httpOptions.headers,
       params: params
     })
   }
 
-  getAllInvitesClient(userId: number){
+  getAllInvitedClient(userId: number){
     const params = new HttpParams()
       .set('userId', userId)
-    return this.http.get(getUrl(`Friend/getAllInvitedClients`), {
+    return this.http.get<any[]>(getUrl(`Friend/getAllInvitedClients`), {
       headers: httpOptions.headers,
       params: params
     })
