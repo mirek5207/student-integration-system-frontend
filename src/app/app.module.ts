@@ -121,7 +121,13 @@ import { MyInvitationsComponent } from './client/friends/my-friends/my-invitatio
     OwnerLobbyDetailsDataComponent,
     OwnerLobbyDetailsGuestListComponent,
     OwnerLobbyDetailsPlaceReservationComponent,
-    CreateLobbyMapComponent
+    CreateLobbyMapComponent,
+    InviteFriendToLobbyDialogComponent,
+    FriendsNavComponent,
+    MyFriendsComponent,
+    MyFriendsListComponent,
+    RequestsToFriendListComponent,
+    MyInvitationsComponent
   ],
   imports: [
     BrowserModule,
