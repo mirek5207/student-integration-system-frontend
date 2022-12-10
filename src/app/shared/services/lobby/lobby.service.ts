@@ -84,9 +84,9 @@ export class LobbyService {
       .subscribe(response => response)
   }
 
-  leaveLobby(lobbyId: number){
+  leaveLobby(userId: number, lobbyId: number){
     const params = new HttpParams()
-      .set('userId', this.authService.getId())
+      .set('userId', userId)
       .set('lobbyId', lobbyId)
 
     return this.http.delete(getUrl(`Lobby/leaveLobby`),{

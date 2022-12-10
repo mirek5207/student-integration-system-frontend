@@ -27,12 +27,11 @@
       <div class="lobby-items">
         <button class="icon" *ngIf="guest.status == 'Joined'"><img src="assets/accept-icon.jpg" class="accept-icon" title="Osoba zaakceptowała zaproszenie do lobby"></button>
         <button class="icon" *ngIf="guest.status == 'Sent'"><img src="assets/unknown-person-icon.png" class="unknown-person"title="Osoba nie zaakceptowała zaproszenie do lobby"></button>
-        <button class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
-      </div>
+      </div><hr>
       <div class="lobby-items">
-<!--        <button routerLink="owner" class="view-button"><img src="assets/view.png" class="view-icon"></button>-->
-
+        <button (click)="throwUserFromLobby(guest.client.user.id)" class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
       </div>
+      <div class="lobby-items"></div>
     </div>
   </div>
 </div>

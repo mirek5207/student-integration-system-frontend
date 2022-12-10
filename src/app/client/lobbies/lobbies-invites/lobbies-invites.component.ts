@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LobbyService} from "../../../shared/services/lobby/lobby.service";
+import {AuthService} from "../../../shared/services/auth/auth.service";
+import {TokenService} from "../../../shared/services/token/token.service";
 
 @Component({
   selector: 'app-lobbies-invites',
@@ -9,7 +11,7 @@ import {LobbyService} from "../../../shared/services/lobby/lobby.service";
 export class LobbiesInvitesComponent implements OnInit {
 
   lobbiesInvites!: any[]
-  constructor(private lobbyService : LobbyService) { }
+  constructor(private lobbyService : LobbyService, private authService: TokenService) { }
 
   ngOnInit(): void {
     this.getAllLobbyInvites()
@@ -25,6 +27,6 @@ export class LobbiesInvitesComponent implements OnInit {
 
   declineInvite(lobbyId: number){
     window.location.reload()
-    this.lobbyService.leaveLobby(lobbyId)
+    this.lobbyService.leaveLobby(this.authService.getId(),lobbyId)
   }
 }
