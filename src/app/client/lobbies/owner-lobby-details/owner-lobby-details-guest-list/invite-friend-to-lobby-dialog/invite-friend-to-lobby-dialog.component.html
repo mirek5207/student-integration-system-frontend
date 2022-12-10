@@ -1,0 +1,27 @@
+<div class="container">
+  <div>
+    <div class = "container-item">
+      <h1>Lista znajomych</h1>
+    </div><br>
+    <div *ngFor="let friend of friends;let i=index;" class = "lobby">
+      <div class="lobby-items">
+        <div class="lobby-item" style="font-size: 20px">{{i+1}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Imie</div>
+        <div class="lobby-item">{{friend.friendReceiver.firstName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Nazwisko</div>
+        <div class="lobby-item">{{friend.friendReceiver.surName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Login</div>
+        <div class="lobby-item">{{friend.friendReceiver.user.login}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div (click)="inviteGuestToLobby(friend.user.id)" class="lobby-item"><button mat-flat-button color = "primary">Zaproś</button></div>
+      </div>
+    </div>
+  </div>
+</div>

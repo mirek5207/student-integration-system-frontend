@@ -77,7 +77,7 @@ export class LobbyService {
     const params = new HttpParams()
       .set('userId', userId)
       .set('lobbyId', lobbyId)
-    return this.http.post(getUrl(`Lobby/cinviteGuest`), {}, {
+    return this.http.post(getUrl(`Lobby/inviteGuest`), {}, {
       headers: httpOptions.headers,
       params: params
     })

@@ -6,7 +6,7 @@
     <div *ngFor="let myLobby of myLobbies" class = "lobby">
       <div class="lobby-items">
         <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPublic);"src="assets/public-group.png" class="group-icon"></div>
-        <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPrivate);"src="" class="group-icon"></div>
+        <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPrivate);"src="assets/public-group.png" class="group-icon"></div>
       </div>
       <div class="lobby-items">
         <div class="lobby-item">{{myLobby.name}}</div>
