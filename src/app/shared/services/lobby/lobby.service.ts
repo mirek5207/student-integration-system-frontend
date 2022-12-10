@@ -57,7 +57,7 @@ export class LobbyService {
     const params = new HttpParams()
       .set('userId', this.authService.getId())
 
-    return this.http.post(getUrl(`Lobby/createLobby`), lobby, {
+    return this.http.post(getUrl(`Lobby/createLobbyAtPlace`), lobby, {
       headers: httpOptions.headers,
       params: params
     }).subscribe(response => console.log(response))
