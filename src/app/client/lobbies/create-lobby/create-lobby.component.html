@@ -25,11 +25,13 @@
       </select>
 
       </div>
-      <!--<select [(ngModel)]="registerNewLobby.placeId" name="place">
-        <option *ngFor="let local of locals" [ngValue]="local.id" >{{local.name}}</option>
-      </select>-->
     <div class="inputbox">
-      <button (click)="registerNewLobby.maxSeats" mat-button color="primary" class="register-button">Create</button>
+      <select [(ngModel)]="registerNewLobby.placeId" name="place">
+        <option *ngFor="let local of locals" [ngValue]="local.id" >{{local.name}}</option>
+      </select>
+    </div>
+    <div class="inputbox">
+      <button (click)="createLobby(registerNewLobby)" mat-button color="primary" class="register-button">Create</button>
     </div>
   </div>
     <div class="container-item">
