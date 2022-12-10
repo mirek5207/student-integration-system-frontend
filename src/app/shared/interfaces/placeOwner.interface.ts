@@ -16,6 +16,13 @@ export interface Place {
   userId: number
 }
 
+export interface CreatePlace{
+  name: string,
+  latitude: number,
+  longitude: number,
+  userId: number
+}
+
 export interface GetOwner {
   id: number,
   firstName: string,
