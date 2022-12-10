@@ -1,0 +1,9 @@
+@import "src/app/client/lobbies/owner-lobby-details/owner-lobby-details-guest-list/owner-lobby-details-guest-list.component";
+.container-item:first-child{
+  padding: 5px;
+  text-align: center;
+  display: block;
+}
+.lobby-items:last-child{
+  margin: 0 auto;
+}

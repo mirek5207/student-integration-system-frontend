@@ -49,7 +49,7 @@ export class FriendService {
     const params = new HttpParams()
       .set('userId', userId)
       .set('lobbyId', lobbyId)
-    return this.http.get(getUrl(`Friend/getAllFriendsToLobby`), {
+    return this.http.get<any[]>(getUrl(`Friend/getAllFriendsToLobby`), {
       headers: httpOptions.headers,
       params: params
     })

@@ -2,6 +2,8 @@
   <div>
     <div class = "container-item">
       <h1>Lista gości</h1>
+      <span class = "spacer"></span>
+      <button (click)="openAddFriendToLobbyDialog()" mat-flat-button color = "primary">+</button>
     </div><br>
     <div *ngFor="let guest of guests;let i=index;" class = "lobby">
       <div class="lobby-items">
@@ -23,12 +25,13 @@
         <div class="lobby-item">{{guest.client.user.email}}</div>
       </div><hr>
       <div class="lobby-items">
-        <div class="lobby-item" *ngIf="guest.status == 'Joined'"><img src="assets/accept-icon.jpg" class="accept-icon" title="Osoba zaakceptowała zaproszenie do lobby"></div>
-        <div class="lobby-item" *ngIf="guest.status == 'Sent'"><img src="assets/unknown-person-icon.png" class="unknown-person"title="Osoba nie zaakceptowała zaproszenie do lobby"></div>
+        <button class="icon" *ngIf="guest.status == 'Joined'"><img src="assets/accept-icon.jpg" class="accept-icon" title="Osoba zaakceptowała zaproszenie do lobby"></button>
+        <button class="icon" *ngIf="guest.status == 'Sent'"><img src="assets/unknown-person-icon.png" class="unknown-person"title="Osoba nie zaakceptowała zaproszenie do lobby"></button>
+        <button class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
       </div>
       <div class="lobby-items">
 <!--        <button routerLink="owner" class="view-button"><img src="assets/view.png" class="view-icon"></button>-->
-<!--        <button class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>-->
+
       </div>
     </div>
   </div>
