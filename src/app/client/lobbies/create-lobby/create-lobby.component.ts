@@ -9,7 +9,7 @@ import {PlaceService} from "../../../shared/services/place/place.service";
   styleUrls: ['./create-lobby.component.scss']
 })
 export class CreateLobbyComponent implements OnInit {
-  lobbies!: any[]
+  placeType = "Local";
   locals!: any[]
   registerNewLobby: any = {
     maxSeats: 0,
@@ -19,6 +19,17 @@ export class CreateLobbyComponent implements OnInit {
     customPlaceId:  null,
     ownerId: this.tokenService.getId()
   }
+  registerNewLobbyWithCustomPlace: any = {
+    maxSeats: 0,
+    name: "",
+    type: "",
+    customPlaceId:  null,
+    customPlaceName: "",
+    latitude: 0,
+    longitude: 0,
+    description: ""
+  }
+
   constructor(private lobbyService: LobbyService,
               private tokenService: TokenService,
               private placeService: PlaceService) { }
@@ -30,8 +41,20 @@ export class CreateLobbyComponent implements OnInit {
   createLobby(lobby: any){
     this.lobbyService.createLobby(lobby);
   }
+  createLobbyAtCustomPlace(lobby:any){
+    lobby.maxSeats = this.registerNewLobby.maxSeats
+    lobby.name = this.registerNewLobby.name
+    lobby.type = this.registerNewLobby.type
+    this.lobbyService.createLobbyWithCustomPlace(lobby)
+  }
 
   getAllPlaces(){
      this.placeService.getPlaces().subscribe(r => this.locals = r);
   }
+
+  outputToParent(placeId: number) {
+    this.registerNewLobby.placeId = placeId
+    console.log(placeId);
+  }
+
 }

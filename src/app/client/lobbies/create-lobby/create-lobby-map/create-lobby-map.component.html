@@ -1,11 +1,25 @@
-<h1>Works</h1>
-Implementacja mapy, póki co nie wykorzystywana ze względu na brak APIKEY
-<!--<agm-map
-  [latitude]='lat'
-  [longitude]='lng'
-  >
-  <agm-marker
-    [latitude]="lat"
-    [longitude]="lng">
-  </agm-marker>
-</agm-map>-->
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+  <div class="map-container-items">
+    <div class="map-container-item">
+      <button (click)="setDisplayToLocal(true)">Lokale</button>
+    </div>
+    <div class="map-container-item">
+      <button (click)="setDisplayToLocal(false)">Twoje miejsca</button>
+    </div>
+  </div>
+  <div class="map-container-items" *ngIf="displayLocal === true">
+    <div class="place-list-item" *ngFor="let local of locals">
+      <div class="place-list-item-child">{{local.id}}  {{local.name}}</div>
+      <div class="place-list-item-child">{{local.distance}} km<button mat-button color="primary" (click)="changeLocation(local.id,local.latitude,local.longitude)">Sprawdź na mapie</button></div>
+    </div>
+  </div>
+  <div class="map-container-items" *ngIf="displayLocal === false">
+    <div class="place-list-item" *ngFor="let customPlace of customPlace">
+      <div class="place-list-item-child">{{customPlace.id}}  {{customPlace.name}} {{customPlace.description}}</div>
+      <div class="place-list-item-child">{{customPlace.distance}} km<button mat-button color="primary" (click)="changeLocationWithoutCustomMarker(customPlace.id,customPlace.latitude,customPlace.longitude)">Sprawdź na mapie</button></div>
+    </div>
+  </div>
+</div>

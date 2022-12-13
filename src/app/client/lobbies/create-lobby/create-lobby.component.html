@@ -1,41 +1,65 @@
 <div class="container">
-  <div class="center">
-      <h1>Utworz lobby</h1>
+  <div class="container-item">
+        <h1>Utworz pokój</h1>
+        <div class="inputbox">
+          <input
+            [(ngModel)]="registerNewLobby.name"
+            type="text"
+            name="latitude"
+          />
+          <span>Nazwa pokoju</span>
+        </div>
+        <div class="inputbox">
+          <input
+            [(ngModel)]="registerNewLobby.maxSeats"
+            type="text"
+            name="maxSeats"
+          />
+          <span>Ilość miejsc w pokoju</span>
+        </div>
+        <div class="inputbox">
+          <select [(ngModel)]="registerNewLobby.type" name="type">
+            <option value="Public">Publiczne</option>
+            <option value="Private">Prywatne</option>
+          </select>
+        <span>Typ pokoju</span>
+        </div>
+        <div class="inputbox">
+          <select name="placeType"[(ngModel)]="placeType">
+            <option value="Local">Lokal</option>
+            <option value="CustomPlace">Twoje miejsce</option>
+          </select>
+          <span>Miejsce spotkania</span>
+        </div>
+        <div *ngIf="placeType === 'Local'" class="inputbox">
+            <div *ngFor="let local of locals">
+              <input *ngIf="local.id == registerNewLobby.placeId" value="{{local.name}}" disabled/>
+            </div>
+            <span style="margin:-30px -10px">Miejsce</span>
+        </div>
+        <div *ngIf="placeType === 'CustomPlace'" class="inputbox">
+          <input
+            [(ngModel)]="registerNewLobbyWithCustomPlace.customPlaceName"
+            type="text"
+            name="customPlaceName"
+          />
+          <span>Nazwa miejsca</span>
+        </div>
+        <div *ngIf="placeType === 'CustomPlace'" class="inputbox">
+          <input
+            [(ngModel)]="registerNewLobbyWithCustomPlace.description"
+            type="text"
+            name="customPlaceName"
+          />
+          <span>Opis miejsca</span>
+        </div>
       <div class="inputbox">
-      <input
-        [(ngModel)]="registerNewLobby.name"
-        type="text"
-        name="latitude"
-      />
-        <span>Nazwa</span>
+        <button *ngIf="placeType === 'Local'" (click)="createLobby(registerNewLobby)" mat-button color="primary" class="register-button">Create</button>
+        <button *ngIf="placeType === 'CustomPlace'" (click)="createLobbyAtCustomPlace(registerNewLobbyWithCustomPlace)" mat-button color="primary" class="register-button">Create</button>
       </div>
-      <div class="inputbox">
-      <input
-
-        [(ngModel)]="registerNewLobby.maxSeats"
-        type="text"
-        name="maxSeats"
-      />
-        <span>Ilość miejsc</span>
-      </div>
-      <div class="inputbox">
-      <select [(ngModel)]="registerNewLobby.type" name="type">
-        <option value="Public">Publiczne</option>
-        <option value="Private">Prywatne</option>
-      </select>
-
-      </div>
-    <div class="inputbox">
-      <select [(ngModel)]="registerNewLobby.placeId" name="place">
-        <option *ngFor="let local of locals" [ngValue]="local.id" >{{local.name}}</option>
-      </select>
     </div>
-    <div class="inputbox">
-      <button (click)="createLobby(registerNewLobby)" mat-button color="primary" class="register-button">Create</button>
-    </div>
+  <div class="container-item">
+    <app-create-lobby-map (outputToParent)="outputToParent($event)"></app-create-lobby-map>
   </div>
-    <div class="container-item">
-      <app-create-lobby-map></app-create-lobby-map>
-    </div>
 </div>
 

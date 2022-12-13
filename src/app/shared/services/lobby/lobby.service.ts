@@ -62,6 +62,15 @@ export class LobbyService {
       params: params
     }).subscribe(response => console.log(response))
   }
+  createLobbyWithCustomPlace(lobby: any){
+    const params = new HttpParams()
+      .set('userId', this.authService.getId())
+
+    return this.http.post(getUrl(`Lobby/createLobbyAtCustomPlace`), lobby, {
+      headers: httpOptions.headers,
+      params: params
+    }).subscribe(response => console.log(response))
+  }
 
   joinLobby(id: number, lobbyId: number){
     const params = new HttpParams()
