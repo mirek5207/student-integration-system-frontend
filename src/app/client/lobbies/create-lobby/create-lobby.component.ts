@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TokenService} from "../../../shared/services/token/token.service";
 import {LobbyService} from "../../../shared/services/lobby/lobby.service";
 import {PlaceService} from "../../../shared/services/place/place.service";
+import {GetCustomPlace} from "../../../shared/interfaces/client.interface";
 
 @Component({
   selector: 'app-create-lobby',
@@ -57,4 +58,12 @@ export class CreateLobbyComponent implements OnInit {
     console.log(placeId);
   }
 
+  outputToParentCustomPlace(customPlace: { customPlace: GetCustomPlace }) {
+    if(customPlace.customPlace.id !== 0)this.registerNewLobbyWithCustomPlace.customPlaceId = customPlace.customPlace.id
+    this.registerNewLobbyWithCustomPlace.latitude = customPlace.customPlace.latitude
+    this.registerNewLobbyWithCustomPlace.longitude = customPlace.customPlace.longitude
+    this.registerNewLobbyWithCustomPlace.customPlaceName = customPlace.customPlace.name
+    this.registerNewLobbyWithCustomPlace.description = customPlace.customPlace.description
+    console.log(customPlace);
+  }
 }

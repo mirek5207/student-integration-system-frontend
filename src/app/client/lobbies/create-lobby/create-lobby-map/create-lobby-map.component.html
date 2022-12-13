@@ -19,7 +19,7 @@
   <div class="map-container-items" *ngIf="displayLocal === false">
     <div class="place-list-item" *ngFor="let customPlace of customPlace">
       <div class="place-list-item-child">{{customPlace.id}}  {{customPlace.name}} {{customPlace.description}}</div>
-      <div class="place-list-item-child">{{customPlace.distance}} km<button mat-button color="primary" (click)="changeLocationWithoutCustomMarker(customPlace.id,customPlace.latitude,customPlace.longitude)">Sprawdź na mapie</button></div>
+      <div class="place-list-item-child">{{customPlace.distance}} km<button mat-button color="primary" (click)="changeLocationWithoutCustomMarker(customPlace)">Sprawdź na mapie</button></div>
     </div>
   </div>
 </div>

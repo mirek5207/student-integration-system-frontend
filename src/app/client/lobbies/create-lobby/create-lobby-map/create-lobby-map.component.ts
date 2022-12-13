@@ -17,6 +17,7 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
   private map!: L.Map;
 
   @Output() outputToParent: EventEmitter<number> = new EventEmitter()
+  @Output() outputToParentCustomPlace: EventEmitter<{customPlace: GetCustomPlace}> = new EventEmitter()
   // Creating a custom icon
   private iconOptions: IconOptions = // Icon options
     {
@@ -105,10 +106,10 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
     L.marker([latitude,longitude],this.markerOptions).addTo(this.map)
     this.map.flyTo([latitude,longitude],19)
   }
-  changeLocationWithoutCustomMarker(localId:number,latitude: number,longitude: number){
-    this.outputToParent.emit(localId);
-    L.marker([latitude,longitude]).addTo(this.map)
-    this.map.flyTo([latitude,longitude],19)
+  changeLocationWithoutCustomMarker(customPlace: GetCustomPlace){
+    this.outputToParentCustomPlace.emit({customPlace});
+    L.marker([customPlace.latitude,customPlace.longitude]).addTo(this.map)
+    this.map.flyTo([customPlace.latitude,customPlace.longitude],19)
   }
 
   getDistanceFromLatLonInKm(lat1: number, lon1: number) {
