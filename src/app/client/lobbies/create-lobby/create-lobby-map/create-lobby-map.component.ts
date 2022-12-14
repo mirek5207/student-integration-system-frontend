@@ -12,8 +12,9 @@ import {GetCustomPlace, GetPlace} from "../../../../shared/interfaces/client.int
 })
 export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
   displayLocal = true
-  private currentLatitude!: number
-  private currentLongitude!: number
+  currentLatitude!: number
+  currentLongitude!: number
+  currentMarker!: any
   private map!: L.Map;
 
   @Output() outputToParent: EventEmitter<number> = new EventEmitter()
@@ -48,6 +49,12 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
     description: 0,
     distance: 0
   }]
+  postCustomPlace: any = {
+    name: "",
+    latitude: 0,
+    longitude: 0,
+    description: ""
+  }
   constructor(private placeService: PlaceService) {
   }
   ngOnInit(): void {
@@ -60,7 +67,12 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
 
   private initMap(): void {
     this.map = L.map('map', {doubleClickZoom: false}).locate({setView: true, maxZoom: 16});
-
+    this.map.on("click", (e) =>{
+      if(this.currentMarker)this.map.removeLayer(this.currentMarker)
+      this.currentMarker = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(this.map);
+      this.postCustomPlace.longitude = e.latlng.lng
+      this.postCustomPlace.latitude = e.latlng.lat
+    });
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 23,
       minZoom: 3,
@@ -89,6 +101,8 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
     navigator.geolocation.getCurrentPosition(position => {
       this.currentLatitude = position.coords.latitude;
       this.currentLongitude = position.coords.longitude;
+      this.postCustomPlace.latitude = position.coords.latitude
+      this.postCustomPlace.longitude = position.coords.longitude
     });
     this.placeService.getCustomPlaces().subscribe(r => {
       this.customPlace = r
@@ -112,6 +126,10 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
     this.map.flyTo([customPlace.latitude,customPlace.longitude],19)
   }
 
+  addLocalization(){
+    this.placeService.createCustomPlace(this.postCustomPlace)
+    alert("Lokalizacja została dodana")
+  }
   getDistanceFromLatLonInKm(lat1: number, lon1: number) {
     var R = 6371; // Radius of the earth in km
     var dLat = this.deg2rad(this.currentLatitude-lat1);  // deg2rad below

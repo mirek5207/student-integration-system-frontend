@@ -18,5 +18,9 @@ export class PlaceService {
     let userId = this.authService.getId()
     return this.http.get<GetCustomPlace[]>(getUrl(`Client/getCustomPlaces/${userId}`), httpOptions)
   }
+  createCustomPlace(customPlace: any){
+    let userId = this.authService.getId()
+    return this.http.post(getUrl(`Client/createCustomPlace/${userId}`), customPlace, httpOptions).subscribe(response => console.log(response))
+  }
 
 }

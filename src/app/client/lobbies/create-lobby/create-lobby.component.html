@@ -24,6 +24,14 @@
           </select>
         <span>Typ pokoju</span>
         </div>
+        <div class = "inputbox">
+          <span style="margin:-30px -12px">Data spotkania</span>
+          <input
+            type="datetime-local"
+            [(ngModel)]="registerNewLobby.startDate"
+            required
+          >
+        </div>
         <div class="inputbox">
           <select name="placeType"[(ngModel)]="placeType">
             <option value="Local">Lokal</option>
@@ -39,19 +47,21 @@
         </div>
         <div *ngIf="placeType === 'CustomPlace'" class="inputbox">
           <input
+            disabled
             [(ngModel)]="registerNewLobbyWithCustomPlace.customPlaceName"
             type="text"
             name="customPlaceName"
           />
-          <span>Nazwa miejsca</span>
+          <span style="margin:-30px -10px">Nazwa miejsca</span>
         </div>
         <div *ngIf="placeType === 'CustomPlace'" class="inputbox">
           <input
+            disabled
             [(ngModel)]="registerNewLobbyWithCustomPlace.description"
             type="text"
             name="customPlaceName"
           />
-          <span>Opis miejsca</span>
+          <span style="margin:-30px -12px">Opis miejsca</span>
         </div>
       <div class="inputbox">
         <button *ngIf="placeType === 'Local'" (click)="createLobby(registerNewLobby)" mat-button color="primary" class="register-button">Create</button>

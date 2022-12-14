@@ -15,6 +15,7 @@ export class CreateLobbyComponent implements OnInit {
   registerNewLobby: any = {
     maxSeats: 0,
     name: "",
+    startDate: new Date(),
     type: "Public",
     placeId: 3,
     customPlaceId:  null,
@@ -23,6 +24,7 @@ export class CreateLobbyComponent implements OnInit {
   registerNewLobbyWithCustomPlace: any = {
     maxSeats: 0,
     name: "",
+    startDate: new Date(),
     type: "",
     customPlaceId:  null,
     customPlaceName: "",
@@ -41,12 +43,14 @@ export class CreateLobbyComponent implements OnInit {
 
   createLobby(lobby: any){
     this.lobbyService.createLobby(lobby);
+    alert("Pokój został stworzony")
   }
   createLobbyAtCustomPlace(lobby:any){
     lobby.maxSeats = this.registerNewLobby.maxSeats
     lobby.name = this.registerNewLobby.name
     lobby.type = this.registerNewLobby.type
     this.lobbyService.createLobbyWithCustomPlace(lobby)
+    alert("Pokój został stworzony")
   }
 
   getAllPlaces(){
