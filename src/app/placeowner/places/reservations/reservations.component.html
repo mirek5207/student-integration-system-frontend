@@ -1,0 +1,21 @@
+<div class="container">
+  <div>
+    <h1>Rezerwacje lokalu </h1>
+    <table>
+      <tr>
+        <th>Liczba gości</th>
+        <th>Czas rozpoczęcia</th>
+        <th>Czas zakończenia</th>
+        <th>Imię i nazwisko</th>
+      </tr>
+      <tr *ngFor="let reservation of reservations">
+        <th>{{reservation.numberOfGuests}}</th>
+        <th>{{reservation.startDate}}</th>
+        <th>{{reservation.endDate}}</th>
+        <th>{{reservation.lobbyOwnerFullName}}</th>
+        <th><button (click)="accept(reservation.id)">Akceputuj</button></th>
+        <th><button (click)="decline(reservation.id)">Odrzuc</button></th>
+      </tr>
+    </table>
+  </div>
+</div>

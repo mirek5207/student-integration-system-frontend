@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <h1>Rezerwacje lokalu na dzień</h1>
+    <input
+      name="date"
+      type="datetime-local"
+      [value]="date | date : 'yyyy-MM-ddThh:mm'"
+    />
+    <ul>
+      <li *ngFor="let reservation of reservations"
+      >
+        {{reservation.id}}
+        {{reservation.numberOfGuests}}
+      </li>
+    </ul>
+    <button (click)="getForSpecificDate(this.pipe.transform(this.date, 'yyyy-MM-ddThh:mm:ss'), local.id)">Check</button>
+  </div>
+</div>
