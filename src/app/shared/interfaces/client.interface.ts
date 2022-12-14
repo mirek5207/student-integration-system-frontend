@@ -62,3 +62,22 @@ export interface GetLobby{
   lobbyGuests?: object
 }
 
+export interface GetPlace{
+  id: number,
+  name: string,
+  latitude: number,
+  longitude: number,
+  placeOwnerId: number,
+  distance: number
+}
+
+export interface GetCustomPlace{
+  id: number,
+  name: string,
+  latitude: number,
+  longitude: number,
+  description: number,
+  distance: number
+}
+
+

@@ -39,4 +39,8 @@ export class OwnerLobbyDetailsGuestListComponent implements OnInit {
     dialogConfig.data = lobbyId.toString();
     return dialogConfig;
   }
+  throwUserFromLobby(userId: number){
+    this.lobbyService.leaveLobby(userId,this.id)
+    window.location.reload()
+  }
 }

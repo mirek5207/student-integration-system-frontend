@@ -58,7 +58,6 @@ import { GuestLobbiesListComponent } from './client/lobbies/lobbies-list/guest-l
 import { CreateLobbyComponent } from './client/lobbies/create-lobby/create-lobby.component';
 import { LobbiesNavComponent } from './client/lobbies/lobbies-nav/lobbies-nav.component';
 import { LobbiesInvitesComponent } from './client/lobbies/lobbies-invites/lobbies-invites.component';
-import { MapComponent } from './client/home/map/map.component';
 import { OwnerLobbyDetailsComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details.component';
 import { OwnerLobbyDetailsNavComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-nav/owner-lobby-details-nav.component';
 import { OwnerLobbyDetailsDataComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-data/owner-lobby-details-data.component';
@@ -75,6 +74,9 @@ import { MyInvitationsComponent } from './client/friends/my-friends/my-invitatio
 import { ReservationsComponent } from './placeowner/places/reservations/reservations.component';
 import { ReservationsForDayComponent } from './placeowner/places/reservations-for-day/reservations-for-day.component';
 
+import { ClientHomeComponent } from './client/client-home/client-home.component';
+import { ClientHomeMapComponent } from './client/client-home/client-home-map/client-home-map.component';
+import { ClientHomePublicLobbiesListComponent } from './client/client-home/client-home-public-lobbies-list/client-home-public-lobbies-list.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +119,6 @@ import { ReservationsForDayComponent } from './placeowner/places/reservations-fo
     CreateLobbyComponent,
     LobbiesNavComponent,
     LobbiesInvitesComponent,
-    MapComponent,
     OwnerLobbyDetailsComponent,
     OwnerLobbyDetailsNavComponent,
     OwnerLobbyDetailsDataComponent,
@@ -131,7 +132,11 @@ import { ReservationsForDayComponent } from './placeowner/places/reservations-fo
     RequestsToFriendListComponent,
     MyInvitationsComponent,
     ReservationsComponent,
-    ReservationsForDayComponent
+    ReservationsForDayComponent,
+    MyInvitationsComponent,
+    ClientHomeComponent,
+    ClientHomeMapComponent,
+    ClientHomePublicLobbiesListComponent
   ],
   imports: [
     BrowserModule,
