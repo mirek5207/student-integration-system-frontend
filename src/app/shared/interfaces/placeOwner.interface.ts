@@ -18,8 +18,8 @@ export interface Place {
 
 export interface CreatePlace{
   name: string,
-  latitude: number,
-  longitude: number,
+  latitude: number| null,
+  longitude: number | null,
   userId: number
 }
 
@@ -50,4 +50,13 @@ export interface UpdateOwner{
   surName: string
   hashedPassword: string,
   isAccountActive: boolean
+}
+
+export interface Reservation{
+  id: number
+  startDate: Date,
+  endDate: Date,
+  numberOfGuests: number,
+  lobbyOwnerFullName: string
+
 }
