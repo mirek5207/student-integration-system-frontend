@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  max-height: 90vh;
+}
+.container-item{
+  flex: 60%;
+}
+.container-item:first-child{
+  flex: 40%;
+  background-color: #c5c5c5;
+}

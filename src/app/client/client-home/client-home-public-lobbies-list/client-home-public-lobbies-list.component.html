@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="lobby-header">
+    <span class="header">Publiczne pokoje</span>
+  </div>
+  <div *ngFor="let myLobby of Lobbies" class = "lobby">
+    <div class="lobby-items">
+      <div class="lobby-item"><b>{{myLobby.name}}</b></div>
+      <div class="lobby-item">Data spotkania: {{myLobby.startDate | date : 'short'}}</div>
+      <div *ngIf="myLobby.place !== null" class="lobby-item">Miejsce: {{myLobby.place.name}}</div>
+      <div *ngIf="myLobby.customPlace !== null" class="lobby-item">Miejsce: {{myLobby.customPlace.name}}</div>
+    </div><br>
+    <div class="lobby-items">
+      <button (click)="changeLocation(myLobby)" mat-raised-button color="primary">Pokaż na mapie</button>
+      <button mat-raised-button color="primary">Dołącz</button>
+    </div>
+  </div>
+</div>

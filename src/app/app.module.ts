@@ -58,7 +58,6 @@ import { GuestLobbiesListComponent } from './client/lobbies/lobbies-list/guest-l
 import { CreateLobbyComponent } from './client/lobbies/create-lobby/create-lobby.component';
 import { LobbiesNavComponent } from './client/lobbies/lobbies-nav/lobbies-nav.component';
 import { LobbiesInvitesComponent } from './client/lobbies/lobbies-invites/lobbies-invites.component';
-import { MapComponent } from './client/home/map/map.component';
 import { OwnerLobbyDetailsComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details.component';
 import { OwnerLobbyDetailsNavComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-nav/owner-lobby-details-nav.component';
 import { OwnerLobbyDetailsDataComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-data/owner-lobby-details-data.component';
@@ -72,7 +71,9 @@ import { MyFriendsComponent } from './client/friends/my-friends/my-friends.compo
 import { MyFriendsListComponent } from './client/friends/my-friends/my-friends-list/my-friends-list.component';
 import { RequestsToFriendListComponent } from './client/friends/my-friends/requests-to-friend-list/requests-to-friend-list.component';
 import { MyInvitationsComponent } from './client/friends/my-friends/my-invitations/my-invitations.component';
-
+import { ClientHomeComponent } from './client/client-home/client-home.component';
+import { ClientHomeMapComponent } from './client/client-home/client-home-map/client-home-map.component';
+import { ClientHomePublicLobbiesListComponent } from './client/client-home/client-home-public-lobbies-list/client-home-public-lobbies-list.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,6 @@ import { MyInvitationsComponent } from './client/friends/my-friends/my-invitatio
     CreateLobbyComponent,
     LobbiesNavComponent,
     LobbiesInvitesComponent,
-    MapComponent,
     OwnerLobbyDetailsComponent,
     OwnerLobbyDetailsNavComponent,
     OwnerLobbyDetailsDataComponent,
@@ -127,7 +127,10 @@ import { MyInvitationsComponent } from './client/friends/my-friends/my-invitatio
     MyFriendsComponent,
     MyFriendsListComponent,
     RequestsToFriendListComponent,
-    MyInvitationsComponent
+    MyInvitationsComponent,
+    ClientHomeComponent,
+    ClientHomeMapComponent,
+    ClientHomePublicLobbiesListComponent
   ],
   imports: [
     BrowserModule,

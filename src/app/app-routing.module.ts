@@ -29,11 +29,15 @@ import {
 } from "./client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component";
 import {FriendsComponent} from "./client/friends/friends.component";
 import {MyFriendsComponent} from "./client/friends/my-friends/my-friends.component";
+import {ClientHomeComponent} from "./client/client-home/client-home.component";
 
 const routes: Routes = [
   { path: 'client',
     component: ClientComponent,
     children: [
+      {path: '',
+        component: ClientHomeComponent,
+      },
       {path: 'lobbies',
         component: LobbiesComponent,
         children: [

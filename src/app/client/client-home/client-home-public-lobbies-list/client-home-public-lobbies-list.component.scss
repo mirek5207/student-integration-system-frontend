@@ -1,0 +1,19 @@
+@import "src/app/client/lobbies/lobbies-list/owner-lobbies-list/owner-lobbies-list.component";
+.container{
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+.lobby-header{
+  background-color: #21355b;
+}
+.lobby{
+  background-color: white;
+}
+.lobby-items{
+  background-color: white;
+  padding: 0px 10px;
+}
+
+.lobby-items button{
+  margin: 0px 5px
+}
