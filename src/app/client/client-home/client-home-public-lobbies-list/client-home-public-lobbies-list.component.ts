@@ -27,14 +27,16 @@ export class ClientHomePublicLobbiesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllPublicLobbies()
-
   }
-
   getAllPublicLobbies(){
     this.lobbyService.getAllPublicLobbies().subscribe(r=> this.Lobbies = r)
   }
   changeLocation(lobby: any){
     this.outputToParentLobby.emit(lobby)
+  }
+  joinPublicLobby(lobbyId: number){
+    this.lobbyService.joinPublicLobby(lobbyId)
+    alert("Zostałeś dodany do pokoju")
   }
 
 }

@@ -72,15 +72,16 @@ export class LobbyService {
     }).subscribe(response => console.log(response))
   }
 
-  joinLobby(id: number, lobbyId: number){
+
+  joinPublicLobby(lobbyId: number){
+    const userId = this.authService.getId()
     const params = new HttpParams()
       .set('lobbyId', lobbyId)
-    return this.http.put(getUrl(`Lobby/joinLobby${id}`), {}, {
+    return this.http.patch(getUrl(`Lobby/joinPublicLobby/${userId}`), {}, {
       headers: httpOptions.headers,
       params: params
-    });
+    }).subscribe(response => console.log(response));
   }
-
 
   addGuestToLobby(userId: number, lobbyId: number){
     const params = new HttpParams()
