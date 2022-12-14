@@ -71,6 +71,9 @@ import { MyFriendsComponent } from './client/friends/my-friends/my-friends.compo
 import { MyFriendsListComponent } from './client/friends/my-friends/my-friends-list/my-friends-list.component';
 import { RequestsToFriendListComponent } from './client/friends/my-friends/requests-to-friend-list/requests-to-friend-list.component';
 import { MyInvitationsComponent } from './client/friends/my-friends/my-invitations/my-invitations.component';
+import { ReservationsComponent } from './placeowner/places/reservations/reservations.component';
+import { ReservationsForDayComponent } from './placeowner/places/reservations-for-day/reservations-for-day.component';
+
 import { ClientHomeComponent } from './client/client-home/client-home.component';
 import { ClientHomeMapComponent } from './client/client-home/client-home-map/client-home-map.component';
 import { ClientHomePublicLobbiesListComponent } from './client/client-home/client-home-public-lobbies-list/client-home-public-lobbies-list.component';
@@ -127,6 +130,9 @@ import { ClientHomePublicLobbiesListComponent } from './client/client-home/clien
     MyFriendsComponent,
     MyFriendsListComponent,
     RequestsToFriendListComponent,
+    MyInvitationsComponent,
+    ReservationsComponent,
+    ReservationsForDayComponent,
     MyInvitationsComponent,
     ClientHomeComponent,
     ClientHomeMapComponent,

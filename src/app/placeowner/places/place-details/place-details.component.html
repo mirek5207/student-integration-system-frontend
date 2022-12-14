@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title>
+  <mat-card-title class="title">
     <span *ngIf="currentPlace.name; else elseBlock">
       {{ currentPlace.name | titlecase }}
     </span>
@@ -18,44 +18,24 @@
         />
       </mat-form-field>
       <mat-form-field class="full-width">
-        <textarea
+        <input
           matInput
           placeholder="latitude"
           [(ngModel)]="currentPlace.latitude"
           type="text"
           name="latitude"
           required
-        ></textarea>
+        />
       </mat-form-field>
       <mat-form-field class="full-width">
-        <textarea
+        <input
           matInput
           placeholder="longitude"
           [(ngModel)]="currentPlace.longitude"
           type="text"
           name="longitude"
           required
-        ></textarea>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <textarea
-          matInput
-          placeholder="numberOfReservedSeats"
-          [(ngModel)]="currentPlace.numberOfReservedSeats"
-          type="text"
-          name="numberOfReservedSeats"
-          required
-        ></textarea>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <textarea
-          matInput
-          placeholder="maxSeatsAvailableForReservation"
-          [(ngModel)]="currentPlace.maxSeatsAvailableForReservation"
-          type="text"
-          name="maxSeatsAvailableForReservation"
-          required
-        ></textarea>
+        />
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
