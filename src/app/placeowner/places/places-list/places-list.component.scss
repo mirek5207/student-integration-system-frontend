@@ -1,0 +1,44 @@
+
+.container h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.container button{
+  height: 10vh;
+  width: 50vw;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #b3ffe0;
+  cursor: pointer;
+}
+
+.container button:hover{
+  background-color: #88ffc9;
+}
+
+.container ul {
+  list-style-type: none;
+}
+
+.container li {
+  height: 8vh;
+  width: 45vw;
+  background-color: white;
+  margin-bottom: 5px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: left;
+  display: flex;
+}
+
+.container li:hover{
+  cursor: pointer;
+  background-color: #f0f1ff;
+}
+
+

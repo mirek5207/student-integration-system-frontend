@@ -1,7 +1,7 @@
-<div>
-  <button (click)="redirectCreatePlace()">Холодный космос Премьера клипа 2022</button>
+<div class="container">
+  <button (click)="openRegisterPlaceDialog()">Utwórz lokal</button>
   <div>
-    <h1>Lista lokali</h1>
+    <h1>Moje lokale</h1>
     <ul>
       <li *ngFor="let place of places"
           (click)="selectPlace(place)">
