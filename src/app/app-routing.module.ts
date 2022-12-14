@@ -30,6 +30,16 @@ import {
 import {FriendsComponent} from "./client/friends/friends.component";
 import {MyFriendsComponent} from "./client/friends/my-friends/my-friends.component";
 import {ClientHomeComponent} from "./client/client-home/client-home.component";
+import {GuestLobbyDetailsComponent} from "./client/lobbies/guest-lobby-details/guest-lobby-details.component";
+import {
+  GuestLobbyPlaceComponent
+} from "./client/lobbies/guest-lobby-details/guest-lobby-place/guest-lobby-place.component";
+import {
+  GuestLobbyDataComponent
+} from "./client/lobbies/guest-lobby-details/guest-lobby-data/guest-lobby-data.component";
+import {
+  GuestLobbyGuestListComponent
+} from "./client/lobbies/guest-lobby-details/guest-lobby-guest-list/guest-lobby-guest-list.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -52,6 +62,14 @@ const routes: Routes = [
               {path: 'place/reservation', component: OwnerLobbyDetailsPlaceReservationComponent}
             ]
           },
+          {path: 'asGuest/:id',
+            component: GuestLobbyDetailsComponent,
+            children: [
+              {path: '', component: GuestLobbyDataComponent},
+              {path: 'guests', component: GuestLobbyGuestListComponent},
+              {path: 'place', component: GuestLobbyPlaceComponent}
+            ]
+          }
         ]
       },
       {path: 'friends', component: FriendsComponent,

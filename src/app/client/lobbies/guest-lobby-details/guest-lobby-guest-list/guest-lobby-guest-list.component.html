@@ -1,0 +1,33 @@
+<div class="container">
+  <div>
+    <div class = "container-item">
+      <h1>Lista gości</h1>
+    </div><br>
+    <div *ngFor="let guest of guests;let i=index;" class = "lobby">
+      <div class="lobby-items">
+        <div class="lobby-item"><img src="assets/person-icon.png" class="person-icon"></div>
+      </div>
+      <div class="lobby-items">
+        <div class="lobby-item" style="font-size: 20px">{{i+1}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Imie</div>
+        <div class="lobby-item">{{guest.client.firstName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Nazwisko</div>
+        <div class="lobby-item">{{guest.client.surName}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <div class="lobby-item">Email</div>
+        <div class="lobby-item">{{guest.client.user.email}}</div>
+      </div><hr>
+      <div class="lobby-items">
+        <button class="icon" *ngIf="guest.status == 'Joined'"><img src="assets/accept-icon.jpg" class="accept-icon" title="Osoba zaakceptowała zaproszenie do lobby"></button>
+        <button class="icon" *ngIf="guest.status == 'Sent'"><img src="assets/unknown-person-icon.png" class="unknown-person"title="Osoba nie zaakceptowała zaproszenie do lobby"></button>
+      </div>
+
+      <div class="lobby-items"></div>
+    </div>
+  </div>
+</div>

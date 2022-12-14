@@ -1,0 +1,26 @@
+.container{
+  min-height: 80vh;
+}
+.container-item{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-size: 15px;
+}
+.container-item a {
+  padding: 15px 10px;
+  font-weight: 500;
+  border-bottom: 0.1px solid gray;
+  width: 100%;
+}
+.container-item:hover{
+  background-color: #80afd3;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+.link span {
+  padding-left: 10px;
+}

@@ -13,7 +13,7 @@
         <div class="lobby-item">Maksymalna ilość miejsc: {{myLobby.maxSeats}}</div>
       </div>
       <div class="lobby-items">
-        <button class="view-button"><img src="assets/view.png" class="view-icon"></button>
+        <button (click)="navigateTo('/client/lobbies/asGuest/' + myLobby.id, myLobby.placeId)"  ro class="view-button"><img src="assets/view.png" class="view-icon"></button>
         <button (click)="leaveLobby(myLobby.id)" class="delete-button"><img src="assets/delete_icon.png" class="delete-icon"></button>
       </div>
     </div>

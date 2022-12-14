@@ -77,6 +77,11 @@ import { ReservationsForDayComponent } from './placeowner/places/reservations-fo
 import { ClientHomeComponent } from './client/client-home/client-home.component';
 import { ClientHomeMapComponent } from './client/client-home/client-home-map/client-home-map.component';
 import { ClientHomePublicLobbiesListComponent } from './client/client-home/client-home-public-lobbies-list/client-home-public-lobbies-list.component';
+import { GuestLobbyDetailsComponent } from './client/lobbies/guest-lobby-details/guest-lobby-details.component';
+import { GuestLobbyNavComponent } from './client/lobbies/guest-lobby-details/guest-lobby-nav/guest-lobby-nav.component';
+import { GuestLobbyDataComponent } from './client/lobbies/guest-lobby-details/guest-lobby-data/guest-lobby-data.component';
+import { GuestLobbyGuestListComponent } from './client/lobbies/guest-lobby-details/guest-lobby-guest-list/guest-lobby-guest-list.component';
+import { GuestLobbyPlaceComponent } from './client/lobbies/guest-lobby-details/guest-lobby-place/guest-lobby-place.component';
 
 @NgModule({
   declarations: [
@@ -136,7 +141,12 @@ import { ClientHomePublicLobbiesListComponent } from './client/client-home/clien
     MyInvitationsComponent,
     ClientHomeComponent,
     ClientHomeMapComponent,
-    ClientHomePublicLobbiesListComponent
+    ClientHomePublicLobbiesListComponent,
+    GuestLobbyDetailsComponent,
+    GuestLobbyNavComponent,
+    GuestLobbyDataComponent,
+    GuestLobbyGuestListComponent,
+    GuestLobbyPlaceComponent
   ],
   imports: [
     BrowserModule,

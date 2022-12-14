@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  height: 100%;
+}
+.container-item:first-child{
+  flex: 20%;
+  border-right: 0.1px solid black;
+}
+.container-item:nth-child(2){
+  flex: 80%;
+}
