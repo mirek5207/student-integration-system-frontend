@@ -1,12 +1,23 @@
+<div class="header">
+  <h1>Moje lokale</h1>
+  <button mat-flat-button color="primary" (click)="openRegisterPlaceDialog()">Utwórz lokal</button>
+</div>
 <div class="container">
-  <button (click)="openRegisterPlaceDialog()">Utwórz lokal</button>
-  <div>
-    <h1>Moje lokale</h1>
-    <ul>
-      <li *ngFor="let place of places"
-          (click)="selectPlace(place)">
+  <div class="container-item">
+    <div *ngFor="let place of places" class="container-item-child">
         {{place.name}}
-      </li>
-    </ul>
+        <div class="container-item-child-buttons">
+          <button mat-flat-button color="primary" (click)="openEditPlaceDialog(place)">Edytuj</button>
+          <button mat-flat-button color="primary" (click)="openPlaceReservation(place.id)">Rezerwacje</button>
+          <button mat-flat-button color="primary" (click)="changeLocation(place.latitude,place.longitude)">Zobacz na mapie</button>
+        </div>
+    </div>
+  </div>
+  <div class="container-item">
+    <div class="map-container">
+      <div class="map-frame">
+        <div id="map"></div>
+      </div>
+    </div>
   </div>
 </div>

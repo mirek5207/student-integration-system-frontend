@@ -48,6 +48,8 @@ import {
 import {SystemReportComponent} from "./system-report/system-report.component";
 import {ReportsComponent} from "./client/reports/reports.component";
 import {UserReportComponent} from "./user-report/user-report.component";
+import {ReservationsComponent} from "./placeowner/places/reservations/reservations.component";
+import {PlacesListComponent} from "./placeowner/places/places-list/places-list.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -108,7 +110,16 @@ const routes: Routes = [
   { path: 'placeowner',
     component: PlaceownerComponent,
     children: [
-      {path: 'places', component: PlacesComponent},
+      {path: 'places',
+        component: PlacesComponent,
+        children: [
+          {path: '', component: PlacesListComponent},
+          {path: 'reservation', component: ReservationsComponent}
+        ]
+      },
+      {path: 'reports',
+        component: SystemReportComponent
+      },
       {path: 'create', component: CreatePlaceComponent},
       //{path: 'createModerator', component: AdminCreateModeratorComponent},
       //{path: 'getModerator/:id', component: AdminGetModeratorComponent}

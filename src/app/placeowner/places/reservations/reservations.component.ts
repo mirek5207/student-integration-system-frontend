@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ReservationService} from "../../../shared/services/reservation/reservation.service";
 import {Place, Reservation} from "../../../shared/interfaces/placeOwner.interface";
+import {Subscription} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-reservations',
@@ -8,14 +10,16 @@ import {Place, Reservation} from "../../../shared/interfaces/placeOwner.interfac
   styleUrls: ['./reservations.component.scss']
 })
 export class ReservationsComponent implements OnInit {
-  @Input() set localReservations(value: any) {
-    this.reservations = Object.assign([], value)
-  }
-
-  reservations!: Reservation[]
-  constructor(private reservationService: ReservationService) { }
+  reservations!: any[]
+  private routeSub!: Subscription;
+  private placeId: any;
+  constructor(private reservationService: ReservationService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.routeSub = this.route.queryParams.subscribe(params => {
+      this.placeId = params['placeId']
+    });
+    this.getAllReservations()
   }
 
   accept(id: number){
@@ -25,5 +29,7 @@ export class ReservationsComponent implements OnInit {
   decline(id:number){
     this.reservationService.declineReservation(id).subscribe(r => console.log(r))
   }
-
+  getAllReservations(){
+    this.reservationService.getSentReservationsForPlace(this.placeId).subscribe(r => this.reservations = r)
+  }
 }

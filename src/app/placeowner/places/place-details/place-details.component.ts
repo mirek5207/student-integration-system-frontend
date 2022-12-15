@@ -1,5 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {Place} from "../../../shared/interfaces/placeOwner.interface";
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {Observable, tap} from "rxjs";
+import {PlaceownerService} from "../../../shared/services/placeowner/placeowner.service";
+import {TokenService} from "../../../shared/services/token/token.service";
 
 @Component({
   selector: 'app-place-details',
@@ -7,26 +11,26 @@ import {Place} from "../../../shared/interfaces/placeOwner.interface";
   styleUrls: ['./place-details.component.scss']
 })
 export class PlaceDetailsComponent implements OnInit {
-  @Input() set selectedPlace(value: Place) {
-    this.currentPlace = Object.assign({}, value)
-  }
-
-  @Output() placeUpdated = new EventEmitter<Place>();
-  @Output() placeDeleted = new EventEmitter<number>();
-
-  constructor() { }
+  places$!: Observable<any>;
+  constructor(@Inject(MAT_DIALOG_DATA) public data:any,private placeOwnerService: PlaceownerService, private tokenService: TokenService) { }
 
   currentPlace!: Place
 
   ngOnInit(): void {
+    this.currentPlace = this.data
   }
 
   updatePlace(place: Place){
-    this.placeUpdated.emit(place)
+    this.placeOwnerService.updatePlace(place, place.id).pipe(
+      tap( () => this.getPlaces())
+    ).subscribe();
   }
-
+  getPlaces(){
+    this.places$ =  this.placeOwnerService.getAllPlaces(this.tokenService.getId())
+  }
   deletePlace(id: number){
-    this.placeDeleted.emit(id)
+    this.placeOwnerService.deletePlace(id).pipe(
+      tap( ()=> this.getPlaces())
+    ).subscribe()
   }
-
 }

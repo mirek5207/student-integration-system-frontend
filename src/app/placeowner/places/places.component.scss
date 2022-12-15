@@ -1,12 +1,6 @@
 .places-container {
   display: flex;
-  justify-content: space-around;
-
-  .places-list {
-    width: 49%;
-  }
-
-  .places-details {
-    width: 49%;
-  }
+  justify-content: center;
+  flex-direction: column;
 }
+

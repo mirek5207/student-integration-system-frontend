@@ -32,18 +32,6 @@ export class PlacesComponent implements OnInit {
     this.selectedPlace = place
   }
 
-  updatePlace(place: Place){
-    this.placeOwnerService.updatePlace(place, place.id).pipe(
-      tap( () => this.getPlaces())
-    ).subscribe();
-  }
-
-  deletePlace(id: number){
-    this.placeOwnerService.deletePlace(id).pipe(
-      tap( ()=> this.getPlaces())
-    ).subscribe()
-  }
-
   getAllReservations(placeId: number){
     this.reservationService.getSentReservationsForPlace(placeId).subscribe(r => this.reservations = r)
   }

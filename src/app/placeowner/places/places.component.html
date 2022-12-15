@@ -1,24 +1,3 @@
 <div class="places-container">
-  <div class="places-list">
-    <app-places-list
-      [places]="places$ | async"
-      (placeSelected)="selectPlace($event)"
-      (reservations)="getAllReservations($event)"
-      (confirmedReservations)="getReservationForDay($event.placeId, $event.date)"
-    ></app-places-list>
-  </div>
-  <div class="places-details">
-    <app-place-details
-      [selectedPlace]="selectedPlace"
-      (placeUpdated)="updatePlace($event)"
-      (placeDeleted)="deletePlace($event)"
-    ></app-place-details>
-    <app-reservations
-      [localReservations]="reservations"
-    ></app-reservations>
-    <app-reservations-for-day
-      [localReservations]="confirmedReservation"
-      [setLocal]="selectedPlace"
-    ></app-reservations-for-day>
-  </div>
+    <router-outlet></router-outlet>
 </div>

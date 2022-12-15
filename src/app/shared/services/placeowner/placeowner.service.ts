@@ -18,7 +18,7 @@ export class PlaceownerService {
   }
 
   getAllPlaces(id: number){
-    return this.http.get(getUrl(`PlaceOwner/getPlaces/${id}`), httpOptions)
+    return this.http.get<any[]>(getUrl(`PlaceOwner/getPlaces/${id}`), httpOptions)
   }
 
   updatePlace(place: Place, id: number){
