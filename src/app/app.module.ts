@@ -50,7 +50,6 @@ import { ModeratorUserReportsComponent } from './moderator/moderator-user-report
 import { ModeratorUserReportsListComponent } from './moderator/moderator-user-reports/moderator-user-reports-list/moderator-user-reports-list.component';
 import { AdminSystemReportsComponent } from './admin/admin-system-reports/admin-system-reports.component';
 import { AdminSystemReportsListComponent } from './admin/admin-system-reports/admin-system-reports-list/admin-system-reports-list.component';
-import { FriendsListComponent } from './client/friends/friends-list/friends-list.component';
 import { LobbiesComponent } from './client/lobbies/lobbies.component';
 import { FriendsComponent } from './client/friends/friends.component';
 import { OwnerLobbiesListComponent } from './client/lobbies/lobbies-list/owner-lobbies-list/owner-lobbies-list.component';
@@ -67,13 +66,9 @@ import { CreateLobbyMapComponent } from './client/lobbies/create-lobby/create-lo
 import {AgmCoreModule} from "@agm/core";
 import { InviteFriendToLobbyDialogComponent } from './client/lobbies/owner-lobby-details/owner-lobby-details-guest-list/invite-friend-to-lobby-dialog/invite-friend-to-lobby-dialog.component';
 import { FriendsNavComponent } from './client/friends/friends-nav/friends-nav.component';
-import { MyFriendsComponent } from './client/friends/my-friends/my-friends.component';
-import { MyFriendsListComponent } from './client/friends/my-friends/my-friends-list/my-friends-list.component';
-import { RequestsToFriendListComponent } from './client/friends/my-friends/requests-to-friend-list/requests-to-friend-list.component';
-import { MyInvitationsComponent } from './client/friends/my-friends/my-invitations/my-invitations.component';
+import { RequestsToFriendListComponent } from './client/friends/requests-to-friend-list/requests-to-friend-list.component';
 import { ReservationsComponent } from './placeowner/places/reservations/reservations.component';
 import { ReservationsForDayComponent } from './placeowner/places/reservations-for-day/reservations-for-day.component';
-
 import { ClientHomeComponent } from './client/client-home/client-home.component';
 import { ClientHomeMapComponent } from './client/client-home/client-home-map/client-home-map.component';
 import { ClientHomePublicLobbiesListComponent } from './client/client-home/client-home-public-lobbies-list/client-home-public-lobbies-list.component';
@@ -82,9 +77,12 @@ import { GuestLobbyNavComponent } from './client/lobbies/guest-lobby-details/gue
 import { GuestLobbyDataComponent } from './client/lobbies/guest-lobby-details/guest-lobby-data/guest-lobby-data.component';
 import { GuestLobbyGuestListComponent } from './client/lobbies/guest-lobby-details/guest-lobby-guest-list/guest-lobby-guest-list.component';
 import { GuestLobbyPlaceComponent } from './client/lobbies/guest-lobby-details/guest-lobby-place/guest-lobby-place.component';
+import { SendInvitationToFriendComponent } from './client/friends/send-invitation-to-friend/send-invitation-to-friend.component';
+import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friends-list.component";
 
 @NgModule({
   declarations: [
+    MyFriendsListComponent,
     AppComponent,
     LoginComponent,
     AdminComponent,
@@ -115,7 +113,6 @@ import { GuestLobbyPlaceComponent } from './client/lobbies/guest-lobby-details/g
     ModeratorUserReportsListComponent,
     AdminSystemReportsComponent,
     AdminSystemReportsListComponent,
-    FriendsListComponent,
     LobbiesComponent,
     LobbiesListComponent,
     FriendsComponent,
@@ -132,13 +129,9 @@ import { GuestLobbyPlaceComponent } from './client/lobbies/guest-lobby-details/g
     CreateLobbyMapComponent,
     InviteFriendToLobbyDialogComponent,
     FriendsNavComponent,
-    MyFriendsComponent,
-    MyFriendsListComponent,
     RequestsToFriendListComponent,
-    MyInvitationsComponent,
     ReservationsComponent,
     ReservationsForDayComponent,
-    MyInvitationsComponent,
     ClientHomeComponent,
     ClientHomeMapComponent,
     ClientHomePublicLobbiesListComponent,
@@ -146,7 +139,8 @@ import { GuestLobbyPlaceComponent } from './client/lobbies/guest-lobby-details/g
     GuestLobbyNavComponent,
     GuestLobbyDataComponent,
     GuestLobbyGuestListComponent,
-    GuestLobbyPlaceComponent
+    GuestLobbyPlaceComponent,
+    SendInvitationToFriendComponent
   ],
   imports: [
     BrowserModule,

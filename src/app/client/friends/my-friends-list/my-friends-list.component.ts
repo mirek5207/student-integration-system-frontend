@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {GetClient} from "../../../../shared/interfaces/client.interface";
-import {FriendService} from "../../../../shared/services/friend/friend.service";
-import {ModeratorService} from "../../../../shared/services/moderator/moderator.service";
-import {TokenService} from "../../../../shared/services/token/token.service";
+import {FriendService} from "../../../shared/services/friend/friend.service";
+import {ModeratorService} from "../../../shared/services/moderator/moderator.service";
+import {TokenService} from "../../../shared/services/token/token.service";
 
 @Component({
   selector: 'app-my-friends-list',

@@ -1,0 +1,11 @@
+<div class="center-div">
+  <div class="leaderboard">
+    <main class="leaderboard__profiles">
+      <article class="leaderboard__profile" *ngFor="let client of clients">
+        <mat-icon class="leaderboard__icon">account_circle</mat-icon>
+        <span class="leaderboard__name">{{client.firstName}} {{client.surName}}</span>
+        <button mat-raised-button color="primary" (click)="addUserToFriendship(client.user.id)">Dodaj do znajomych</button>
+      </article>
+    </main>
+  </div>
+</div>

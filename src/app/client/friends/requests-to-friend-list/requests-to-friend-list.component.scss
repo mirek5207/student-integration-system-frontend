@@ -1,0 +1,8 @@
+@import "src/app/client/friends/send-invitation-to-friend/send-invitation-to-friend.component.scss";
+.leaderboard__buttons{
+  display: flex;
+  flex-direction: row;
+}
+.leaderboard__buttons button{
+  margin: 0 10px;
+}

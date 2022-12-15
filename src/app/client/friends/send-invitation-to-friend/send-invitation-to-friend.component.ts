@@ -5,11 +5,11 @@ import {ModeratorService} from "../../../shared/services/moderator/moderator.ser
 import {TokenService} from "../../../shared/services/token/token.service";
 
 @Component({
-  selector: 'app-friends-list',
-  templateUrl: './friends-list.component.html',
-  styleUrls: ['./friends-list.component.scss']
+  selector: 'app-send-invitation-to-friend',
+  templateUrl: './send-invitation-to-friend.component.html',
+  styleUrls: ['./send-invitation-to-friend.component.scss']
 })
-export class FriendsListComponent implements OnInit {
+export class SendInvitationToFriendComponent implements OnInit {
 
   clients!: GetClient[]
   constructor(private friendService: FriendService,
@@ -26,7 +26,6 @@ export class FriendsListComponent implements OnInit {
 
   addUserToFriendship(id: number){
     this.friendService.sendInvite(this.tokenService.getId(), id).subscribe(r => console.log(r))
+    // window.location.reload()
   }
-
-
 }

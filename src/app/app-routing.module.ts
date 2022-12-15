@@ -13,7 +13,6 @@ import {ModeratorUsersComponent} from "./moderator/moderator-users/moderator-use
 import {ModeratorPlaceOwnersComponent} from "./moderator/moderator-place-owners/moderator-place-owners.component";
 import {ModeratorUserReportsComponent} from "./moderator/moderator-user-reports/moderator-user-reports.component";
 import {AdminSystemReportsComponent} from "./admin/admin-system-reports/admin-system-reports.component";
-import {FriendsListComponent} from "./client/friends/friends-list/friends-list.component";
 import {ClientComponent} from "./client/client.component";
 import {LobbiesComponent} from "./client/lobbies/lobbies.component";
 import {LobbiesListComponent} from "./client/lobbies/lobbies-list/lobbies-list.component";
@@ -28,7 +27,6 @@ import {
   OwnerLobbyDetailsPlaceReservationComponent
 } from "./client/lobbies/owner-lobby-details/owner-lobby-details-place-reservation/owner-lobby-details-place-reservation.component";
 import {FriendsComponent} from "./client/friends/friends.component";
-import {MyFriendsComponent} from "./client/friends/my-friends/my-friends.component";
 import {ClientHomeComponent} from "./client/client-home/client-home.component";
 import {GuestLobbyDetailsComponent} from "./client/lobbies/guest-lobby-details/guest-lobby-details.component";
 import {
@@ -40,6 +38,13 @@ import {
 import {
   GuestLobbyGuestListComponent
 } from "./client/lobbies/guest-lobby-details/guest-lobby-guest-list/guest-lobby-guest-list.component";
+import {
+  SendInvitationToFriendComponent
+} from "./client/friends/send-invitation-to-friend/send-invitation-to-friend.component";
+import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friends-list.component";
+import {
+  RequestsToFriendListComponent
+} from "./client/friends/requests-to-friend-list/requests-to-friend-list.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -74,9 +79,9 @@ const routes: Routes = [
       },
       {path: 'friends', component: FriendsComponent,
       children: [
-        {path:'', component: FriendsListComponent},
-        {path:'myfriends', component: MyFriendsComponent},
-
+        {path:'', component: MyFriendsListComponent},
+        {path:'inviteUser', component: SendInvitationToFriendComponent},
+        {path:'friendshipRequests', component: RequestsToFriendListComponent},
       ]},
     ]
   },
