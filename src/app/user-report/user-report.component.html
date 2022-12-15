@@ -1,1 +1,26 @@
-<p>user-report works!</p>
+<div class="container">
+  <div class = "container-item">
+    <h1>Zgłoś użytkownika</h1>
+  </div>
+  <div class = "container-item">
+    <label>Login użytkownika</label>
+    <input
+      required
+      type="text"
+      [(ngModel)]="createUserReport.reportedUserLogin"
+    >
+  </div>
+  <div class = "container-item">
+    <label>Powód zgłoszenia</label>
+    <textarea
+      required
+      type="text"
+      rows="16"
+      [(ngModel)]="createUserReport.description"
+    ></textarea>
+  </div>
+  <div class = "container-item">
+    <button (click)="postUserReport()" mat-flat-button color="warn">Zarezerwuj</button>
+  </div>
+</div>
+

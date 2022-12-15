@@ -1,5 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {LobbyService} from "../../../shared/services/lobby/lobby.service";
+import {Router} from "@angular/router";
+import * as path from "path";
 
 @Component({
   selector: 'app-client-home-public-lobbies-list',
@@ -15,6 +17,7 @@ export class ClientHomePublicLobbiesListComponent implements OnInit {
       longitude: 0
     },
     place:{
+      id: 0,
       latitude: 0,
       longitude: 0
     },
@@ -23,7 +26,7 @@ export class ClientHomePublicLobbiesListComponent implements OnInit {
     startDate: new Date(),
 
   }]
-  constructor(private lobbyService: LobbyService) { }
+  constructor(private lobbyService: LobbyService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllPublicLobbies()
@@ -34,9 +37,15 @@ export class ClientHomePublicLobbiesListComponent implements OnInit {
   changeLocation(lobby: any){
     this.outputToParentLobby.emit(lobby)
   }
-  joinPublicLobby(lobbyId: number){
+  joinPublicLobby(lobbyId: number,placeId:number){
     this.lobbyService.joinPublicLobby(lobbyId)
-    alert("Zostałeś dodany do pokoju")
+    this.navigateTo('/client/lobbies/asGuest/' + lobbyId, placeId)
   }
-
+  navigateTo(path: string, placeId: number)
+  {
+    let typeOfPlace;
+    if(placeId == null) typeOfPlace = 'customPlace'
+    else typeOfPlace = 'place'
+    this.router.navigate([path],{queryParams: {placeId: placeId, type:typeOfPlace}});
+  }
 }

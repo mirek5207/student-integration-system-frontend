@@ -1,11 +1,7 @@
 export const navlinks: {name:string, url:string}[] = [
   {
-    name: 'Zgłoszenia systemowe',
+    name: 'Zgłoszenia',
     url: 'client/report',
-  },
-  {
-    name: 'Zgłoszenie użytkownika',
-    url: 'user/second',
   },
   {
     name: 'Pokoje',

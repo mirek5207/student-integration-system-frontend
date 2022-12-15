@@ -45,6 +45,9 @@ import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friend
 import {
   RequestsToFriendListComponent
 } from "./client/friends/requests-to-friend-list/requests-to-friend-list.component";
+import {SystemReportComponent} from "./system-report/system-report.component";
+import {ReportsComponent} from "./client/reports/reports.component";
+import {UserReportComponent} from "./user-report/user-report.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -83,6 +86,14 @@ const routes: Routes = [
         {path:'inviteUser', component: SendInvitationToFriendComponent},
         {path:'friendshipRequests', component: RequestsToFriendListComponent},
       ]},
+      {path: 'report',
+        component: ReportsComponent,
+        children: [
+          {path:'', component: UserReportComponent},
+          {path:'system', component: SystemReportComponent}
+        ]
+
+      }
     ]
   },
   { path: 'admin',

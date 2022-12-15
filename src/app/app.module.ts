@@ -79,10 +79,13 @@ import { GuestLobbyGuestListComponent } from './client/lobbies/guest-lobby-detai
 import { GuestLobbyPlaceComponent } from './client/lobbies/guest-lobby-details/guest-lobby-place/guest-lobby-place.component';
 import { SendInvitationToFriendComponent } from './client/friends/send-invitation-to-friend/send-invitation-to-friend.component';
 import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friends-list.component";
-
+import {ReportsComponent} from "./client/reports/reports.component";
+import { ReportsNavComponent } from './client/reports/reports-nav/reports-nav.component';
+// @ts-ignore
 @NgModule({
   declarations: [
     MyFriendsListComponent,
+    ReportsComponent,
     AppComponent,
     LoginComponent,
     AdminComponent,
@@ -140,7 +143,8 @@ import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friend
     GuestLobbyDataComponent,
     GuestLobbyGuestListComponent,
     GuestLobbyPlaceComponent,
-    SendInvitationToFriendComponent
+    SendInvitationToFriendComponent,
+    ReportsNavComponent,
   ],
   imports: [
     BrowserModule,

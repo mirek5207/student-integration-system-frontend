@@ -6,8 +6,7 @@
     <a (click)="navigateTo('/client/lobbies/asGuest/'+ this.lobbyId + '/guests')" class="link"><span>Lista gości</span></a>
   </div>
   <div class = "container-item">
-    <a *ngIf="type == 'place'" (click)="navigateTo('/client/lobbies/asGuest/'+ this.lobbyId + '/place')" class="link"><span>Miejsce spotkania</span></a>
-    <a *ngIf="type == 'customPlace'" style="background: gray" class="link" title="Dostępne tylko po wybraniu lokalu w zakładce podstawowe informacje"><span>Rezerwacja lokalu</span></a>
+    <a (click)="navigateTo('/client/lobbies/asGuest/'+ this.lobbyId + '/place')" class="link"><span>Miejsce spotkania</span></a>
   </div>
 </div>
 

@@ -25,4 +25,10 @@ export class ClientService {
   getAllPlaces(){
     return this.http.get<any[]>(getUrl(`Client/getAllPlaces`), httpOptions)
   }
+  createUserReport(report : any){
+    return this.http.post(getUrl(`User/createUserReport`), report, httpOptions).subscribe(r=> console.log(r))
+  }
+  createSystemReport(report : any){
+    return this.http.post(getUrl(`User/createSystemReport`), report, httpOptions).subscribe(r=> console.log(r))
+  }
 }
