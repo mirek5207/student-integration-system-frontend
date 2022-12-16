@@ -1,33 +1,33 @@
 <div class="container">
-  <div class="center">
-    <h1>Utworz lobby</h1>
-    <div class="inputbox">
+    <div class = "container-item">
+      <h1>Utworz lobby</h1>
+    </div>
+    <div class="container-item">
+      <label>Nazwa</label>
       <input
         [(ngModel)]="registerNewPlace.name"
         type="text"
         name="name"
       />
-      <span>Nazwa</span>
     </div>
-    <div class="inputbox">
+    <div class="container-item">
+      <label>Szerokość geograficzna</label>
       <input
 
         [(ngModel)]="registerNewPlace.latitude"
         type="text"
         name="latitude"
       />
-      <span>Szerokość geograficzna</span>
     </div>
-    <div class="inputbox">
+    <div class="container-item">
+      <span>Długość geograficzna</span>
       <input
         [(ngModel)]="registerNewPlace.longitude"
         type="text"
         name="longitute"
       />
-      <span>Długość geograficzna</span>
     </div>
-    <div class="inputbox">
-      <button (click)="createPlace(registerNewPlace)" mat-button color="primary" class="register-button">Create</button>
+    <div class="container-item">
+      <button (click)="createPlace(registerNewPlace)" mat-flat-button color="primary" class="register-button">Create</button>
     </div>
-  </div>
 </div>
