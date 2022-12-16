@@ -1,15 +1,15 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ReservationService} from "../../../shared/services/reservation/reservation.service";
-import {Place, Reservation} from "../../../shared/interfaces/placeOwner.interface";
+import { Component, OnInit } from '@angular/core';
 import {Subscription} from "rxjs";
+import {ReservationService} from "../../../../shared/services/reservation/reservation.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-reservations',
-  templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.scss']
+  selector: 'app-requested-reservation',
+  templateUrl: './requested-reservation.component.html',
+  styleUrls: ['./requested-reservation.component.scss']
 })
-export class ReservationsComponent implements OnInit {
+export class RequestedReservationComponent implements OnInit {
+
   reservations!: any[]
   private routeSub!: Subscription;
   placeId: any;
@@ -31,9 +31,5 @@ export class ReservationsComponent implements OnInit {
   }
   getAllReservations(){
     this.reservationService.getSentReservationsForPlace(this.placeId).subscribe(r => this.reservations = r)
-  }
-  navigateTo(path: string)
-  {
-    this.router.navigate([path],{queryParams: {placeId: this.placeId}})
   }
 }

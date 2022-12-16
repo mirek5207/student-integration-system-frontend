@@ -68,7 +68,7 @@ import { InviteFriendToLobbyDialogComponent } from './client/lobbies/owner-lobby
 import { FriendsNavComponent } from './client/friends/friends-nav/friends-nav.component';
 import { RequestsToFriendListComponent } from './client/friends/requests-to-friend-list/requests-to-friend-list.component';
 import { ReservationsComponent } from './placeowner/places/reservations/reservations.component';
-import { ReservationsForDayComponent } from './placeowner/places/reservations-for-day/reservations-for-day.component';
+import { ReservationsForDayComponent } from './placeowner/places/reservations/reservations-for-day/reservations-for-day.component';
 import { ClientHomeComponent } from './client/client-home/client-home.component';
 import { ClientHomeMapComponent } from './client/client-home/client-home-map/client-home-map.component';
 import { ClientHomePublicLobbiesListComponent } from './client/client-home/client-home-public-lobbies-list/client-home-public-lobbies-list.component';
@@ -81,6 +81,7 @@ import { SendInvitationToFriendComponent } from './client/friends/send-invitatio
 import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friends-list.component";
 import {ReportsComponent} from "./client/reports/reports.component";
 import { ReportsNavComponent } from './client/reports/reports-nav/reports-nav.component';
+import { RequestedReservationComponent } from './placeowner/places/reservations/requested-reservation/requested-reservation.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -145,6 +146,7 @@ import { ReportsNavComponent } from './client/reports/reports-nav/reports-nav.co
     GuestLobbyPlaceComponent,
     SendInvitationToFriendComponent,
     ReportsNavComponent,
+    RequestedReservationComponent,
   ],
   imports: [
     BrowserModule,

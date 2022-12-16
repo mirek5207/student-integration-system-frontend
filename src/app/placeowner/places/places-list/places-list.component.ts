@@ -79,8 +79,8 @@ export class PlacesListComponent implements OnInit {
   getRegisterDialogConfig(){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "450px";
-    dialogConfig.height = "580px";
+    dialogConfig.width = "440px";
+    dialogConfig.height = "500px";
     return dialogConfig;
   }
   getEditDialogConfig(place: Place){

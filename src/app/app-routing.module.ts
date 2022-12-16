@@ -50,6 +50,10 @@ import {ReportsComponent} from "./client/reports/reports.component";
 import {UserReportComponent} from "./user-report/user-report.component";
 import {ReservationsComponent} from "./placeowner/places/reservations/reservations.component";
 import {PlacesListComponent} from "./placeowner/places/places-list/places-list.component";
+import {ReservationsForDayComponent} from "./placeowner/places/reservations/reservations-for-day/reservations-for-day.component";
+import {
+  RequestedReservationComponent
+} from "./placeowner/places/reservations/requested-reservation/requested-reservation.component";
 
 const routes: Routes = [
   { path: 'client',
@@ -114,7 +118,13 @@ const routes: Routes = [
         component: PlacesComponent,
         children: [
           {path: '', component: PlacesListComponent},
-          {path: 'reservation', component: ReservationsComponent}
+          {path: 'reservation',
+            component: ReservationsComponent,
+            children: [
+              {path: '' , component: ReservationsForDayComponent},
+              {path: ' requestedReservation' , component: RequestedReservationComponent},
+            ]
+          }
         ]
       },
       {path: 'reports',

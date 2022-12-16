@@ -24,6 +24,7 @@ export class CreatePlaceComponent implements OnInit {
   }
 
   createPlace(place: CreatePlace){
+    console.log(place)
     this.placeOwnerService.createPlace(place);
   }
 }

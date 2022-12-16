@@ -1,6 +1,6 @@
 <div class="container">
     <div class = "container-item">
-      <h1>Utworz lobby</h1>
+      <h1>Dodaj lokal</h1>
     </div>
     <div class="container-item">
       <label>Nazwa</label>
@@ -15,19 +15,20 @@
       <input
 
         [(ngModel)]="registerNewPlace.latitude"
-        type="text"
+        type="number"
         name="latitude"
       />
     </div>
     <div class="container-item">
-      <span>Długość geograficzna</span>
+      <label>Długość geograficzna</label>
       <input
         [(ngModel)]="registerNewPlace.longitude"
-        type="text"
+        type="number"
         name="longitute"
       />
     </div>
     <div class="container-item">
-      <button (click)="createPlace(registerNewPlace)" mat-flat-button color="primary" class="register-button">Create</button>
+      <br>
+      <button (click)="createPlace(registerNewPlace)" mat-flat-button color="primary" class="register-button">Stwórz</button>
     </div>
 </div>

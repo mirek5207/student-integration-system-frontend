@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container-item" *ngFor="let reservation of reservations">
+    <div class="container-item-child">
+      <div>
+        <span>Imie i nazwisko</span>
+        {{reservation.lobbyOwnerFullName}}
+      </div>
+      <div>
+        <span>Data rozpoczęcia</span>
+        {{reservation.startDate | date: 'short'}}
+      </div>
+      <div>
+        <span>Data zakończenia</span>
+        {{reservation.endDate| date: 'short'}}
+      </div>
+      <div>
+        <span>Liczba gości</span>
+        {{reservation.numberOfGuests}}
+      </div>
+      <div>
+        <span>Numer telefonu</span>
+        {{reservation.phoneNumber}}
+      </div>
+      <div class="container-item-child-buttons">
+        <button mat-flat-button color="primary" (click)="accept(reservation.id)">Zaakceptuj</button>
+        <button mat-flat-button color="warn" (click)="decline(reservation.id)">Odrzuć</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--51,23509676625871422,547146469724574-->

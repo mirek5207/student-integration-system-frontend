@@ -14,7 +14,7 @@ export class PlaceownerService {
 
   //--------------------Places--------------------\\
   createPlace(place: CreatePlace){
-    this.http.post(getUrl('PlaceOwner/createPlace'), place, httpOptions).subscribe()
+    this.http.post(getUrl('PlaceOwner/createPlace'), place, httpOptions).subscribe(r=>console.log(r))
   }
 
   getAllPlaces(id: number){
