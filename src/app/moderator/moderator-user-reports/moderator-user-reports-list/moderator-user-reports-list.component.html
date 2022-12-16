@@ -8,7 +8,7 @@
 
     <!-- FirstName Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> description </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Opis </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
     </ng-container>
 
@@ -20,17 +20,17 @@
 
     <!-- UserId Column -->
     <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Reported user Id </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Identyfikator zgłoszonego </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.reportedUserId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="reportingUser">
-      <mat-header-cell *matHeaderCellDef> Reporting user Id </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Identyfikator zgłaszającego </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.reportingUserId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="date">
-      <mat-header-cell *matHeaderCellDef>Date Time</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Data zgłoszenia</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.creationDate | date : 'short'}} </mat-cell>
     </ng-container>
 

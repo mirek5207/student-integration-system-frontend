@@ -1,10 +1,10 @@
 export const navlinks: {name: string, url: string}[] = [
   {
-    name: 'Moderators',
+    name: 'Moderatorzy',
     url: 'admin/getModerators'
   },
   {
-    name: 'System Reports',
+    name: 'Zgłoszenia systemowe',
     url: '/admin/systemReport'
   },
 ];

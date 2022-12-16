@@ -1,14 +1,14 @@
 export const navlinks: {name: string, url: string}[] = [
   {
-    name: 'Clients',
+    name: 'Klienci',
     url: 'moderator/clients'
   },
   {
-    name: 'Place Owners',
+    name: 'Właściciele lokalu',
     url: 'moderator/owners'
   },
   {
-    name: 'User Reports',
+    name: 'Zgłoszenia użytkowników',
     url: 'moderator/users/reports'
   }
 

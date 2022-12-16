@@ -1,7 +1,14 @@
 <mat-toolbar color="primary" class="container">
   <ng-container *ngIf="isAuthenticated$ | async else elseBlock">
       <a
+        *ngIf="isClient()"
         routerLink='/client'
+        class = "logo"
+      >
+        STUDENTUS
+      </a>
+      <a
+        *ngIf="!isClient()"
         class = "logo"
       >
         STUDENTUS

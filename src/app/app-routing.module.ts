@@ -131,8 +131,6 @@ const routes: Routes = [
         component: SystemReportComponent
       },
       {path: 'create', component: CreatePlaceComponent},
-      //{path: 'createModerator', component: AdminCreateModeratorComponent},
-      //{path: 'getModerator/:id', component: AdminGetModeratorComponent}
     ]
   },
   { path: 'moderator',

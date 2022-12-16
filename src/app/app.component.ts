@@ -5,6 +5,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {PlaceownerComponent} from "./placeowner/placeowner.component";
+import {TokenService} from "./shared/services/token/token.service";
 
 
 @Component({
@@ -21,7 +22,7 @@ export class AppComponent{
   navigationLinks: {name: string, url:string}[] = []
 
 
-  constructor(private authService: AuthService, private dialogRef : MatDialog) {
+  constructor(private authService: AuthService, private dialogRef : MatDialog, private tokenService: TokenService) {
     this.navItems$.subscribe(r => this.navigationLinks = r)
   }
 
@@ -34,7 +35,11 @@ export class AppComponent{
   openRegisterPlaceOwnerDialog(){
     this.dialogRef.open(PlaceownerComponent, this.getDialogConfig("80vw","89vh","600px", "500px"))
   }
-
+  isClient(){
+    if(this.tokenService.getRole() === "Client")
+      return true
+    else return false
+  }
   getDialogConfig(width: string, height: string, maxHeight: string, maxWidth: string){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;

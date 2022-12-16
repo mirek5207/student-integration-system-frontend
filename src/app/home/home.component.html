@@ -4,14 +4,14 @@
       <p class="container-item-1-p1">Sprawdź swoją okolicę</p>
       <div class="search-bar">
         <input placeholder="Podaj swoją lokalizację" name= "search">
-        <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+        <button matSuffix mat-button (click)="openLoginDialog()"><mat-icon >search</mat-icon></button>
       </div>
     <div class="city-group">
-      <button mat-flat-button>WARSZAWA</button>
-      <button mat-flat-button>LUBLIN</button>
-      <button mat-flat-button>KRAKÓW</button>
-      <button mat-flat-button>KATOWICE</button>
-      <button mat-flat-button>WROCŁAW</button>
+      <button mat-flat-button (click)="openLoginDialog()">WARSZAWA</button>
+      <button mat-flat-button (click)="openLoginDialog()">LUBLIN</button>
+      <button mat-flat-button (click)="openLoginDialog()">KRAKÓW</button>
+      <button mat-flat-button (click)="openLoginDialog()">KATOWICE</button>
+      <button mat-flat-button (click)="openLoginDialog()">WROCŁAW</button>
     </div>
   </div>
   <div class="container-item-2">
