@@ -105,7 +105,7 @@ const routes: Routes = [
   { path: 'admin',
     component: AdminComponent,
     children: [
-      {path: 'getModerators', component: AdminGetModeratorsComponent},
+      {path: '', component: AdminGetModeratorsComponent},
       {path: 'createModerator', component: AdminCreateModeratorComponent},
       {path: 'getModerator/:id', component: AdminGetModeratorComponent},
       {path: 'systemReport', component: AdminSystemReportsComponent}
@@ -114,7 +114,7 @@ const routes: Routes = [
   { path: 'placeowner',
     component: PlaceownerComponent,
     children: [
-      {path: 'places',
+      {path: '',
         component: PlacesComponent,
         children: [
           {path: '', component: PlacesListComponent},
@@ -122,7 +122,7 @@ const routes: Routes = [
             component: ReservationsComponent,
             children: [
               {path: '' , component: ReservationsForDayComponent},
-              {path: ' requestedReservation' , component: RequestedReservationComponent},
+              {path: 'requestedReservation' , component: RequestedReservationComponent},
             ]
           }
         ]
@@ -138,7 +138,7 @@ const routes: Routes = [
     children: [
       {path: 'clients', component: ModeratorUsersComponent},
       {path: 'owners', component: ModeratorPlaceOwnersComponent},
-      {path: 'users/reports', component: ModeratorUserReportsComponent},
+      {path: '', component: ModeratorUserReportsComponent},
     ]
   },
   { path: 'login', component: LoginComponent },

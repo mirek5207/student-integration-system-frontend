@@ -63,7 +63,7 @@ export class PlacesListComponent implements OnInit {
     this.dialogRef.open(PlaceDetailsComponent, this.getEditDialogConfig(place))
   }
   openPlaceReservation(placeId: number){
-    this.router.navigate(['placeowner/places/reservation'], {queryParams: {placeId: placeId}})
+    this.router.navigate(['placeowner/reservation'], {queryParams: {placeId: placeId}})
   }
   getPlaces(){
     this.placeOwnerService.getAllPlaces(this.tokenService.getId()).subscribe(r=> {

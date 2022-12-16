@@ -1,7 +1,7 @@
 export const navlinks: {name: string, url: string}[] = [
   {
     name: 'Moderatorzy',
-    url: 'admin/getModerators'
+    url: 'admin/'
   },
   {
     name: 'Zgłoszenia systemowe',

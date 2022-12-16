@@ -1,7 +1,7 @@
 export const navlinks: {name: string, url: string}[] = [
   {
     name: 'Lokale',
-    url: 'placeowner/places'
+    url: 'placeowner/'
   },
   {
     name: 'Zgłoszenia systemowe',

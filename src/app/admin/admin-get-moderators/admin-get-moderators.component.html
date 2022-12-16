@@ -2,7 +2,7 @@
   <mat-table #table [dataSource]="dataSource">
     <!-- Id Column -->
     <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Identyfikator moderatora </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
     </ng-container>
 
@@ -20,7 +20,7 @@
 
     <!-- UserId Column -->
     <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> UserId </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Identyfikator użytkownika </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.userId}} </mat-cell>
     </ng-container>
 

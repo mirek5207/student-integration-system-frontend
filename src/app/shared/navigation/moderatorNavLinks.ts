@@ -9,7 +9,7 @@ export const navlinks: {name: string, url: string}[] = [
   },
   {
     name: 'Zgłoszenia użytkowników',
-    url: 'moderator/users/reports'
+    url: 'moderator/'
   }
 
 ];
