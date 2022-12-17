@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {LobbyService} from "../../../shared/services/lobby/lobby.service";
 import {Router} from "@angular/router";
-import * as path from "path";
+import {first, Observable} from "rxjs";
+import {GetPublicLobby} from "../../../shared/interfaces/client.interface";
 
 @Component({
   selector: 'app-client-home-public-lobbies-list',
@@ -10,29 +11,21 @@ import * as path from "path";
 })
 export class ClientHomePublicLobbiesListComponent implements OnInit {
   @Output() outputToParentLobby: EventEmitter<{lobby: any}> = new EventEmitter()
-  Lobbies: any[] = [{
-    id: 0,
-    customPlace: {
-      latitude: 0,
-      longitude: 0
-    },
-    place:{
-      id: 0,
-      latitude: 0,
-      longitude: 0
-    },
-    maxSeats: 0,
-    name: "",
-    startDate: new Date(),
-
-  }]
+  Lobbies$!: Observable<GetPublicLobby[]>
+  Lobbies!: GetPublicLobby[]
   constructor(private lobbyService: LobbyService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllPublicLobbies()
   }
   getAllPublicLobbies(){
-    this.lobbyService.getAllPublicLobbies().subscribe(r=> this.Lobbies = r)
+    this.Lobbies$ = this.lobbyService.getAllPublicLobbies()
+    this.Lobbies$.pipe(first()).subscribe(lob=>{
+      this.Lobbies = lob
+      console.log(this.Lobbies)
+    }
+    )
+
   }
   changeLocation(lobby: any){
     this.outputToParentLobby.emit(lobby)

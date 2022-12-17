@@ -80,4 +80,21 @@ export interface GetCustomPlace{
   distance: number
 }
 
-
+export interface GetPublicLobby{
+  placeId: number;
+  id: number,
+  customPlace: {
+    name: string;
+    latitude: number,
+    longitude: number
+  },
+  place:{
+    name: string;
+    id: number,
+    latitude: number,
+    longitude: number
+  },
+  maxSeats: number,
+  name: string,
+  startDate: Date,
+}

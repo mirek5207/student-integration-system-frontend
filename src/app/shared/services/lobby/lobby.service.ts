@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {getUrl, httpOptions} from "../../API/api";
 import {TokenService} from "../token/token.service";
+import {GetLobby, GetPublicLobby} from "../../interfaces/client.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class LobbyService {
   }
 
   getAllPublicLobbies(){
-    return this.http.get<any[]>(getUrl(`Lobby/allPublicLobbies`), httpOptions)
+    return this.http.get<GetPublicLobby[]>(getUrl(`Lobby/allPublicLobbies`), httpOptions)
   }
 
   getAllGuestLobbies(){
