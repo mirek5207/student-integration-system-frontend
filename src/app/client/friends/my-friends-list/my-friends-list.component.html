@@ -1,5 +1,8 @@
 <div class="center-div">
-  <div class="leaderboard">
+  <div class="not-found" *ngIf="friends === undefined || friends.length == 0;">
+    <span>Wygląda na to, że nie masz dodanych żadnych przyjaciół</span>
+  </div>
+  <div *ngIf="friends.length>0" class="leaderboard">
     <main class="leaderboard__profiles">
       <article class="leaderboard__profile" *ngFor="let friend of friends">
         <mat-icon class="leaderboard__icon">account_circle</mat-icon>

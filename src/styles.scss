@@ -151,3 +151,14 @@ app-root {
 .mat-dialog-container{
   box-shadow: none;
 }
+.not-found{
+  width: 500px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  line-height: 60px;
+  transform: translateY(60%);
+  color: gray;
+  font-size: 40px;
+  font-weight: 500;
+}

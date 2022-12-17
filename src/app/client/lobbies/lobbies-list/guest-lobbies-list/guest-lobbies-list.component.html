@@ -2,6 +2,9 @@
   <div class="lobby-header">
     <span class="header">Pokoje, do których dołączyłeś</span>
   </div>
+  <div class="not-found" *ngIf="myLobbies === undefined || myLobbies.length == 0">
+    <span>Nie jesteś gościem w żadnym pokoju</span>
+  </div>
   <div>
     <div *ngFor="let myLobby of myLobbies" class = "lobby">
       <div class="lobby-items">
