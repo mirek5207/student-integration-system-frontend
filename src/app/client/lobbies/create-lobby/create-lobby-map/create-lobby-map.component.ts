@@ -4,6 +4,7 @@ import {PlaceService} from "../../../../shared/services/place/place.service";
 import {control, IconOptions} from "leaflet";
 import zoom = control.zoom;
 import {GetCustomPlace, GetPlace} from "../../../../shared/interfaces/client.interface";
+import {first, Observable} from "rxjs";
 
 @Component({
   selector: 'app-create-lobby-map',
@@ -58,7 +59,7 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
   constructor(private placeService: PlaceService) {
   }
   ngOnInit(): void {
-    this.getAllPlaces()
+    this.getAllPlaces().then()
     this.getAllCustomPlaces()
   }
   ngAfterViewInit(): void {
@@ -131,6 +132,7 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
     alert("Lokalizacja została dodana")
   }
   getDistanceFromLatLonInKm(lat1: number, lon1: number) {
+    if(!this.currentLongitude)window.location.reload()
     var R = 6371; // Radius of the earth in km
     var dLat = this.deg2rad(this.currentLatitude-lat1);  // deg2rad below
     var dLon = this.deg2rad(this.currentLongitude-lon1);

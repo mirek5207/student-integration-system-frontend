@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {TokenService} from "../../../shared/services/token/token.service";
 import {LobbyService} from "../../../shared/services/lobby/lobby.service";
 import {PlaceService} from "../../../shared/services/place/place.service";
-import {GetCustomPlace} from "../../../shared/interfaces/client.interface";
+import {GetCustomPlace, GetPlace} from "../../../shared/interfaces/client.interface";
+import {first, Observable} from "rxjs";
 
 @Component({
   selector: 'app-create-lobby',
@@ -11,7 +12,8 @@ import {GetCustomPlace} from "../../../shared/interfaces/client.interface";
 })
 export class CreateLobbyComponent implements OnInit {
   placeType = "Local";
-  locals!: any[]
+  locals$!: Observable<GetPlace[]>
+  locals!: GetPlace[]
   registerNewLobby: any = {
     maxSeats: 0,
     name: "",
@@ -54,7 +56,10 @@ export class CreateLobbyComponent implements OnInit {
   }
 
   getAllPlaces(){
-     this.placeService.getPlaces().subscribe(r => this.locals = r);
+     this.locals$ = this.placeService.getPlaces();
+     this.locals$.pipe(first()).subscribe(local=>{
+       this.locals = local
+     })
   }
 
   outputToParent(placeId: number) {
