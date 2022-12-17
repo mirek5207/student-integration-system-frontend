@@ -5,7 +5,7 @@
   <div class="not-found" *ngIf="myLobbies === undefined || myLobbies.length == 0">
     <span>Nie jesteś gościem w żadnym pokoju</span>
   </div>
-  <div>
+  <div class="lobby-container">
     <div *ngFor="let myLobby of myLobbies" class = "lobby">
       <div class="lobby-items">
         <div class="lobby-item"><img *ngIf= "myLobby.type.toString().includes(lobbyStatusPublic);"src="assets/public-group.png" class="group-icon"></div>

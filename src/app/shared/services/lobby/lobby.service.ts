@@ -31,7 +31,8 @@ export class LobbyService {
   }
 
   getAllPublicLobbies(){
-    return this.http.get<GetPublicLobby[]>(getUrl(`Lobby/allPublicLobbies`), httpOptions)
+    const userId = this.authService.getId()
+    return this.http.get<GetPublicLobby[]>(getUrl(`Lobby/allPublicLobbies/${userId}`), httpOptions)
   }
 
   getAllGuestLobbies(){

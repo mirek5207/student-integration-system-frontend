@@ -3,8 +3,9 @@
     <h1>Rezerwacje lokalu na dzień</h1>
     <input
       name="date"
-      type="datetime-local"
-      [value]="date | date : 'yyyy-MM-ddThh:mm'"
+      type="date"
+      [value]="date | date : 'yyyy-MM-dd'"
+      [(ngModel)]= date
     />
     <ul>
       <li *ngFor="let reservation of reservations"

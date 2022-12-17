@@ -1,7 +1,10 @@
 @import "src/app/client/lobbies/lobbies-list/owner-lobbies-list/owner-lobbies-list.component";
 .container{
-  max-height: 90vh;
-  overflow-y: scroll;
+  height: 90vh;
+}
+.container-lobby{
+  height: 82vh;
+  overflow-y: auto;
 }
 .lobby-header{
   background-color: #21355b;

@@ -22,6 +22,7 @@ export class ClientHomePublicLobbiesListComponent implements OnInit {
     this.Lobbies$ = this.lobbyService.getAllPublicLobbies()
     this.Lobbies$.pipe(first()).subscribe(lob=>{
       this.Lobbies = lob
+      console.log(lob)
     })
 
   }

@@ -2,6 +2,10 @@
   margin-left: 20px;
   font-size: 20px;
 }
+.lobby-container{
+  overflow-y: auto;
+  max-height: 72vh;
+}
 .lobby{
   display: flex;
   margin: 10px 2%;
