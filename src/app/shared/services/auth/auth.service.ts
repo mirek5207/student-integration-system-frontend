@@ -25,7 +25,7 @@ export class AuthService {
     private router: Router,
     private http: HttpClient,
     private tokenService: TokenService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
     ) { }
 
 

@@ -7,21 +7,24 @@
         <input
           [(ngModel)]="userInfo.login"
           type="text"
-          name="email"
+          name="login"
           class="dialog-input"
+          (change)="checkIfLoginIsValid(userInfo.login)"
         /><br>
+        <span *ngIf="!isValidLogin" class="error"><img src="assets/error.png"/>Podaj login</span>
       </div>
       <div class="dialog-input-container">
-        <label>Password</label><br>
+        <label>Hasło</label><br>
         <input
           [(ngModel)]="userInfo.password"
           type="password"
           name="password"
           class="dialog-input"
+          (change)="checkIfPasswordIsValid(userInfo.password)"
         /><br>
+        <span *ngIf="!isValidPassword" class="error"><img src="assets/error.png"/>Podaj hasło</span>
       </div>
-      <button mat-dialog-close type="submit" class="dialog-button">Login</button>
+      <button type="submit" class="dialog-button">Login</button>
       <button mat-dialog-close type="button" class="dialog-button-second">Nie masz konta? Zarejestruj się</button>
   </form>
 </div>
-<!-- HTML !-->
