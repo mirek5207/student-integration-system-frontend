@@ -20,11 +20,18 @@
   </div>
   <div class = "container-item">
     <label>Miejsce spotkania</label>
-        <input
-          required
-          type="text"
-          [value]=lobby?.place.name
-        >
+    <input *ngIf="lobby?.place"
+           required
+           type="text"
+           [value]=lobby?.place.name
+           disabled
+    >
+    <input *ngIf="lobby?.customPlace"
+           required
+           type="text"
+           [value]=lobby.customPlace.name
+           disabled
+    >
   </div>
   <div class = "container-item">
     <label>Masymalna liczba miejsc w lobby</label>

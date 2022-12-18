@@ -73,6 +73,7 @@ const routes: Routes = [
             children: [
               {path: '', component: OwnerLobbyDetailsDataComponent},
               {path: 'guests', component: OwnerLobbyDetailsGuestListComponent},
+              {path: 'place', component: GuestLobbyPlaceComponent},
               {path: 'place/reservation', component: OwnerLobbyDetailsPlaceReservationComponent}
             ]
           },

@@ -5,7 +5,7 @@
   <div class="not-found" *ngIf="Lobbies === undefined || Lobbies.length == 0">
     <span>Nie znaleziono żadnych publicznych pokoi</span>
   </div>
-  <div *ngIf="Lobbies.length > 0" class="container-lobby">
+  <div *ngIf="!(Lobbies === undefined || Lobbies.length == 0)" class="container-lobby">
     <div *ngFor="let myLobby of Lobbies" class = "lobby">
       <div class="lobby-items">
         <div class="lobby-item"><b>{{myLobby.name}}</b></div>
