@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./reservations-for-day.component.scss']
 })
 export class ReservationsForDayComponent implements OnInit {
-  date!: Date
+  date = new Date()
   reservations!: any[]
   private routeSub!: Subscription;
   local!: any
@@ -25,9 +25,9 @@ export class ReservationsForDayComponent implements OnInit {
     });
   }
 
-  getForSpecificDate(date: any){
-    console.log(date)
-    this.reservationService.getConfirmedReservationsForOneDay(date, this.placeId).subscribe(r => console.log(r))
+  getForSpecificDate(){
+    this.reservations = []
+    this.reservationService.getConfirmedReservationsForOneDay(this.date, this.placeId).subscribe(r => this.reservations = r)
   }
 
 }

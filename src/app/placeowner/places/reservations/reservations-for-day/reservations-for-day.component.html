@@ -1,19 +1,43 @@
 <div class="container">
   <div>
-    <h1>Rezerwacje lokalu na dzień</h1>
-    <input
-      name="date"
-      type="date"
-      [value]="date | date : 'yyyy-MM-dd'"
-      [(ngModel)]= date
-    />
-    <ul>
-      <li *ngFor="let reservation of reservations"
-      >
-        {{reservation.id}}
-        {{reservation.numberOfGuests}}
-      </li>
-    </ul>
-    <button (click)="getForSpecificDate(this.pipe.transform(this.date, 'yyyy-MM-ddThh:mm:ss'))">Check</button>
+    <div class="container-item">
+      <h1>Rezerwacje lokalu na dzień</h1>
+      <div>
+        <input
+          id="date"
+          name="date"
+          type="date"
+          [(ngModel)]= date
+        />
+        <button mat-flat-button color="primary" (click)="getForSpecificDate()">Wyszukaj</button>
+      </div>
+    </div><hr>
+    <div class="container-item" *ngFor="let reservation of reservations">
+      <div class="container-item-child">
+        <div>
+          <span>Imie i nazwisko</span>
+          {{reservation.lobbyOwnerFullName}}
+        </div>
+        <div>
+          <span>Data rozpoczęcia</span>
+          {{reservation.startDate | date: 'short'}}
+        </div>
+        <div>
+          <span>Data zakończenia</span>
+          {{reservation.endDate| date: 'short'}}
+        </div>
+        <div>
+          <span>Liczba gości</span>
+          {{reservation.numberOfGuests}}
+        </div>
+        <div>
+          <span>Numer telefonu</span>
+          {{reservation.phoneNumber}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="reservations == undefined || reservations.length == 0" class="not-found">
+      Brak rezerwacji <br>na podany dzień
+    </div>
   </div>
 </div>

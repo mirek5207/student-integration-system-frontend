@@ -19,7 +19,6 @@ export class ReservationsComponent implements OnInit {
     this.routeSub = this.route.queryParams.subscribe(params => {
       this.placeId = params['placeId']
     });
-    this.getAllReservations()
   }
 
   accept(id: number){
@@ -28,9 +27,6 @@ export class ReservationsComponent implements OnInit {
 
   decline(id:number){
     this.reservationService.declineReservation(id).subscribe(r => console.log(r))
-  }
-  getAllReservations(){
-    this.reservationService.getSentReservationsForPlace(this.placeId).subscribe(r => this.reservations = r)
   }
   navigateTo(path: string)
   {

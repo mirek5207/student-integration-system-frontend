@@ -1,6 +1,17 @@
+@import "src/app/placeowner/places/reservations/requested-reservation/requested-reservation.component";
 .container input{
   border: 1px solid gray;
   height: 30px;
   padding: 0px 20px;
   border-radius: 10px;
+}
+.container-item:first-child{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.container-item:first-child button{
+  margin-left: 10px;
 }

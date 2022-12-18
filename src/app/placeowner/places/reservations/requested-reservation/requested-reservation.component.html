@@ -27,5 +27,8 @@
       </div>
     </div>
   </div>
+  <div *ngIf="reservations === undefined || reservations.length == 0" class="not-found">
+    Brak próśb o rezerwacje w tym lokalu
+  </div>
 </div>
 <!--51,23509676625871422,547146469724574-->
