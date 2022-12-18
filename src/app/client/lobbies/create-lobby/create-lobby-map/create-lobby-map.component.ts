@@ -129,7 +129,7 @@ export class CreateLobbyMapComponent implements AfterViewInit,OnInit  {
 
   addLocalization(){
     this.placeService.createCustomPlace(this.postCustomPlace)
-    alert("Lokalizacja została dodana")
+    window.location.reload()
   }
   getDistanceFromLatLonInKm(lat1: number, lon1: number) {
     if(!this.currentLongitude)window.location.reload()
