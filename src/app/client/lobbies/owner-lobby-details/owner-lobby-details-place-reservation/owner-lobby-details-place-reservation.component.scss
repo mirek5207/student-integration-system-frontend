@@ -30,7 +30,7 @@ html, body {
 .container-item:last-child{
   color: transparent;
 }
-.container-item input{
+.container-item input, .container-item select{
   border: 1px solid gray;
   height: 30px;
   padding: 0px 20px;

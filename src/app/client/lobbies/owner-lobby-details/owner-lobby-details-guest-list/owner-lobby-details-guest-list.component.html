@@ -5,6 +5,9 @@
       <span class = "spacer"></span>
       <button (click)="openAddFriendToLobbyDialog()" mat-flat-button color = "primary">+</button>
     </div><br>
+    <div *ngIf="guests === undefined || guests.length == 0" class="not-found">
+      Brak zaproszonych znajomych w pokoju
+    </div>
     <div *ngFor="let guest of guests;let i=index;" class = "lobby">
       <div class="lobby-items">
         <div class="lobby-item"><img src="assets/person-icon.png" class="person-icon"></div>

@@ -12,11 +12,10 @@
   </div>
   <div class = "container-item">
     <label>Typ pokoju</label>
-        <input
-          required
-          type="text"
-          [value]=lobby?.type
-        >
+    <select [ngModel]= lobby?.type>
+      <option value="Public">Publiczne</option>
+      <option value="Private">Prywatne</option>
+    </select>
   </div>
   <div class = "container-item">
     <label>Miejsce spotkania</label>

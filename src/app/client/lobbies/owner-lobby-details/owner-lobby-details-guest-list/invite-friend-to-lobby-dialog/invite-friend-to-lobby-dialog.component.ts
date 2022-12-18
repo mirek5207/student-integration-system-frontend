@@ -24,5 +24,6 @@ export class InviteFriendToLobbyDialogComponent implements OnInit {
   }
   inviteGuestToLobby(userId: number){
     this.lobbyService.addGuestToLobby(userId,this.lobbyId)
+    window.location.reload()
   }
 }
