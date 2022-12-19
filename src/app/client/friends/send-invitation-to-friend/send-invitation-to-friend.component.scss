@@ -1,8 +1,8 @@
 .leaderboard {
   width: 80%;
   border-radius: 12px;
-  max-height: 73vh;
-  overflow-y: scroll;
+  height: 73vh;
+  overflow-y: auto;
   &__profiles {
     background-color: #fff;
     border-radius: 0 0 12px 12px;
