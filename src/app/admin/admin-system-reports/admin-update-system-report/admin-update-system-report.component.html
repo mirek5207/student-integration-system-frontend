@@ -1,0 +1,27 @@
+<div class="container">
+  <div class = "container-item">
+    <h1>Zgłoszenie systemowe</h1>
+  </div>
+  <div class = "container-item">
+    <label>Data zgłoszenia</label>
+    <input
+      disabled
+      [(ngModel)]="creationDate"
+    />
+  </div>
+  <div class = "container-item">
+    <label>Powód zgłoszenia</label>
+    <textarea
+      required
+      type="text"
+      rows="15"
+      disabled
+      [(ngModel)]="description"
+    >
+    </textarea>
+  </div>
+  <div class = "container-item">
+    <button (click)="updateSystemReportStatus(inProgressReport)" mat-flat-button color="primary">Zgłoszenie w trakcie weryfikacji</button>
+    <button (click)="updateSystemReportStatus(verifiedReport)" mat-flat-button color="primary">Zgłoszenie zweryfikowane</button>
+  </div>
+</div>

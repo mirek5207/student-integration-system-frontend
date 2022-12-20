@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+.container-item{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 90%;
+}
+.container-item:first-child{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 13px 0px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.container-item textarea{
+  position: relative;
+  resize: none;
+  width: 100%;
+}
+.container-item:last-child{
+  margin-top: 10px;
+  color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-item:last-child button:first-child{
+  background: #fb4b00;
+}
+.container-item button{
+  width: 95%;
+  margin-bottom: 10px;
+}
+.container-item input{
+  border: 1px solid gray;
+  height: 30px;
+  padding: 0px 20px;
+  border-radius: 10px;
+}
+.container-item label{
+  font-size: 20px;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}

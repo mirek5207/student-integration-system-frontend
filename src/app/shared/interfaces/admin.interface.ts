@@ -9,3 +9,6 @@ export interface GetSystemReport{
 export interface PatchSystemReport{
   _reportStatus: string
 }
+export interface PatchUserAccount{
+  isActive: boolean
+}

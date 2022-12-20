@@ -9,6 +9,12 @@ import {
   ModeratorUpdateUserComponent
 } from "../../moderator-users/moderator-update-user/moderator-update-user.component";
 import {GetUserReport} from "../../../shared/interfaces/moderator.interface";
+import {
+  AdminUpdateSystemReportComponent
+} from "../../../admin/admin-system-reports/admin-update-system-report/admin-update-system-report.component";
+import {
+  ModeratorUpdateUserReportComponent
+} from "../moderator-update-user-report/moderator-update-user-report.component";
 
 @Component({
   selector: 'app-moderator-user-reports-list',
@@ -41,16 +47,16 @@ export class ModeratorUserReportsListComponent implements OnInit {
     this.userReport = this.moderatorService.getAllUserReports()
   }
 
-  openUpdateClientDialog(id: number){
-    this.dialogRef.open(ModeratorUpdateUserComponent, this.getUpdateDialogConfig(id))
+  openUpdateClientDialog(id: number,description: string,date: Date,reportedUserId: number){
+    this.dialogRef.open(ModeratorUpdateUserReportComponent, this.getUpdateDialogConfig(id,description,date,reportedUserId))
   }
 
-  getUpdateDialogConfig(id: number){
+  getUpdateDialogConfig(id: number,description: string, date: Date,reportedUserId: number){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = "450px";
-    dialogConfig.height = "620px";
-    dialogConfig.data = id.toString();
+    dialogConfig.height = "580px";
+    dialogConfig.data = [id,description,date,reportedUserId];
     return dialogConfig;
   }
 

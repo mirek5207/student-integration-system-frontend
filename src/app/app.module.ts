@@ -83,6 +83,7 @@ import {ReportsComponent} from "./client/reports/reports.component";
 import { ReportsNavComponent } from './client/reports/reports-nav/reports-nav.component';
 import { RequestedReservationComponent } from './placeowner/places/reservations/requested-reservation/requested-reservation.component';
 import { AdminUpdateSystemReportComponent } from './admin/admin-system-reports/admin-update-system-report/admin-update-system-report.component';
+import { ModeratorUpdateUserReportComponent } from './moderator/moderator-user-reports/moderator-update-user-report/moderator-update-user-report.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -149,6 +150,7 @@ import { AdminUpdateSystemReportComponent } from './admin/admin-system-reports/a
     ReportsNavComponent,
     RequestedReservationComponent,
     AdminUpdateSystemReportComponent,
+    ModeratorUpdateUserReportComponent,
   ],
   imports: [
     BrowserModule,

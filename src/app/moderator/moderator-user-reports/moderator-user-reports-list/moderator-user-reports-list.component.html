@@ -36,7 +36,7 @@
 
     <ng-container matColumnDef="button">
       <mat-header-cell *matHeaderCellDef><mat-icon (click)="refreshComponent()" class = "refresh-icon">refresh</mat-icon></mat-header-cell>
-      <mat-cell *matCellDef="let element"> <button mat-stroked-button color="primary" (click)="openUpdateClientDialog(element.userId)">Edytuj</button></mat-cell>
+      <mat-cell *matCellDef="let element"> <button mat-stroked-button color="primary" (click)="openUpdateClientDialog(element.id,element.description,element.creationDate,element.reportedUserId)">Edytuj</button></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

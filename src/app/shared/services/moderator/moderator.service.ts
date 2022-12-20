@@ -4,6 +4,7 @@ import {getUrl, httpOptions} from "../../API/api";
 import {GetModerator, GetUserReport, UpdateModerator} from "../../interfaces/moderator.interface";
 import {GetClient, UpdateClient} from "../../interfaces/client.interface";
 import {GetOwner} from "../../interfaces/placeOwner.interface";
+import {GetSystemReport, PatchSystemReport, PatchUserAccount} from "../../interfaces/admin.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,12 @@ export class ModeratorService {
 
   getAllUserReports(){
     return this.http.get<GetUserReport[]>(getUrl(`Moderator/getUserReports`), httpOptions)
+  }
+
+  updateStatusOfUserReport(reportId: number, reportStatus: PatchSystemReport) {
+    return this.http.patch(getUrl(`Moderator/updateStatusOfUserReport/${reportId}`),reportStatus, httpOptions)
+  }
+  updateStatusOfUserAccount(userId: number, reportStatus: PatchUserAccount) {
+    return this.http.patch(getUrl(`Moderator/UpdateStatusOfUserAccount/${userId}`),reportStatus, httpOptions)
   }
 }
