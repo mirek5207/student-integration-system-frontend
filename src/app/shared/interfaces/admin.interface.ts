@@ -6,3 +6,6 @@ export interface GetSystemReport{
   "status": number,
   "reportingUserId": number
 }
+export interface PatchSystemReport{
+  _reportStatus: string
+}

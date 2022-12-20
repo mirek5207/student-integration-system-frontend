@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Observable} from "rxjs";
+import {first, Observable} from "rxjs";
 import {GetUserReport} from "../../../shared/interfaces/moderator.interface";
 import {MatTableDataSource} from "@angular/material/table";
 import {ModeratorService} from "../../../shared/services/moderator/moderator.service";
@@ -10,6 +10,7 @@ import {
 } from "../../../moderator/moderator-users/moderator-update-user/moderator-update-user.component";
 import {GetSystemReport} from "../../../shared/interfaces/admin.interface";
 import {AdminService} from "../../../shared/services/admin/admin.service";
+import {AdminUpdateSystemReportComponent} from "../admin-update-system-report/admin-update-system-report.component";
 
 @Component({
   selector: 'app-admin-system-reports-list',
@@ -40,18 +41,20 @@ export class AdminSystemReportsListComponent implements OnInit {
 
   getAllSystemReports(){
     this.systemReport = this.adminService.getSystemReports()
+    this.systemReport.pipe(first()).subscribe(res=> console.log(res))
   }
 
-  openUpdateClientDialog(id: number){
-    this.dialogRef.open(ModeratorUpdateUserComponent, this.getUpdateDialogConfig(id))
+  openUpdateClientDialog(id: number,description: string,date: Date){
+    this.dialogRef.open(AdminUpdateSystemReportComponent, this.getUpdateDialogConfig(id,description,date))
   }
 
-  getUpdateDialogConfig(id: number){
+  getUpdateDialogConfig(id: number,description: string, date: Date){
+    console.log(id)
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = "450px";
-    dialogConfig.height = "620px";
-    dialogConfig.data = id.toString();
+    dialogConfig.height = "580px";
+    dialogConfig.data = [id,description,date];
     return dialogConfig;
   }
 

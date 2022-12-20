@@ -82,6 +82,7 @@ import {MyFriendsListComponent} from "./client/friends/my-friends-list/my-friend
 import {ReportsComponent} from "./client/reports/reports.component";
 import { ReportsNavComponent } from './client/reports/reports-nav/reports-nav.component';
 import { RequestedReservationComponent } from './placeowner/places/reservations/requested-reservation/requested-reservation.component';
+import { AdminUpdateSystemReportComponent } from './admin/admin-system-reports/admin-update-system-report/admin-update-system-report.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -147,6 +148,7 @@ import { RequestedReservationComponent } from './placeowner/places/reservations/
     SendInvitationToFriendComponent,
     ReportsNavComponent,
     RequestedReservationComponent,
+    AdminUpdateSystemReportComponent,
   ],
   imports: [
     BrowserModule,

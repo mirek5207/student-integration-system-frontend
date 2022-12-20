@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {GetModerator, ModeratorInfo, UpdateModerator} from "../../interfaces/moderator.interface";
 import {getUrl, httpOptions} from "../../API/api";
-import {GetSystemReport} from "../../interfaces/admin.interface";
+import {GetSystemReport, PatchSystemReport} from "../../interfaces/admin.interface";
 
 
 
@@ -32,6 +32,9 @@ export class AdminService {
 
   updateModerator(id: number, moderator: UpdateModerator){
     return this.http.patch(getUrl(`Admin/updateModeratorAccount/${id}`),moderator, httpOptions)
+  }
+  updateStatusOfSystemReport(reportId: number, reportStatus: PatchSystemReport){
+    return this.http.patch(getUrl(`Admin/updateStatusOfSystemReport/${reportId}`),reportStatus, httpOptions)
   }
 
   getSystemReports(){
