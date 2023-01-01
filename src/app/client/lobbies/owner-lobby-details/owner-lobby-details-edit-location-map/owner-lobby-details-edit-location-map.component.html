@@ -1,0 +1,25 @@
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+  <div class="map-container-items">
+    <div class="map-container-item">
+      <button (click)="setDisplayToLocal(true)">Lokale</button>
+    </div>
+    <div class="map-container-item">
+      <button (click)="setDisplayToLocal(false)">Twoje miejsca</button>
+    </div>
+  </div>
+  <div class="map-container-items" *ngIf="displayLocal === true">
+    <div class="place-list-item" *ngFor="let local of locals">
+      <div class="place-list-item-child">{{local.id}}  {{local.name}}</div>
+      <div class="place-list-item-child"><button (click)="changePlaceToLocal(local.id,local.name)" mat-button color="primary">Zmień miejsce spotkania</button><button mat-button color="primary" (click)="changeLocation(local.id,local.latitude,local.longitude)">Sprawdź na mapie</button></div>
+    </div>
+  </div>
+  <div class="map-container-items" *ngIf="displayLocal === false">
+    <div class="place-list-item" *ngFor="let customPlace of customPlace">
+      <div class="place-list-item-child">{{customPlace.id}}  {{customPlace.name}} {{customPlace.description}}</div>
+      <div class="place-list-item-child"><button (click)="changePlaceToCustomPlace(customPlace.id,customPlace.name,customPlace.latitude,customPlace.longitude,customPlace.description.toString())" mat-button color="primary">Zmień miejsce spotkania</button><button mat-button color="primary" (click)="changeLocationWithoutCustomMarker(customPlace)">Sprawdź na mapie</button></div>
+    </div>
+  </div>
+</div>

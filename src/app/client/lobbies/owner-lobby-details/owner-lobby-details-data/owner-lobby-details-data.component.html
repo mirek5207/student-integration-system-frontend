@@ -8,14 +8,17 @@
           required
           type="text"
           [value]=lobby?.name
+          disabled
         >
   </div>
   <div class = "container-item">
     <label>Typ pokoju</label>
-    <select [ngModel]= lobby?.type>
-      <option value="Public">Publiczne</option>
-      <option value="Private">Prywatne</option>
-    </select>
+    <input
+      required
+      type="text"
+      [value]=lobby?.type
+      disabled
+    >
   </div>
   <div class = "container-item">
     <label>Miejsce spotkania</label>
@@ -38,6 +41,7 @@
       required
       type="number"
       [value]=lobby?.maxSeats
+      disabled
     >
   </div>
   <div class = "container-item">
@@ -47,9 +51,10 @@
       type="datetime-local"
       placeholder="111-222-333"
       [value] = "lobby?.startDate | date : 'yyyy-MM-ddThh:mm'"
+      disabled
     />
   </div>
   <div class = "container-item">
-    <button  mat-flat-button color="primary">Edytuj</button><br>
+<!--    <button  mat-flat-button color="primary">Edytuj</button><br>-->
   </div>
 </div>
