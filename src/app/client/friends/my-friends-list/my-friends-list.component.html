@@ -7,7 +7,7 @@
       <article class="leaderboard__profile" *ngFor="let friend of friends">
         <mat-icon class="leaderboard__icon">account_circle</mat-icon>
         <span class="leaderboard__name">{{friend.friendSender.firstName}} {{friend.friendSender.surName}}</span>
-        <button mat-raised-button color="primary" (click)="deleteUserFromFriendList(friend.id)">Delete friend</button>
+        <button mat-raised-button color="primary" (click)="deleteUserFromFriendList(friend.id)">Usuń z listy znajomych</button>
       </article>
     </main>
   </div>

@@ -4,6 +4,7 @@ import {RegisterService} from "../../shared/services/register/register.service";
 import {AuthService} from "../../shared/services/auth/auth.service";
 import {Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-register-placeowner',
@@ -20,7 +21,7 @@ export class RegisterPlaceownerComponent implements OnInit {
     hashedPassword: ''
   }
   private routeSub!: Subscription;
-  constructor(private registerService : RegisterService, private authService : AuthService, private route: ActivatedRoute) { }
+  constructor(private registerService : RegisterService, private authService : AuthService, private route: ActivatedRoute, private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -32,5 +33,7 @@ export class RegisterPlaceownerComponent implements OnInit {
     await this.registerService.createAccount(placeOwner, 'PlaceOwner/createAccount')
     await this.authService.loginAfterRegistration()
   }
-
+  closeDialog() {
+    this.dialogRef.closeAll()
+  }
 }

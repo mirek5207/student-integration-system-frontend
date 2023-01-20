@@ -41,4 +41,8 @@ export class RegisterComponent implements OnInit {
     dialogConfig.panelClass = "dialog";
     return dialogConfig;
   }
+
+  closeDialog() {
+    this.dialogRef.closeAll()
+  }
 }

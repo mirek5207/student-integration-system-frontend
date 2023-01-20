@@ -1,7 +1,7 @@
 <div class="dialog-container">
   <button mat-dialog-close class= "close-button">X</button>
   <h1 class = "header-h1">Rejestracja użytkownika</h1>
-  <form (submit)="register(registerNewClient)" class="form">
+  <form (submit)="register(registerNewClient)" class="form" ngNativeValidate #form>
     <div class="dialog-container-content">
       <div class="dialog-input-container">
         <label>Login</label><br>
@@ -10,6 +10,8 @@
           type="text"
           name="login"
           class="dialog-input"
+          required
+          title="Pole jest wymagane"
         /><br>
       </div>
       <div class="dialog-input-container">
@@ -19,37 +21,48 @@
           type="email"
           name="Email"
           class="dialog-input"
+          required
+          title="Pole jest wymagane"
         /><br>
       </div>
       <div class="dialog-input-container">
-        <label>First Name</label><br>
+        <label>Imię</label><br>
         <input
           [(ngModel)]="registerNewClient.firstName"
           type="text"
           name="first name"
           class="dialog-input"
+          required
+          pattern="^[A-Z][a-z0-9_-]{2,}$"
+          title="Imię musi zaczynać się z dużej litery"
         /><br>
       </div>
       <div class="dialog-input-container">
-        <label>Surname</label><br>
+        <label>Nazwisko</label><br>
         <input
           [(ngModel)]="registerNewClient.surName"
           type="text"
           name="Surname"
           class="dialog-input"
+          required
+          pattern="^[A-Z][a-z0-9_-]{2,}$"
+          title="Nazwisko musi zaczynać się z dużej litery"
         /><br>
       </div>
       <div class="dialog-input-container">
-        <label>Password</label><br>
+        <label>Hasło</label><br>
         <input
           [(ngModel)]="registerNewClient.hashedPassword"
           type="password"
           name="password"
           class="dialog-input"
+          required
+          pattern="^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{6,}$"
+          title="Hasło musi składać się z 6 znaków, dużej litery, małej litery, cyfry oraz znaku specjalnego (np. !@#$)"
         /><br>
       </div>
     </div>
-    <button mat-dialog-close type="submit" mat-button color="primary" class="dialog-button">Zarejestruj</button>
+    <button (click)="form.checkValidity()? closeDialog() : null" type="submit" mat-button color="primary" class="dialog-button">Zarejestruj</button>
     <button type="button" (click)="openRegisterPlaceOwnerDialog()" mat-button color="primary" class="dialog-button-second">Jesteś właścicielem? Zarejestruj się</button>
   </form>
 </div>

@@ -3,6 +3,8 @@ import { UserInfo } from '../shared/interfaces/auth.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
 import { URL } from "url";
 import * as url from "url";
+import {RegisterComponent} from "../register/register.component";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private dialogRef : MatDialog) {}
 
   ngOnInit(): void {}
    async login(userInfo: UserInfo) {
@@ -48,5 +50,17 @@ export class LoginComponent implements OnInit {
       this.isValidPassword = 0
     }
   }
-
+  openRegisterClientDialog(){
+    this.dialogRef.open(RegisterComponent, this.getDialogConfig("80vw","89vh","600px", "500px"))
+  }
+  getDialogConfig(width: string, height: string, maxHeight: string, maxWidth: string){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = width;
+    dialogConfig.height = height;
+    dialogConfig.maxHeight = maxHeight;
+    dialogConfig.maxWidth = maxWidth;
+    dialogConfig.panelClass = "dialog";
+    return dialogConfig;
+  }
 }
